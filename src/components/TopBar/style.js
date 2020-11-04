@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const TopMenuContainer = styled.div`
   font-family: "sfMedium";
-  display: inline-block;
-  vertical-align: top;
+  display: flex;
+  align-items: center;
   width: 100%;
   height: 3rem;
   background-color: ${(props) => props.theme.colors.red};
