@@ -3,7 +3,6 @@ import { ThemeProvider } from "styled-components";
 import { createGlobalStyle } from "styled-components";
 
 import sfMedium from "./fonts/sf-compact-medium.woff";
-import sfThin from "./fonts/sf-compact-thin.woff";
 
 const theme = {
   colors: {
@@ -16,6 +15,10 @@ const theme = {
     small: "1em",
     medium: "2em",
     large: "3em",
+    tag: "0.75rem",
+  },
+  fontFamily: {
+    sf: "sfMedium",
   },
 };
 
@@ -33,6 +36,11 @@ const GlobalFonts = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+  li, ol, ul {
+    margin: 0;
+    border: 0;
+    vertical-align: baseline;
+    } 
   }
 `;
 
