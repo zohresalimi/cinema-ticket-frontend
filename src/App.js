@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { Router, Link } from "@reach/router";
+import { Router } from "@reach/router";
 import Theme from "./Styles/Theme";
 import HomePage from "./pages/HomePage";
 import MovieDetailPage from "./pages/MovieDetailPage";

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { PlayBtn, Div, RoundBut } from "./style";
 
-function PlayButton(props) {
+function PlayButton() {
   return (
     <Div>
       <RoundBut>

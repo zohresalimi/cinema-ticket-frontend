@@ -2,7 +2,7 @@ import React from "react";
 import { Wrapper, TopMenuContainer, Link, Logo, Ul, Li, Div } from "./style";
 import { Container, Row, Col } from "../../Styles/StyleComponents";
 
-function TopBar(props) {
+function TopBar() {
   return (
     <Wrapper>
       <TopMenuContainer>
@@ -14,14 +14,18 @@ function TopBar(props) {
                   <Logo
                     alt=""
                     src="https://www.filmstaden.se/contentassets/abcfcecd76ac47a18718257ddc52e804/filmstadenloggo100ar.png"
-                  ></Logo>
+                  />
                 </Link>
                 <Ul>
                   <Li>
-                    <Link weight="bold">Home</Link>
+                    <Link href="/" weight="bold">
+                      Home
+                    </Link>
                   </Li>
                   <Li>
-                    <Link weight="bold">Movies</Link>
+                    <Link href="/" weight="bold">
+                      Movies
+                    </Link>
                   </Li>
                 </Ul>
               </Div>

@@ -16,13 +16,13 @@ const device = {
   xl: `(min-width: ${size.xl})`,
 };
 
-const media = {
-  xs: (styles) => `
-    @media only screen and ${device.xs}{
-        ${styles}
-    }
-    `,
-};
+// const media = {
+//   xs: (styles) => `
+//     @media only screen and ${device.xs}{
+//         ${styles}
+//     }
+//     `,
+// };
 
 // function getWidth(w) {
 //   if (!w) return;

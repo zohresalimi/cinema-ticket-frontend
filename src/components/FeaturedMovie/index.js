@@ -9,10 +9,9 @@ import {
   MovieTitle,
   Link,
 } from "./style";
-import { Container, Row, Col } from "../../Styles/StyleComponents";
 import PlayButton from "../PlayButton";
 
-function FeaturedMovie(props) {
+function FeaturedMovie() {
   return (
     <Wrapper>
       <FullImage>
@@ -25,7 +24,7 @@ function FeaturedMovie(props) {
         <Info>
           <Tag> Movie</Tag>
           <MovieTitle>
-            <Link>Movie Tilte</Link>
+            <Link href="/">Movie Tilte</Link>
           </MovieTitle>
         </Info>
       </FullImage>

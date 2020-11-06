@@ -61,15 +61,15 @@ function HomePage() {
   }, [childrenMoviesList, dispatch]);
   return (
     <>
-      <TopBar></TopBar>
-      <FeaturedMovie></FeaturedMovie>
+      <TopBar />
+      <FeaturedMovie />
       <div>
         <h2> Currently at the cinema </h2>
         <ul>
           {premiered &&
-            premiered.map(function (item, i) {
+            premiered.map((item) => {
               return (
-                <li key={i}>
+                <li key={item._id}>
                   <Link to={`premiered/movie-detail/${item._id}`}>
                     <img src={item.coverImage} alt="" />
                     {item.name}
@@ -84,9 +84,9 @@ function HomePage() {
         <h2> Upcoming movies</h2>
         <ul>
           {upcoming &&
-            upcoming.map(function (item, i) {
+            upcoming.map((item) => {
               return (
-                <li key={i}>
+                <li key={item._id}>
                   <Link to={`upcoming/movie-detail/${item._id}`}>
                     <img src={item.coverImage} alt="" />
                     {item.name}
@@ -100,9 +100,9 @@ function HomePage() {
         <h2> Children And Family </h2>
         <ul>
           {children &&
-            children.map(function (item, i) {
+            children.map((item) => {
               return (
-                <li key={i}>
+                <li key={item._id}>
                   <Link to={`children/movie-detail/${item._id}`}>
                     <img src={item.coverImage} alt="" />
                     {item.name}

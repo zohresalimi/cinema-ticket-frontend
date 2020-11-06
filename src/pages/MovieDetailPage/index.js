@@ -1,12 +1,10 @@
-import React, { useState, useContext, useEffect, useRef } from "react";
+import React, { useState, useContext, useRef } from "react";
 import { Link } from "@reach/router";
 import useAxios from "../../hooks/useAxios";
 import AppContext from "../../store/context";
 
-import { SET_SELECTED_MOVIE_REDUCER } from "../../constants";
-
 function MovieDetailPage(props) {
-  const { state, dispatch } = useContext(AppContext);
+  const { state } = useContext(AppContext);
   const { category, movieId } = props;
   const { movies } = state;
   const [currentMovie] = useState(() => {
@@ -23,10 +21,9 @@ function MovieDetailPage(props) {
   );
 
   // const [{ response: showings }] = useAxios(
-  //   `/api/v1/cinemas/by-room-ids`,
-  //   dataRef.current
+  //   `/api/v1/showings/by-movie-id/${currentMovie._id}`
   // );
-
+  // console.log(showings);
   return (
     <div>
       {currentMovie && (
@@ -34,9 +31,9 @@ function MovieDetailPage(props) {
           <p>{currentMovie.name}</p>
           <ul>
             {cinemas &&
-              cinemas.data.map(function (item, i) {
+              cinemas.data.map((item) => {
                 return (
-                  <li key={i}>
+                  <li key={item._id}>
                     <Link to="/">{item.name}</Link>
                   </li>
                 );

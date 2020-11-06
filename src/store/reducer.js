@@ -1,4 +1,3 @@
-import formatPrice from "../utils/formatPrice";
 import {
   SET_PREMIERED_MOVIE_REDUCER,
   SET_UPCOMING_MOVIE_REDUCER,
