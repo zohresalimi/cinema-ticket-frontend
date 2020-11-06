@@ -1,5 +1,6 @@
 import { useEffect, useReducer, useMemo, useCallback } from "react";
 import axios from "axios";
+import qs from "qs";
 
 const baseUrl = process.env.REACT_APP_BASE_URL;
 const actions = {
@@ -7,13 +8,15 @@ const actions = {
   REQUEST_END: "REQUEST_END",
 };
 
-async function fetchData({ method, data, path }, dispatch) {
+async function fetchData({ path, ...config }, dispatch) {
   try {
     dispatch({ type: actions.REQUEST_START });
     const result = await axios({
-      method,
+      ...config,
       url: `${baseUrl}${path}`,
-      data,
+      paramsSerializer: (params) => {
+        return qs.stringify(params);
+      },
     });
     dispatch({ type: actions.REQUEST_END, payload: result.data });
   } catch (err) {
@@ -73,9 +76,12 @@ const useAxios = (path, config) => {
     }
   }, [options, dispatch, path]);
 
-  const refetch = useCallback(() => {
-    return fetchData(options, dispatch);
-  }, [options, dispatch]);
+  const refetch = useCallback(
+    (payload) => {
+      return fetchData({ ...options, ...payload }, dispatch);
+    },
+    [options, dispatch]
+  );
 
   return [state, refetch];
 };

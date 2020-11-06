@@ -1,6 +1,8 @@
 import React, { useReducer } from "react";
+import { Router, Link } from "@reach/router";
 import Theme from "./Styles/Theme";
 import HomePage from "./pages/HomePage";
+import MovieDetailPage from "./pages/MovieDetailPage";
 import AppContext from "./store/context";
 import store from "./store";
 
@@ -12,7 +14,10 @@ function App() {
     <Theme>
       <div className="App">
         <AppContext.Provider value={{ state, dispatch }}>
-          <HomePage></HomePage>
+          <Router>
+            <HomePage path="/" />
+            <MovieDetailPage path=":category/movie-detail/:movieId" />
+          </Router>
         </AppContext.Provider>
       </div>
     </Theme>

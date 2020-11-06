@@ -3,11 +3,15 @@ const state = {
     name: "",
     email: "",
   },
-  movies: {},
+  movies: {
+    selected: {},
+    children: [],
+    premiered: [],
+    upcoming: [],
+  },
   selectedMovie: {},
   numberOfTicket: 0,
   seatsNumber: [],
-  currentMovies: [],
 };
 
 export default state;
