@@ -20,25 +20,39 @@ function MovieDetailPage(props) {
     dataRef.current
   );
 
-  // const [{ response: showings }] = useAxios(
-  //   `/api/v1/showings/by-movie-id/${currentMovie._id}`
-  // );
-  // console.log(showings);
+  const [{ response: showings }] = useAxios(
+    `/api/v1/showings/by-movie-id/${currentMovie._id}`
+  );
+
+  const showingByCinemaId = (cinemaId) => {
+    return showings.data.filter((showing) => showing.cinema._id === cinemaId);
+  };
+
   return (
     <div>
       {currentMovie && (
         <div>
           <p>{currentMovie.name}</p>
-          <ul>
+          <div>
             {cinemas &&
               cinemas.data.map((item) => {
                 return (
-                  <li key={item._id}>
-                    <Link to="/">{item.name}</Link>
-                  </li>
+                  <div key={item._id}>
+                    <h2>{item.name}</h2>
+                    <ul>
+                      {showings &&
+                        showingByCinemaId(item._id).map((el) => (
+                          <li key={el._id}>
+                            <p>{el.startTime}</p>
+                            <p>{el.room.name}</p>
+                            <p>{el.room.name}</p>
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
                 );
               })}
-          </ul>
+          </div>
         </div>
       )}
     </div>
