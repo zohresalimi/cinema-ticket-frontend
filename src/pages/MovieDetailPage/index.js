@@ -1,10 +1,15 @@
-import React, { useState, useContext, useRef } from "react";
+import React, { useState, useContext, useRef, useEffect } from "react";
 import { Link } from "@reach/router";
+import TopBar from "../../components/TopBar";
 import useAxios from "../../hooks/useAxios";
 import AppContext from "../../store/context";
+import {
+  SET_SELECTED_MOVIE_REDUCER,
+  SET_SHOWINGS_MOVIE_REDUCER,
+} from "../../constants";
 
 function MovieDetailPage(props) {
-  const { state } = useContext(AppContext);
+  const { state, dispatch } = useContext(AppContext);
   const { category, movieId } = props;
   const { movies } = state;
   const [currentMovie] = useState(() => {
@@ -25,14 +30,49 @@ function MovieDetailPage(props) {
   );
 
   const showingByCinemaId = (cinemaId) => {
-    return showings.data.filter((showing) => showing.cinema._id === cinemaId);
+    return showings.data.filter((showing) => showing.room.cinema === cinemaId);
   };
+
+  useEffect(() => {
+    if (currentMovie) {
+      dispatch({ type: SET_SELECTED_MOVIE_REDUCER, data: currentMovie });
+    }
+  }, [currentMovie, dispatch]);
+
+  useEffect(() => {
+    if (showings) {
+      dispatch({ type: SET_SHOWINGS_MOVIE_REDUCER, data: showings.data });
+    }
+  }, [showings, dispatch]);
 
   return (
     <div>
+      <TopBar />
       {currentMovie && (
         <div>
+          <img src={currentMovie.coverImage} alt="" />
+
           <p>{currentMovie.name}</p>
+          <p>{currentMovie.description}</p>
+          <p>{currentMovie.genre}</p>
+          <p>{currentMovie.duration}</p>
+          <p>{currentMovie.age}</p>
+          <p>
+            director:
+            {currentMovie.director}
+          </p>
+          <p>
+            premiere:
+            {currentMovie.premiere}
+          </p>
+          <p>actor: </p>
+          {currentMovie.actors.map((actor) => (
+            <p key={actor}>{actor}</p>
+          ))}
+          <p>
+            original language:
+            {currentMovie.originalTitle}
+          </p>
           <div>
             {cinemas &&
               cinemas.data.map((item) => {
@@ -43,9 +83,11 @@ function MovieDetailPage(props) {
                       {showings &&
                         showingByCinemaId(item._id).map((el) => (
                           <li key={el._id}>
-                            <p>{el.startTime}</p>
-                            <p>{el.room.name}</p>
-                            <p>{el.room.name}</p>
+                            <Link to={`../../../booking/${item._id}`}>
+                              <p>{el.startTime}</p>
+                              <p>{el.room.name}</p>
+                              <p>{currentMovie.originalTitle}</p>
+                            </Link>
                           </li>
                         ))}
                     </ul>

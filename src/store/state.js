@@ -4,13 +4,23 @@ const state = {
     email: "",
   },
   movies: {
-    selected: {},
     children: [],
     premiered: [],
     upcoming: [],
   },
-  selectedMovie: {},
-  numberOfTicket: 0,
+  ticket: {
+    movie: {},
+    status: false,
+    quantity: 0,
+    price: 0,
+    seatNumbers: [],
+    user: {},
+    showing: {},
+    cinemaName: "",
+    roomName: "",
+    movieName: "",
+  },
+  showings: [],
   seatsNumber: [],
 };
 
