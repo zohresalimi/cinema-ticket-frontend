@@ -6,6 +6,7 @@ import {
   SET_TICKET_QUANTITY_REDUCER,
   SET_SHOWINGS_MOVIE_REDUCER,
   SET_SELECTED_SHOWING_REDUCER,
+  SET_PRICE_REDUCER,
 } from "../constants";
 
 const reducer = (state, action) => {
@@ -56,6 +57,14 @@ const reducer = (state, action) => {
         ticket: {
           ...state.ticket,
           showing: action.data,
+        },
+      };
+    case SET_PRICE_REDUCER:
+      return {
+        ...state,
+        ticket: {
+          ...state.ticket,
+          price: action.data,
         },
       };
     case SET_SHOWINGS_MOVIE_REDUCER:

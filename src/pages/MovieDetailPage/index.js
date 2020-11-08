@@ -83,7 +83,7 @@ function MovieDetailPage(props) {
                       {showings &&
                         showingByCinemaId(item._id).map((el) => (
                           <li key={el._id}>
-                            <Link to={`../../../booking/${item._id}`}>
+                            <Link to={`../../../booking/${el._id}`}>
                               <p>{el.startTime}</p>
                               <p>{el.room.name}</p>
                               <p>{currentMovie.originalTitle}</p>

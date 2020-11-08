@@ -1,8 +1,11 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useCallback } from "react";
 import AppContext from "../../store/context";
 import TopBar from "../../components/TopBar";
 import Quantity from "../../components/Quantity";
-import { SET_SELECTED_SHOWING_REDUCER } from "../../constants";
+import {
+  SET_SELECTED_SHOWING_REDUCE,
+  SET_PRICE_REDUCER,
+} from "../../constants";
 
 function Booking(props) {
   const { state, dispatch } = useContext(AppContext);
@@ -11,16 +14,24 @@ function Booking(props) {
 
   useEffect(() => {
     if (showingId) {
-      const shoeingObj = showings.filter(
+      const showingObj = showings.filter(
         (showing) => showing._id === showingId
       );
-      dispatch({ type: SET_SELECTED_SHOWING_REDUCER, data: shoeingObj });
+      dispatch({ type: SET_SELECTED_SHOWING_REDUCER, data: showingObj });
     }
   }, [showingId, showings, dispatch]);
+
+  const setPriceToState = useCallback(
+    (price) => {
+      dispatch({ type: SET_PRICE_REDUCER, data: price });
+    },
+    [dispatch]
+  );
+
   return (
     <div>
       <TopBar />
-      <Quantity />
+      <Quantity setPriceToState={setPriceToState} />
     </div>
   );
 }

@@ -3,15 +3,15 @@ import { Link } from "@reach/router";
 import AppContext from "../../store/context";
 import { SET_TICKET_QUANTITY_REDUCER } from "../../constants";
 
-function Booking(props) {
+function Booking({ showingId, setPrice }) {
   const { state, dispatch } = useContext(AppContext);
   const [ticketquantity, setTicketQuantity] = useState(0);
-  const { showingId } = props;
-  const { movie } = state.ticket;
+  const { movie, price } = state.ticket;
 
   const handleIncrement = () => {
     if (ticketquantity >= 0) {
       setTicketQuantity(ticketquantity + 1);
+      setPrice(price * ticketquantity);
     }
     dispatch({ type: SET_TICKET_QUANTITY_REDUCER, data: ticketquantity });
   };
@@ -19,6 +19,7 @@ function Booking(props) {
   const handleDecrement = () => {
     if (ticketquantity > 0) {
       setTicketQuantity(ticketquantity - 1);
+      setPrice(price * ticketquantity);
     }
     dispatch({ type: SET_TICKET_QUANTITY_REDUCER, data: ticketquantity });
   };

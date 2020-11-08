@@ -5,5 +5,6 @@ export const SET_SELECTED_MOVIE_REDUCER = "setSelectedMovie";
 export const SET_TICKET_QUANTITY_REDUCER = "setTicketQuantity";
 export const SET_SHOWINGS_MOVIE_REDUCER = "setShowingsMovie";
 export const SET_SELECTED_SHOWING_REDUCER = "setSelectedShowing";
+export const SET_PRICE_REDUCER = "setPrice";
 
 export const CHILDREN_GENRE = ["family"];
