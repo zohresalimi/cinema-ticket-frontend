@@ -6,7 +6,9 @@ import {
   SET_TICKET_QUANTITY_REDUCER,
   SET_SHOWINGS_MOVIE_REDUCER,
   SET_SELECTED_SHOWING_REDUCER,
+  SET_SELECTED_CINEMA_REDUCER,
   SET_PRICE_REDUCER,
+  SET_CINEMAS_REDUCER,
 } from "../constants";
 
 const reducer = (state, action) => {
@@ -67,10 +69,23 @@ const reducer = (state, action) => {
           price: action.data,
         },
       };
+    case SET_SELECTED_CINEMA_REDUCER:
+      return {
+        ...state,
+        ticket: {
+          ...state.ticket,
+          cinema: action.data,
+        },
+      };
     case SET_SHOWINGS_MOVIE_REDUCER:
       return {
         ...state,
         showings: action.data,
+      };
+    case SET_CINEMAS_REDUCER:
+      return {
+        ...state,
+        cinemas: action.data,
       };
     default:
       return state;

@@ -8,6 +8,7 @@ const state = {
     premiered: [],
     upcoming: [],
   },
+  cinemas: [],
   ticket: {
     movie: {},
     status: false,
@@ -16,12 +17,8 @@ const state = {
     seatNumbers: [],
     user: {},
     showing: {},
-    cinemaName: "",
-    roomName: "",
-    movieName: "",
   },
   showings: [],
-  seatsNumber: [],
 };
 
 export default state;

@@ -6,6 +6,7 @@ import AppContext from "../../store/context";
 import {
   SET_SELECTED_MOVIE_REDUCER,
   SET_SHOWINGS_MOVIE_REDUCER,
+  SET_CINEMAS_REDUCER,
 } from "../../constants";
 
 function MovieDetailPage(props) {
@@ -32,6 +33,12 @@ function MovieDetailPage(props) {
   const showingByCinemaId = (cinemaId) => {
     return showings.data.filter((showing) => showing.room.cinema === cinemaId);
   };
+
+  useEffect(() => {
+    if (cinemas) {
+      dispatch({ type: SET_CINEMAS_REDUCER, data: cinemas.data });
+    }
+  }, [cinemas, dispatch]);
 
   useEffect(() => {
     if (currentMovie) {
