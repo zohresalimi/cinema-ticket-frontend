@@ -14,7 +14,7 @@ const state = {
     status: false,
     quantity: 0,
     price: 0,
-    seatNumbers: [],
+    seatNumbers: new Map(),
     user: {},
     showing: {},
   },

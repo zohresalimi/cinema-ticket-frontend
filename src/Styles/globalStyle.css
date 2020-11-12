@@ -1,3 +1,28 @@
 ul {
   display: flex;
 }
+
+.seat {
+  width: 15px;
+  height: 15px;
+  border: 1px solid #ccc;
+  margin: 3px;
+  border-radius: 0 0 0.5em 0.5em;
+  cursor: pointer;
+}
+
+.seat a:hover {
+  background-color: "green";
+}
+.seat.taken {
+  background-color: #000;
+}
+.rowrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.column-wrapper div[disabled] {
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.04);
+}

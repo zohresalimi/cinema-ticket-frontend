@@ -1,41 +1,47 @@
-import React, { useContext, useCallback } from "react";
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/control-has-associated-label */
+import React, { useContext, useEffect, useState } from "react";
 import AppContext from "../../store/context";
-import {} from "../../constants";
-
-const seat = {
-  width: "15px",
-  height: "15px",
-  border: "1px solid #ccc",
-  margin: "3px",
-  borderRadius: "0 0 .5em .5em",
-  cursor: "pointer",
-  "& a:hover": {
-    backgroundColor: "green",
-  },
-};
-const rowrapper = {
-  display: "flex",
-  justifyContent: "center",
-};
-
-const bookSeaat = (column) => {
-  console.log(column);
-};
+import { SET_SELECTED_SEAT } from "../../constants";
 
 function SeatPlan({ seats }) {
+  const { state, dispatch } = useContext(AppContext);
+  const { quantity, seatNumbers } = state.ticket;
+  const [ticketCount, setTicketCount] = useState(0);
+
+  const bookSeat = (rowIndex, colIndex) => {
+    dispatch({ type: SET_SELECTED_SEAT, data: [rowIndex, colIndex] });
+  };
+
+  useEffect(() => {
+    let count = 0;
+    for (const [_, columns] of seatNumbers) {
+      count += columns.size;
+    }
+    setTicketCount(count);
+  }, [seatNumbers, setTicketCount]);
+
+  // const isDisabled = () => {
+  //   if (quantity > seatNumbers.length) {
+  //     seatNumbers.showing.seat.map((seat) => !seat.taken);
+  //   }
+  // };
+
   return (
-    <div style={rowrapper}>
+    <div className="rowrapper">
+      {`${ticketCount}/${quantity}`}
       {seats.map((row, rowIndex) => (
-        // eslint-disable-next-line react/no-array-index-key
         <div className="column-wrapper" key={`row-${rowIndex}`}>
-          {row.map((column) => {
-            // eslint-disable-next-line react/no-array-index-key
+          {row.map((column, colIndex) => {
             return (
+              // eslint-disable-next-line jsx-a11y/interactive-supports-focus
               <div
                 role="button"
-                style={seat}
+                disabled={quantity === ticketCount && !column.taken}
+                className={"seat " + (column.taken ? "taken" : "")}
                 key={`column-${column.seatNumber}`}
-                onClick={() => bookSeaat(column)}
+                onClick={() => bookSeat(rowIndex, colIndex)}
               />
             );
           })}
@@ -46,10 +52,15 @@ function SeatPlan({ seats }) {
 }
 
 function Seat() {
-  const { state, dispatch } = useContext(AppContext);
+  const { state } = useContext(AppContext);
   const { showing } = state.ticket;
 
-  return <div>{showing && <SeatPlan seats={showing.seats} />}</div>;
+  return (
+    <div>
+      {showing && <SeatPlan seats={showing.seats} />}
+      <button>continue</button>
+    </div>
+  );
 }
 
 export default Seat;

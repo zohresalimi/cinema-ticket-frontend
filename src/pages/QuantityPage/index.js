@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "@reach/router";
 import AppContext from "../../store/context";
 import {
@@ -6,7 +6,7 @@ import {
   SET_PRICE_REDUCER,
 } from "../../constants";
 
-function Booking() {
+function Booking({ navigate }) {
   const { state, dispatch } = useContext(AppContext);
   const { movie, showing, quantity } = state.ticket;
 
@@ -37,7 +37,13 @@ function Booking() {
         <span>{quantity}</span>
         <button onClick={handleIncrement}>+</button>
       </div>
-      <Link to="seat-selection">select locations </Link>
+      <button
+        onClick={() => navigate("seat-selection")}
+        disabled={quantity <= 0}
+      >
+        select locations
+      </button>
+      {quantity === 0 && <p> You must select at least one ticket </p>}
     </div>
   );
 }
