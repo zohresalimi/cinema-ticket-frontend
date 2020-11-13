@@ -35,12 +35,10 @@ const setSeatSelection = (state, data) => {
     } else {
       seatNumbers.set(row, new Set([column]));
     }
-
-    // seatNumbers = [...state.ticket.seatNumbers, [row, [column]];
   } else {
     existingRow.delete(column);
     if (!existingRow.size) {
-      existingRow.delete(row);
+      seatNumbers.delete(row);
     }
   }
 
