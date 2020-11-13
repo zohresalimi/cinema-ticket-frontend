@@ -22,12 +22,6 @@ function SeatPlan({ seats }) {
     setTicketCount(count);
   }, [seatNumbers, setTicketCount]);
 
-  // const isDisabled = () => {
-  //   if (quantity > seatNumbers.length) {
-  //     seatNumbers.showing.seat.map((seat) => !seat.taken);
-  //   }
-  // };
-
   return (
     <div className="rowrapper">
       {`${ticketCount}/${quantity}`}
@@ -51,14 +45,14 @@ function SeatPlan({ seats }) {
   );
 }
 
-function Seat() {
+function Seat({ navigate }) {
   const { state } = useContext(AppContext);
   const { showing } = state.ticket;
 
   return (
     <div>
       {showing && <SeatPlan seats={showing.seats} />}
-      <button>continue</button>
+      <button onClick={() => navigate("../confirm-booking")}>continue</button>
     </div>
   );
 }

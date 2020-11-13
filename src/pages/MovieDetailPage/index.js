@@ -1,5 +1,6 @@
 import React, { useState, useContext, useRef, useEffect } from "react";
 import { Link } from "@reach/router";
+import Moment from "react-moment";
 import TopBar from "../../components/TopBar";
 import useAxios from "../../hooks/useAxios";
 import AppContext from "../../store/context";
@@ -91,7 +92,9 @@ function MovieDetailPage(props) {
                         showingByCinemaId(item._id).map((el) => (
                           <li key={el._id}>
                             <Link to={`../../../booking/${el._id}`}>
-                              <p>{el.startTime}</p>
+                              <p>
+                                <Moment date={el.startTime} format="hh:mm" />
+                              </p>
                               <p>{el.room.name}</p>
                               <p>{currentMovie.originalTitle}</p>
                             </Link>
