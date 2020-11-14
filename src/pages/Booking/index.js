@@ -1,15 +1,10 @@
 import React, { useContext, useEffect } from "react";
-import { loadStripe } from "@stripe/stripe-js";
 import AppContext from "../../store/context";
 import TopBar from "../../components/TopBar";
 import {
   SET_SELECTED_SHOWING_REDUCER,
   SET_SELECTED_CINEMA_REDUCER,
 } from "../../constants";
-
-const stripePromise = loadStripe(
-  "pk_test_51HlWoOBo1w65UuRVOCuk1wSITrosNGuUTMxvpsZ0ESnRav6gqD89XE8ukzLgs0PfeV6NWUL8ZUMWMCtTTkKTFDEC00RiYKz72I"
-);
 
 function Booking({ showingId, children }) {
   const { state, dispatch } = useContext(AppContext);
@@ -30,21 +25,6 @@ function Booking({ showingId, children }) {
       dispatch({ type: SET_SELECTED_CINEMA_REDUCER, data: cinemaObj });
     }
   }, [showingId, showings, dispatch, cinemas, ticket.showing]);
-
-  const handleClick = async (event) => {
-    const stripe = await stripePromise;
-    const response = await fetch(
-      "http://localhost:8080/api/v1/create-checkout-session",
-      {
-        method: "POST",
-      }
-    );
-    const session = await response.json();
-    const result = await stripe.redirectToCheckout({ sessionId: session.id });
-    if (result.error) {
-      console.log(result.error);
-    }
-  };
 
   return (
     <div>

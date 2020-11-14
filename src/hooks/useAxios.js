@@ -50,9 +50,9 @@ const useAxios = (path, config) => {
     }
   }
 
-  function createInitialState({ manual }) {
+  function createInitialState() {
     return {
-      loading: !manual,
+      loading: false,
       error: null,
       response: null,
     };
@@ -68,7 +68,7 @@ const useAxios = (path, config) => {
     }),
     [config, path]
   );
-  const [state, dispatch] = useReducer(reducer, createInitialState(options));
+  const [state, dispatch] = useReducer(reducer, createInitialState());
 
   useEffect(() => {
     if (!options.manual) {

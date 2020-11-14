@@ -1,9 +1,14 @@
-import React, { useContext, useState, useMemo } from "react";
+import React, { useContext, useState, useMemo, useEffect } from "react";
 import { Link } from "@reach/router";
 import Moment from "react-moment";
+import { loadStripe } from "@stripe/stripe-js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import useAxios from "../../hooks/useAxios";
 import AppContext from "../../store/context";
 import formatPrice from "../../utils/formatPrice";
+
+const stripePromise = loadStripe(process.env.REACT_APP_PUBLISHABLE_KEY);
 
 function ConfirmPage() {
   const { state } = useContext(AppContext);
@@ -14,14 +19,68 @@ function ConfirmPage() {
     return [seat[0], [...seat[1]].sort((a, b) => a - b)];
   });
 
-  //   const [{ error, response, isLoading }, createUser] = useAxios(
-  //     "/api/v1/users",
-  //     {
-  //       manual: true,
-  //       data: {},
-  //       method: "post",
-  //     }
-  //   );
+  const [
+    { error: ticketError, response: ticketResponse, loading: ticketLoading },
+    createTicket,
+  ] = useAxios("/api/v1/ticket", {
+    manual: true,
+    data: {
+      email,
+      quantity,
+      seatNumbers: seatsArray,
+      price,
+      unitAmount: showing.price,
+      movieName: movie.name,
+      roomName: showing.room.name,
+      cinemaName: cinema.name,
+      showing: showing._id,
+      movieCover: movie.coverImage,
+    },
+    method: "post",
+  });
+
+  const [
+    {
+      error: checkoutError,
+      response: checkoutResponse,
+      loading: checkoutInProgress,
+    },
+    createCheckout,
+  ] = useAxios("/api/v1/create-checkout-session", {
+    manual: true,
+    method: "post",
+  });
+
+  useEffect(() => {
+    async function createSession() {
+      if (ticketResponse && !checkoutInProgress && !checkoutResponse) {
+        await createCheckout({
+          data: {
+            ticketId: ticketResponse.data._id,
+          },
+        });
+      }
+    }
+
+    createSession();
+  }, [checkoutInProgress, ticketResponse, checkoutResponse]);
+
+  useEffect(() => {
+    async function goToCheckout() {
+      if (checkoutResponse) {
+        const stripe = await stripePromise;
+        const result = await stripe.redirectToCheckout({
+          sessionId: checkoutResponse.id,
+        });
+        if (result.error) {
+          console.log(result.error);
+        }
+      }
+    }
+
+    goToCheckout();
+  }, [checkoutResponse]);
+
   const enableButton = useMemo(() => email && checked, [email, checked]);
 
   return (
@@ -87,7 +146,11 @@ function ConfirmPage() {
           Example 1 (basic input)
         </label>
       </div>
-      <button disabled={!enableButton}> continue</button>
+      <button role="link" disabled={!enableButton} onClick={createTicket}>
+        {ticketLoading && <FontAwesomeIcon icon={faSpinner} spin />}
+        continue
+      </button>
+      {ticketError && <p> try it again</p>}
     </div>
   );
 }
