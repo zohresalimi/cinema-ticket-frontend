@@ -46,7 +46,7 @@ function ConfirmPage() {
       loading: checkoutInProgress,
     },
     createCheckout,
-  ] = useAxios("/api/v1/create-checkout-session", {
+  ] = useAxios("/api/v1/checkout/create", {
     manual: true,
     method: "post",
   });

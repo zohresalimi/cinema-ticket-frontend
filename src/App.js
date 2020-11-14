@@ -7,6 +7,9 @@ import Booking from "./pages/Booking";
 import QuantityPage from "./pages/QuantityPage";
 import SeatPage from "./pages/SeatPage";
 import ConfirmPage from "./pages/ConfirmPage";
+import OrderPage from "./pages/OrderPage";
+import SuccessPage from "./pages/SuccessPage";
+import CancelPage from "./pages/CancelPage";
 import AppContext from "./store/context";
 import store from "./store";
 import { setLocalStorage, getLocalStorage } from "./utils/localStorage";
@@ -32,6 +35,10 @@ function App() {
               <SeatPage path="seat-selection" />
               <ConfirmPage path="confirm-booking" />
             </Booking>
+            <OrderPage path="order">
+              <SuccessPage path="success" />
+              <CancelPage path="cancel" />
+            </OrderPage>
           </Router>
         </AppContext.Provider>
       </div>
