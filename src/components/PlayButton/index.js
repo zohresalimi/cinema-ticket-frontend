@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { PlayBtn, Div, RoundBut } from "./style";
 
-function PlayButton() {
+function PlayButton({ setPlayVideo }) {
   return (
-    <Div>
+    <Div onClick={() => setPlayVideo(true)}>
       <RoundBut>
         <PlayBtn>
           <FontAwesomeIcon icon={faPlay} />

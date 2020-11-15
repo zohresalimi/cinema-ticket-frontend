@@ -1,0 +1,14 @@
+.close-btn {
+  position: absolute;
+  color: #ccc;
+  z-index: 999;
+  top: 15px;
+  left: 15px;
+  font-size: 33px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.close-btn:hover {
+  color: #fff;
+}

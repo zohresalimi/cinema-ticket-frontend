@@ -18,6 +18,9 @@ export const FullImage = styled.div`
   height: 630px;
   width: 100%;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Link = styled.a`
