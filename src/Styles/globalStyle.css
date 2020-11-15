@@ -15,8 +15,27 @@ ul {
   background-color: "green";
 }
 .seat.taken {
-  background-color: #000;
+  background-color: #ccc;
 }
+
+.seat.taken,
+.seat.reserved {
+  pointer-events: none;
+}
+.seat.taken::before {
+  content: "x";
+  color: #fff;
+  font-weight: 300;
+  font-family: Arial, sans-serif;
+}
+
+.seat.reserved {
+  background-color: rgb(170, 255, 255);
+}
+.seat.selected {
+  background-color: rgb(235 51 87);
+}
+
 .rowrapper {
   display: flex;
   justify-content: center;

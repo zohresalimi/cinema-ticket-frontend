@@ -9,5 +9,6 @@ export const SET_PRICE_REDUCER = "setPrice";
 export const SET_CINEMAS_REDUCER = "setCinemas";
 export const SET_SELECTED_CINEMA_REDUCER = "setSelectedCinema";
 export const SET_SELECTED_SEAT = "setSelectedSeat";
+export const RESET_STATE = "resetState";
 
 export const CHILDREN_GENRE = ["family"];

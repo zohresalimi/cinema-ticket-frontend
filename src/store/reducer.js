@@ -10,14 +10,35 @@ import {
   SET_SELECTED_SEAT,
   SET_PRICE_REDUCER,
   SET_CINEMAS_REDUCER,
+  RESET_STATE,
 } from "../constants";
+
+const resetState = (state) => {
+  return {
+    ...state,
+    showings: [],
+    ticket: {
+      movie: {},
+      status: false,
+      quantity: 0,
+      price: 0,
+      seatNumbers: new Map(),
+      user: {},
+      showing: {},
+    },
+  };
+};
 
 const setSeatSelection = (state, data) => {
   const [row, column] = data;
   const seats = state.ticket.showing.seats.map((seatRow) =>
     seatRow.map((seatCol) => ({ ...seatCol }))
   );
-  seats[row][column].taken = !seats[row][column].taken;
+  if (seats[row][column].taken === "available") {
+    seats[row][column].taken = "selected";
+  } else if (seats[row][column].taken === "selected") {
+    seats[row][column].taken = "available";
+  }
 
   const deepCloneMap = (x) => {
     const y = new Map();
@@ -28,7 +49,7 @@ const setSeatSelection = (state, data) => {
   const seatNumbers = deepCloneMap(state.ticket.seatNumbers);
 
   const existingRow = seatNumbers.get(row);
-  if (seats[row][column].taken) {
+  if (seats[row][column].taken === "selected") {
     // const existingRow = seatNumbers.find((seat) => seat[0] === row);
     if (existingRow) {
       existingRow.add(column);
@@ -142,6 +163,8 @@ const reducer = (state, action) => {
       };
     case SET_SELECTED_SEAT:
       return setSeatSelection(state, action.data);
+    case RESET_STATE:
+      return resetState(state);
     default:
       return state;
   }

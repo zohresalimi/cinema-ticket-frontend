@@ -32,8 +32,10 @@ function SeatPlan({ seats }) {
               // eslint-disable-next-line jsx-a11y/interactive-supports-focus
               <div
                 role="button"
-                disabled={quantity === ticketCount && !column.taken}
-                className={"seat " + (column.taken ? "taken" : "")}
+                disabled={
+                  quantity === ticketCount && column.taken === "available"
+                }
+                className={"seat " + column.taken}
                 key={`column-${column.seatNumber}`}
                 onClick={() => bookSeat(rowIndex, colIndex)}
               />
