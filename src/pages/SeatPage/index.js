@@ -5,22 +5,13 @@ import React, { useContext, useEffect, useState } from "react";
 import AppContext from "../../store/context";
 import { SET_SELECTED_SEAT } from "../../constants";
 
-function SeatPlan({ seats }) {
+function SeatPlan({ seats, ticketCount }) {
   const { state, dispatch } = useContext(AppContext);
-  const { quantity, seatNumbers } = state.ticket;
-  const [ticketCount, setTicketCount] = useState(0);
+  const { quantity } = state.ticket;
 
   const bookSeat = (rowIndex, colIndex) => {
     dispatch({ type: SET_SELECTED_SEAT, data: [rowIndex, colIndex] });
   };
-
-  useEffect(() => {
-    let count = 0;
-    for (const [_, columns] of seatNumbers) {
-      count += columns.size;
-    }
-    setTicketCount(count);
-  }, [seatNumbers, setTicketCount]);
 
   return (
     <div className="rowrapper">
@@ -49,12 +40,26 @@ function SeatPlan({ seats }) {
 
 function Seat({ navigate }) {
   const { state } = useContext(AppContext);
-  const { showing } = state.ticket;
+  const { showing, seatNumbers, quantity } = state.ticket;
+  const [ticketCount, setTicketCount] = useState(0);
+
+  useEffect(() => {
+    let count = 0;
+    for (const [_, columns] of seatNumbers) {
+      count += columns.size;
+    }
+    setTicketCount(count);
+  }, [seatNumbers, setTicketCount]);
 
   return (
     <div>
-      {showing && <SeatPlan seats={showing.seats} />}
-      <button onClick={() => navigate("../confirm-booking")}>continue</button>
+      {showing && <SeatPlan ticketCount={ticketCount} seats={showing.seats} />}
+      <button
+        disabled={ticketCount < quantity}
+        onClick={() => navigate("../confirm-booking")}
+      >
+        continue
+      </button>
     </div>
   );
 }
