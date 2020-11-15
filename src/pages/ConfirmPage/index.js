@@ -1,4 +1,10 @@
-import React, { useContext, useState, useMemo, useEffect } from "react";
+import React, {
+  useContext,
+  useState,
+  useMemo,
+  useEffect,
+  useCallback,
+} from "react";
 import { Link } from "@reach/router";
 import Moment from "react-moment";
 import { loadStripe } from "@stripe/stripe-js";
@@ -14,6 +20,7 @@ function ConfirmPage() {
   const { state } = useContext(AppContext);
   const { cinema, movie, price, quantity, seatNumbers, showing } = state.ticket;
   const [email, setEmail] = useState();
+  const [emailError, setEmailError] = useState(null);
   const [checked, setChecked] = useState(false);
   const seatsArray = Array.from(seatNumbers).map((seat) => {
     return [seat[0], [...seat[1]].sort((a, b) => a - b)];
@@ -81,7 +88,21 @@ function ConfirmPage() {
     goToCheckout();
   }, [checkoutResponse]);
 
-  const enableButton = useMemo(() => email && checked, [email, checked]);
+  const emailValidation = useCallback(() => {
+    const pattern = new RegExp(
+      /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
+    );
+
+    if (pattern.test(email) === false && email) {
+      setEmailError("Email Field is Invalid");
+    } else setEmailError(null);
+  }, [email]);
+
+  const enableButton = useMemo(() => email && checked && !emailError, [
+    email,
+    checked,
+    emailError,
+  ]);
 
   return (
     <div>
@@ -130,16 +151,18 @@ function ConfirmPage() {
           your e-mail:
           <input
             onInput={(e) => setEmail(e.target.value)}
+            onBlur={() => emailValidation()}
             type="text"
             name="name"
             placeholder="example@gmail.com"
           />
+          {emailError && <p>{emailError}</p>}
         </label>
       </div>
       <div>
         <label>
           <input
-            name="example_1"
+            name="checkbox"
             type="checkbox"
             onChange={() => setChecked(!checked)}
           />
