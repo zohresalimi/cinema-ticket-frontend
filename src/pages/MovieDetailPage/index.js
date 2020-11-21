@@ -19,7 +19,7 @@ function MovieDetailPage(props) {
   });
 
   const dataRef = useRef({
-    params: { rooms: JSON.stringify(currentMovie.rooms) },
+    params: { rooms: currentMovie.rooms.join(",") },
   });
 
   const [{ response: cinemas }] = useAxios(
@@ -89,17 +89,27 @@ function MovieDetailPage(props) {
                     <h2>{item.name}</h2>
                     <ul>
                       {showings &&
-                        showingByCinemaId(item._id).map((el) => (
-                          <li key={el._id}>
-                            <Link to={`../../../booking/${el._id}`}>
+                        showingByCinemaId(item._id).map((el) =>
+                          el.capacity > 0 ? (
+                            <li key={el._id}>
+                              <Link to={`../../../booking/${el._id}`}>
+                                <p>
+                                  <Moment date={el.startTime} format="hh:mm" />
+                                </p>
+                                <p>{el.room.name}</p>
+                                <p>{currentMovie.originalTitle}</p>
+                              </Link>
+                            </li>
+                          ) : (
+                            <li key={el._id}>
                               <p>
                                 <Moment date={el.startTime} format="hh:mm" />
                               </p>
                               <p>{el.room.name}</p>
                               <p>{currentMovie.originalTitle}</p>
-                            </Link>
-                          </li>
-                        ))}
+                            </li>
+                          )
+                        )}
                     </ul>
                   </div>
                 );
