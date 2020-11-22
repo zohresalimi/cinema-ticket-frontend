@@ -1,8 +1,16 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
+import DropDown from "../DropDown";
 import { Wrapper, TopMenuContainer, Link, Logo, Ul, Li, Div } from "./style";
 import { Container, Row, Col } from "../../Styles/StyleComponents";
 
 function TopBar() {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (event) => {
+    i18n.changeLanguage(event.target.value);
+  };
+
   return (
     <Wrapper>
       <TopMenuContainer>
@@ -19,16 +27,25 @@ function TopBar() {
                 <Ul>
                   <Li>
                     <Link href="/" weight="bold">
-                      Home
+                      {t("home")}
                     </Link>
                   </Li>
                   <Li>
                     <Link href="/" weight="bold">
-                      Movies
+                      {t("movies")}
                     </Link>
                   </Li>
                 </Ul>
               </Div>
+            </Col>
+            <Col>
+              {/* <Div onChange={changeLanguage}>
+                <input type="radio" value="fa" name="language" />
+                فارسی
+                <input type="radio" value="sv" name="language" defaultChecked />
+                svenska
+              </Div> */}
+              <DropDown />
             </Col>
           </Row>
         </Container>

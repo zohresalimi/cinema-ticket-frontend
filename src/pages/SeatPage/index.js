@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useContext, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import AppContext from "../../store/context";
 import { SET_SELECTED_SEAT } from "../../constants";
 
@@ -40,6 +41,7 @@ function SeatPlan({ seats, ticketCount }) {
 
 function Seat({ navigate }) {
   const { state } = useContext(AppContext);
+  const { t } = useTranslation();
   const { showing, seatNumbers, quantity } = state.ticket;
   const [ticketCount, setTicketCount] = useState(0);
 
@@ -58,7 +60,7 @@ function Seat({ navigate }) {
         disabled={ticketCount < quantity}
         onClick={() => navigate("../confirm-booking")}
       >
-        continue
+        {t("continue")}
       </button>
     </div>
   );

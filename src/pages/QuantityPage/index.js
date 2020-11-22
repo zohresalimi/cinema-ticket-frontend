@@ -1,5 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Link } from "@reach/router";
+import { useTranslation } from "react-i18next";
+
 import AppContext from "../../store/context";
 import {
   SET_TICKET_QUANTITY_REDUCER,
@@ -9,6 +11,7 @@ import {
 function Booking({ navigate }) {
   const { state, dispatch } = useContext(AppContext);
   const { movie, showing, quantity } = state.ticket;
+  const { t } = useTranslation();
 
   const handleIncrement = () => {
     dispatch({ type: SET_TICKET_QUANTITY_REDUCER, data: quantity + 1 });
@@ -31,7 +34,8 @@ function Booking({ navigate }) {
 
   return (
     <div>
-      <Link to={`/movie-detail/${movie._id}`}>{movie.name}</Link>
+      <Link to={`/movie-detail/${movie._id}`}>{t(movie.name)}</Link>
+      <h2>{t("number of tickets")}</h2>
       <div>
         <button onClick={handleDecrement}>-</button>
         <span>{quantity}</span>
@@ -41,9 +45,9 @@ function Booking({ navigate }) {
         onClick={() => navigate("seat-selection")}
         disabled={quantity <= 0}
       >
-        select locations
+        {t("select location")}
       </button>
-      {quantity === 0 && <p> You must select at least one ticket </p>}
+      {quantity === 0 && <p>{t("you must select at least one ticket")}</p>}
     </div>
   );
 }

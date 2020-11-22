@@ -1,0 +1,70 @@
+/* eslint-disable react/jsx-closing-tag-location */
+/* eslint-disable react/jsx-indent */
+/* eslint-disable react/jsx-no-comment-textnodes */
+/* eslint-disable react/jsx-indent-props */
+import React, { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
+import { SUPPORTED_LOCALES } from "../../i18n";
+import { Wrapper, MenuLabel, ItemList, Button, CaratContainer } from "./style";
+
+function DropDown() {
+  const [isOpened, setIsOpened] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("");
+  const [label, setLabel] = useState("");
+  const [isFocussed, setIsFocussed] = useState(false);
+  const { t, i18n } = useTranslation();
+
+  const dropdownRef = useRef();
+  useEffect(() => {
+    const externalEventHandler = (e) => {
+      if (!isOpened) return;
+
+      const node = dropdownRef.current;
+
+      if (node && node.contains(e.target)) {
+        return;
+      }
+
+      setIsOpened(false);
+    };
+
+    if (isOpened) {
+      document.addEventListener("click", externalEventHandler);
+    } else {
+      document.removeEventListener("click", externalEventHandler);
+    }
+
+    return () => {
+      document.removeEventListener("click", externalEventHandler);
+    };
+  }, [isOpened]);
+
+  const handleSelectedItem = (obj) => {
+    setSelectedOption(obj.name);
+    setLabel(obj.name);
+    setIsOpened(!isOpened);
+    i18n.changeLanguage(obj.code);
+  };
+  return (
+    <Wrapper ref={dropdownRef}>
+      <Button onClick={() => setIsOpened(!isOpened)}>
+        <p>{selectedOption ? label : "svenska"}</p>
+        <CaratContainer isOpen={isOpened}>
+          <FontAwesomeIcon icon={faAngleUp} />
+        </CaratContainer>
+      </Button>
+      <MenuLabel>
+        {isOpened &&
+          SUPPORTED_LOCALES.map((el) => (
+            <ItemList key={el.value} onClick={() => handleSelectedItem(el)}>
+              {el.name}
+            </ItemList>
+          ))}
+      </MenuLabel>
+    </Wrapper>
+  );
+}
+
+export default DropDown;

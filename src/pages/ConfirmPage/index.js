@@ -6,7 +6,10 @@ import React, {
   useCallback,
 } from "react";
 import { Link } from "@reach/router";
+import { useTranslation } from "react-i18next";
 import Moment from "react-moment";
+import "moment/locale/sv";
+import "moment/locale/fa";
 import { loadStripe } from "@stripe/stripe-js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
@@ -18,6 +21,7 @@ const stripePromise = loadStripe(process.env.REACT_APP_PUBLISHABLE_KEY);
 
 function ConfirmPage() {
   const { state } = useContext(AppContext);
+  const { t } = useTranslation();
   const { cinema, movie, price, quantity, seatNumbers, showing } = state.ticket;
   const [email, setEmail] = useState();
   const [emailError, setEmailError] = useState(null);
@@ -94,7 +98,7 @@ function ConfirmPage() {
     );
 
     if (pattern.test(email) === false && email) {
-      setEmailError("Email Field is Invalid");
+      setEmailError("please enter a valid email");
     } else setEmailError(null);
   }, [email]);
 
@@ -107,31 +111,32 @@ function ConfirmPage() {
   return (
     <div>
       <div>
-        <Link to="../seat-selection">seat selection </Link>
-        <Link to="/"> sing in</Link>
+        <Link to="../seat-selection">{t("seat selection")}</Link>
+        <Link to="/">{t("sing in")}</Link>
       </div>
-      <h2> reservation </h2>
+      <h2>{t("reservation")}</h2>
       <div className="movie-info">
         <img src={movie.coverImage} alt="" />
         <div>
-          <h4>{movie.name}</h4>
+          <h4>{t(movie.name)}</h4>
           <p>
-            <Moment calendar={showing.startTime} format="dddd" />
+            <Moment locale="sv" calendar={showing.startTime} format="dddd" />
             <span>/</span>
-            <Moment calendar={showing.startTime} format="D" />
+            <Moment locale="sv" calendar={showing.startTime} format="D" />
           </p>
           <p>
-            <Moment date={showing.startTime} format="hh:mm" />
+            <Moment locale="sv" date={showing.startTime} format="hh:mm" />
           </p>
           <p>{cinema.name}</p>
-          <p>{showing.room.name}</p>
+          <p>{t(showing.room.name)}</p>
           <div>
             {seatsArray &&
               seatsArray.map(([row, seats]) => (
                 <div key={`r${row}`}>
-                  <span> row </span>
+                  <span>{t("row")}</span>
                   <span>{row + 1}</span>
-                  <span> seat number </span>
+                  <span>{t("seat number")}</span>
+                  <span>{row + 1}</span>
                   <span>{seats.map((seat) => seat + 1).join(", ")}</span>
                 </div>
               ))}
@@ -143,12 +148,12 @@ function ConfirmPage() {
         <p>{formatPrice(price)}</p>
       </div>
       <div>
-        <p>to pay</p>
+        <p>{t("to pay")}</p>
         <p>{formatPrice(showing.price)}</p>
       </div>
       <div>
         <label>
-          your e-mail:
+          {t("your e-mail:")}
           <input
             onInput={(e) => setEmail(e.target.value)}
             onBlur={() => emailValidation()}
@@ -156,7 +161,7 @@ function ConfirmPage() {
             name="name"
             placeholder="example@gmail.com"
           />
-          {emailError && <p>{emailError}</p>}
+          {emailError && <p>{t(emailError)}</p>}
         </label>
       </div>
       <div>
@@ -166,14 +171,14 @@ function ConfirmPage() {
             type="checkbox"
             onChange={() => setChecked(!checked)}
           />
-          Example 1 (basic input)
+          {t("i accept the  terms of purchase.")}
         </label>
       </div>
       <button role="link" disabled={!enableButton} onClick={createTicket}>
         {ticketLoading && <FontAwesomeIcon icon={faSpinner} spin />}
-        continue
+        {t("continue")}
       </button>
-      {ticketError && <p> try it again</p>}
+      {ticketError && <p>{t("try again")}</p>}
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState, useContext, useRef, useEffect } from "react";
 import { Link } from "@reach/router";
 import Moment from "react-moment";
+import { useTranslation } from "react-i18next";
 import TopBar from "../../components/TopBar";
 import useAxios from "../../hooks/useAxios";
 import AppContext from "../../store/context";
@@ -12,6 +13,7 @@ import {
 
 function MovieDetailPage(props) {
   const { state, dispatch } = useContext(AppContext);
+  const { t } = useTranslation();
   const { category, movieId } = props;
   const { movies } = state;
   const [currentMovie] = useState(() => {
@@ -60,25 +62,31 @@ function MovieDetailPage(props) {
         <div>
           <img src={currentMovie.coverImage} alt="" />
 
-          <p>{currentMovie.name}</p>
-          <p>{currentMovie.description}</p>
-          <p>{currentMovie.genre}</p>
-          <p>{currentMovie.duration}</p>
-          <p>{currentMovie.age}</p>
+          <p>{t(currentMovie.name)}</p>
+          <p>{t(currentMovie.description)}</p>
+          <p>{t(currentMovie.genre)}</p>
+          <p>{t(currentMovie.duration)}</p>
+          <p>{t(currentMovie.age)}</p>
           <p>
-            director:
-            {currentMovie.director}
+            {t("director")}
+            <span>:</span>
+            {t(currentMovie.director)}
           </p>
           <p>
-            premiere:
-            {currentMovie.premiere}
+            {t("premiere")}
+            <span>:</span>
+            {t(currentMovie.premiere)}
           </p>
-          <p>actor: </p>
+          <p>
+            {t("actor")}
+            <span>:</span>
+          </p>
           {currentMovie.actors.map((actor) => (
             <p key={actor}>{actor}</p>
           ))}
           <p>
-            original language:
+            {t("original language")}
+            <span>:</span>
             {currentMovie.originalTitle}
           </p>
           <div>
@@ -96,8 +104,8 @@ function MovieDetailPage(props) {
                                 <p>
                                   <Moment date={el.startTime} format="hh:mm" />
                                 </p>
-                                <p>{el.room.name}</p>
-                                <p>{currentMovie.originalTitle}</p>
+                                <p>{t(el.room.name)}</p>
+                                <p>{t(currentMovie.originalTitle)}</p>
                               </Link>
                             </li>
                           ) : (
@@ -105,8 +113,8 @@ function MovieDetailPage(props) {
                               <p>
                                 <Moment date={el.startTime} format="hh:mm" />
                               </p>
-                              <p>{el.room.name}</p>
-                              <p>{currentMovie.originalTitle}</p>
+                              <p>{t(el.room.name)}</p>
+                              <p>{t(currentMovie.originalTitle)}</p>
                             </li>
                           )
                         )}
