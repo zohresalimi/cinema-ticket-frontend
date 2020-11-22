@@ -13,7 +13,7 @@ import {
 
 function MovieDetailPage(props) {
   const { state, dispatch } = useContext(AppContext);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { category, movieId } = props;
   const { movies } = state;
   const [currentMovie] = useState(() => {
@@ -75,7 +75,11 @@ function MovieDetailPage(props) {
           <p>
             {t("premiere")}
             <span>:</span>
-            {t(currentMovie.premiere)}
+            <Moment
+              locale={i18n.language}
+              date={currentMovie.premiere}
+              format="ddd D MMM"
+            />
           </p>
           <p>
             {t("actor")}

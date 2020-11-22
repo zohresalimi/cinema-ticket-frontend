@@ -8,8 +8,6 @@ import React, {
 import { Link } from "@reach/router";
 import { useTranslation } from "react-i18next";
 import Moment from "react-moment";
-import "moment/locale/sv";
-import "moment/locale/fa";
 import { loadStripe } from "@stripe/stripe-js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
@@ -21,7 +19,7 @@ const stripePromise = loadStripe(process.env.REACT_APP_PUBLISHABLE_KEY);
 
 function ConfirmPage() {
   const { state } = useContext(AppContext);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { cinema, movie, price, quantity, seatNumbers, showing } = state.ticket;
   const [email, setEmail] = useState();
   const [emailError, setEmailError] = useState(null);
@@ -120,12 +118,18 @@ function ConfirmPage() {
         <div>
           <h4>{t(movie.name)}</h4>
           <p>
-            <Moment locale="sv" calendar={showing.startTime} format="dddd" />
-            <span>/</span>
-            <Moment locale="sv" calendar={showing.startTime} format="D" />
+            <Moment
+              locale={i18n.language}
+              calendar={showing.startTime}
+              format="dddd D MMMM"
+            />
           </p>
           <p>
-            <Moment locale="sv" date={showing.startTime} format="hh:mm" />
+            <Moment
+              locale={i18n.language}
+              date={showing.startTime}
+              format="HH:mm"
+            />
           </p>
           <p>{cinema.name}</p>
           <p>{t(showing.room.name)}</p>

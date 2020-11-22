@@ -6,13 +6,13 @@
     "children and family":"barn och familj",
     "upcoming movies":"kommande filmer",
     "A popular influencer and his friends travel the world and film themselves in extreme situations. In Russia, they are invited to a mysterious escape room by an eccentric millionaire and see a given video success on social media in front of them. But no likes in the world can buy them free from the nightmare that awaits":"En populär influencer och hans vänner reser jorden runt och filmar sig själva i extrema situationer. I Ryssland blir de inbjudna till ett mystiskt escape room av en excentrisk miljonär och ser en given videosuccé i sociala medier framför sig. Men inga likes i världen kan köpa dem fria från mardrömmen som väntar",
-    "horrorthriller":"skräck thriller",
+    "horror thriller":"skräck thriller",
+    "horror":"skräck",
+    "thriller":"thriller",
     "director":"regi",
     "premiere":"premiär",
     "actor":"skådespelare",
     "original language":"originalspråk",
-    "film city serge":"",
-    "You must select at least one ticket":"du måste välja minst en biljett",
     "select location":"Välj platser",
     "continue":"Fortsätt",
     "seat selection":"biljettval",
@@ -27,7 +27,6 @@
     "year":"år",
     "book tickets":"book tickets",
     "room":"salong",
-    "filmstaden eron City":"Filmstaden Heron City",
     "buy ticket":"Köp biljetter",
     "number of tickets":"Antal biljetter",
     "see":"se",
@@ -48,6 +47,5 @@
     "you must select at least one ticket":"du måste välja minst en biljett",
     "i accept the  terms of purchase.":"jag godkänner köpvillkoren",
     "please enter a valid email":"Ange en giltig e-post",
-    "try again":"försök igen",
-    "Sunday":"Söndag"
+    "try again":"försök igen"
 }
