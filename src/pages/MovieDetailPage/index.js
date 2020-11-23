@@ -3,6 +3,8 @@ import { Link } from "@reach/router";
 import Moment from "react-moment";
 import { useTranslation } from "react-i18next";
 import TopBar from "../../components/TopBar";
+import MovieDetail from "../../components/MovieDetail";
+
 import useAxios from "../../hooks/useAxios";
 import AppContext from "../../store/context";
 import {
@@ -10,6 +12,8 @@ import {
   SET_SHOWINGS_MOVIE_REDUCER,
   SET_CINEMAS_REDUCER,
 } from "../../constants";
+import { Container, Row } from "../../Styles/StyleComponents";
+import { Wrapper } from "./style";
 
 function MovieDetailPage(props) {
   const { state, dispatch } = useContext(AppContext);
@@ -58,77 +62,81 @@ function MovieDetailPage(props) {
   return (
     <div>
       <TopBar />
-      {currentMovie && (
-        <div>
-          <img src={currentMovie.coverImage} alt="" />
+      <MovieDetail movie={currentMovie} />
 
-          <p>{t(currentMovie.name)}</p>
-          <p>{t(currentMovie.description)}</p>
-          <p>{t(currentMovie.genre)}</p>
-          <p>{t(currentMovie.duration)}</p>
-          <p>{t(currentMovie.age)}</p>
-          <p>
-            {t("director")}
-            <span>:</span>
-            {t(currentMovie.director)}
-          </p>
-          <p>
-            {t("premiere")}
-            <span>:</span>
-            <Moment
-              locale={i18n.language}
-              date={currentMovie.premiere}
-              format="ddd D MMM"
-            />
-          </p>
-          <p>
-            {t("actor")}
-            <span>:</span>
-          </p>
-          {currentMovie.actors.map((actor) => (
-            <p key={actor}>{actor}</p>
-          ))}
-          <p>
-            {t("original language")}
-            <span>:</span>
-            {currentMovie.originalTitle}
-          </p>
-          <div>
-            {cinemas &&
-              cinemas.data.map((item) => {
-                return (
-                  <div key={item._id}>
-                    <h2>{item.name}</h2>
-                    <ul>
-                      {showings &&
-                        showingByCinemaId(item._id).map((el) =>
-                          el.capacity > 0 ? (
-                            <li key={el._id}>
-                              <Link to={`../../../booking/${el._id}`}>
-                                <p>
-                                  <Moment date={el.startTime} format="hh:mm" />
-                                </p>
-                                <p>{t(el.room.name)}</p>
-                                <p>{t(currentMovie.originalTitle)}</p>
-                              </Link>
-                            </li>
-                          ) : (
-                            <li key={el._id}>
-                              <p>
-                                <Moment date={el.startTime} format="hh:mm" />
-                              </p>
-                              <p>{t(el.room.name)}</p>
-                              <p>{t(currentMovie.originalTitle)}</p>
-                            </li>
-                          )
-                        )}
-                    </ul>
-                  </div>
-                );
-              })}
-          </div>
-        </div>
-      )}
+      <Container>
+        <Row>
+          <Wrapper>
+            {currentMovie && (
+              <div>
+                <p className="description">{t(currentMovie.description)}</p>
+                <p className="title">{t("director")}</p>
+                <p>{t(currentMovie.director)}</p>
+                <p className="title">{t("premiere")}</p>
+                <p>
+                  <Moment
+                    locale={i18n.language}
+                    date={currentMovie.premiere}
+                    format="ddd D MMM"
+                  />
+                </p>
+                <p className="title">{t("actor")}</p>
+                <div className="displayInline">
+                  {currentMovie.actors.map((actor) => (
+                    <>
+                      <p key={actor}>{actor}</p>
+                    </>
+                  ))}
+                </div>
+
+                <p className="title">{t("original language")}</p>
+                <p>{currentMovie.originalTitle}</p>
+                <h2 className="buyTicket">{t("book tickets")}</h2>
+                <div>
+                  {cinemas &&
+                    cinemas.data.map((item) => {
+                      return (
+                        <div key={item._id}>
+                          <h2>{item.name}</h2>
+                          <ul>
+                            {showings &&
+                              showingByCinemaId(item._id).map((el) =>
+                                el.capacity > 0 ? (
+                                  <li key={el._id}>
+                                    <Link to={`../../../booking/${el._id}`}>
+                                      <p>
+                                        <Moment
+                                          date={el.startTime}
+                                          format="hh:mm"
+                                        />
+                                      </p>
+                                      <p>{t(el.room.name)}</p>
+                                      <p>{t(currentMovie.originalTitle)}</p>
+                                    </Link>
+                                  </li>
+                                ) : (
+                                  <li key={el._id}>
+                                    <p>
+                                      <Moment
+                                        date={el.startTime}
+                                        format="hh:mm"
+                                      />
+                                    </p>
+                                    <p>{t(el.room.name)}</p>
+                                    <p>{t(currentMovie.originalTitle)}</p>
+                                  </li>
+                                )
+                              )}
+                          </ul>
+                        </div>
+                      );
+                    })}
+                </div>
+              </div>
+            )}
+          </Wrapper>
+        </Row>
+      </Container>
     </div>
   );
 }

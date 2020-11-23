@@ -25,7 +25,7 @@
     "hour":"tim",
     "min":"min",
     "year":"år",
-    "book tickets":"book tickets",
+    "book tickets":"boka biljetter",
     "room":"salong",
     "buy ticket":"Köp biljetter",
     "number of tickets":"Antal biljetter",
@@ -47,5 +47,6 @@
     "you must select at least one ticket":"du måste välja minst en biljett",
     "i accept the  terms of purchase.":"jag godkänner köpvillkoren",
     "please enter a valid email":"Ange en giltig e-post",
-    "try again":"försök igen"
+    "try again":"försök igen",
+    "action":"action"
 }

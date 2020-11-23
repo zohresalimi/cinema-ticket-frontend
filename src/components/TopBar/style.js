@@ -31,6 +31,9 @@ export const Link = styled.a`
   height: 100%;
   display: flex;
   align-items: center;
+  text-transform: capitalize;
+  color: ${(props) => props.theme.colors.white};
+  font-size: ${(props) => props.theme.fontSizes.topMenu};
 `;
 export const Logo = styled.img`
   display: block;

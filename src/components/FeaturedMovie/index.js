@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import ReactPlayer from "react-player/youtube";
+import { useTranslation } from "react-i18next";
 import {
   Wrapper,
   FullImage,
@@ -12,28 +13,32 @@ import {
 } from "./style";
 import PlayButton from "../PlayButton";
 import Modal from "../Modal";
+import AppContext from "../../store/context";
 
 function FeaturedMovie() {
+  const { state } = useContext(AppContext);
+  const [movie, setMovie] = useState("");
   const [playVideo, setPlayVideo] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
+  const [t] = useTranslation();
 
-  const toggleModalState = () => {
-    setModalOpen(!modalOpen);
-  };
+  useEffect(() => {
+    const randomIndex = Math.floor(
+      Math.random() * Math.floor(state.movies.premiered.length)
+    );
+    setMovie(state.movies.premiered[randomIndex]);
+  }, [state.movies.premiered, state.movies.premiered.lenght, state.premiered]);
+
   return (
     <Wrapper>
       <FullImage>
-        <Image
-          alt=""
-          src="https://catalog.cinema-api.com/cf/images/ncg-images/9e5d23a9c1624f68859caedbf35ec3de.jpg?width=1920&version=9CD85BE7BA3CC619CC4E8D5A82DCA1C1&format=webp"
-        />
+        <Image alt="" src={movie.largeImage} />
         <ShadowBg />
         {playVideo && (
           <Modal setPlayVideo={setPlayVideo}>
             <div className="player-wrapper">
               <ReactPlayer
                 className="react-player"
-                url="https://youtu.be/tiBE56vQ0Fg"
+                url={movie.trailerUrl}
                 config={{
                   youtube: {
                     playerVars: { modestbranding: 1, showinfo: 0, controls: 0 },
@@ -46,9 +51,9 @@ function FeaturedMovie() {
         <PlayButton setPlayVideo={setPlayVideo} />
 
         <Info>
-          <Tag> Movie</Tag>
+          <Tag>{t("at the cinema now")}</Tag>
           <MovieTitle>
-            <Link href="/">Movie Tilte</Link>
+            <Link href="/">{movie.name}</Link>
           </MovieTitle>
         </Info>
       </FullImage>

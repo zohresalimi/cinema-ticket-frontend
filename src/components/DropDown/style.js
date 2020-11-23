@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 `;
 
 export const MenuLabel = styled.ul`
-  color: #fff;
+  color: ${(props) => props.theme.colors.white};
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -21,10 +21,10 @@ export const MenuLabel = styled.ul`
 `;
 
 export const ItemList = styled.li`
-  font-family: "sfMedium";
+  font-family: ${(props) => props.theme.fontFamily.sf};
   padding: 0.25em 2em 0.25em 2em;
   width: 100%;
-  color: #000;
+  color: ${(props) => props.theme.colors.black};
   background: white;
   line-height: 30px;
   padding: 0.25em 2em 0.25em 2em;
@@ -46,7 +46,7 @@ export const Button = styled.button`
   justify-content: center;
   position: relative;
   font-size: 20px;
-  color: #fff;
+  color: ${(props) => props.theme.colors.white};
   background-color: Transparent;
   background-repeat: no-repeat;
   border: none;
@@ -56,9 +56,6 @@ export const Button = styled.button`
   appearance: none;
   box-shadow: none;
   transition: ease-in-out 0.2s;
-  & hover: {
-    color: green;
-  }
   &:focus {
     outline: none;
   }

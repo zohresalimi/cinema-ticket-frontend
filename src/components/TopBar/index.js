@@ -39,12 +39,6 @@ function TopBar() {
               </Div>
             </Col>
             <Col>
-              {/* <Div onChange={changeLanguage}>
-                <input type="radio" value="fa" name="language" />
-                فارسی
-                <input type="radio" value="sv" name="language" defaultChecked />
-                svenska
-              </Div> */}
               <DropDown />
             </Col>
           </Row>

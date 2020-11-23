@@ -69,7 +69,7 @@ function HomePage() {
   }, [childrenMoviesList, dispatch]);
 
   const options = {
-    loop: true,
+    loop: false,
     lazyLoad: true,
     margin: 20,
     nav: true,
@@ -101,8 +101,7 @@ function HomePage() {
                     to={`premiered/movie-detail/${item._id}`}
                     key={item._id}
                   >
-                    <img src={item.coverImage} alt="" />
-                    {item.name}
+                    <Cards item={item} />
                   </Link>
                 );
               })}
@@ -117,8 +116,6 @@ function HomePage() {
                 return (
                   <Link to={`upcoming/movie-detail/${item._id}`} key={item._id}>
                     <Cards item={item} />
-                    {/* <img src={item.coverImage} alt="" />
-                  {item.name} */}
                   </Link>
                 );
               })}
@@ -131,8 +128,7 @@ function HomePage() {
               children.map((item) => {
                 return (
                   <Link to={`children/movie-detail/${item._id}`} key={item._id}>
-                    <img src={item.coverImage} alt="" />
-                    {item.name}
+                    <Cards item={item} />
                   </Link>
                 );
               })}
