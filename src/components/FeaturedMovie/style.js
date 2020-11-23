@@ -15,12 +15,22 @@ export const Wrapper = styled.div`
 `;
 
 export const FullImage = styled.div`
-  height: 630px;
+  height: ${(props) => props.theme.fullImage.height};
   width: 100%;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  @media (max-width: 375px) {
+    max-height: 540px;
+  }
+
+  ${"" /* @media (max-width: 768px) {
+    max-height: 720px;
+  } */}
 `;
 
 export const Link = styled.a`
@@ -36,6 +46,9 @@ export const Image = styled.img`
   width: 100%;
   max-width: 100%;
   max-height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+  height: 100%;
 `;
 
 export const ShadowBg = styled.div`

@@ -36,21 +36,27 @@ export const Container = styled.div`
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  box-sizing: border-box;
 
   @media ${device.xs} {
     max-width: 100%;
   }
-  @media ${device.sm} {
-    max-width: 576px;
+
+  @media (min-width: 576px) {
+    max-width: 540px;
   }
-  @media ${device.md} {
-    max-width: 768px;
+
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+    max-width: 720px;
   }
-  @media ${device.lg} {
+
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) {
     max-width: 960px;
   }
 
-  @media ${device.xl} {
+  @media (min-width: 1200px) {
     max-width: 1140px;
   }
 `;
@@ -58,8 +64,7 @@ export const Container = styled.div`
 export const Row = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+  box-sizing: border-box;
 `;
 
 export const Col = styled.div`
@@ -67,8 +72,7 @@ export const Col = styled.div`
   flex: 1;
   flex-grow: 1;
   position: relative;
-  padding-right: 15px;
-  padding-left: 15px;
+  box-sizing: border-box;
 `;
 
 export const Button = styled.button`
@@ -82,7 +86,6 @@ export const Button = styled.button`
   min-width: 11.25rem;
   height: 2.5rem;
   line-height: 2.5rem;
-  padding: 0 1rem;
   background-repeat: no-repeat;
   border: none;
   cursor: pointer;
@@ -94,5 +97,9 @@ export const Button = styled.button`
   }
   &:focus {
     outline: none;
+  }
+
+  @media only screen and (max-width: 768px) {
+    display: flex;
   }
 `;

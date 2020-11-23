@@ -11,10 +11,11 @@ import { Wrapper, MenuLabel, ItemList, Button, CaratContainer } from "./style";
 
 function DropDown() {
   const [isOpened, setIsOpened] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("");
-  const [label, setLabel] = useState("");
-  const [isFocussed, setIsFocussed] = useState(false);
   const { t, i18n } = useTranslation();
+  const [selectedOption, setSelectedOption] = useState(() => i18n.language);
+  const [label, setLabel] = useState(
+    () => SUPPORTED_LOCALES.find((locale) => locale.code === i18n.language).name
+  );
 
   const dropdownRef = useRef();
   useEffect(() => {

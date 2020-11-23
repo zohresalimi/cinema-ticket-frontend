@@ -59,6 +59,9 @@ export const Button = styled.button`
   &:focus {
     outline: none;
   }
+  @media only screen and (max-width: 375px) {
+    font-size: 13px;
+  }
 `;
 
 export const CaratContainer = styled.div`

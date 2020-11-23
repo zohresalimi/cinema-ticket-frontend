@@ -30,33 +30,41 @@ function FeaturedMovie() {
 
   return (
     <Wrapper>
-      <FullImage>
-        <Image alt="" src={movie.largeImage} />
-        <ShadowBg />
-        {playVideo && (
-          <Modal setPlayVideo={setPlayVideo}>
-            <div className="player-wrapper">
-              <ReactPlayer
-                className="react-player"
-                url={movie.trailerUrl}
-                config={{
-                  youtube: {
-                    playerVars: { modestbranding: 1, showinfo: 0, controls: 0 },
-                  },
-                }}
-              />
-            </div>
-          </Modal>
-        )}
-        <PlayButton setPlayVideo={setPlayVideo} />
+      {movie && (
+        <FullImage>
+          <Image alt="" src={movie.largeImage} />
+          <ShadowBg />
+          {playVideo && (
+            <Modal setPlayVideo={setPlayVideo}>
+              <div className="player-wrapper">
+                <ReactPlayer
+                  className="react-player"
+                  url={movie.trailerUrl}
+                  width="100%"
+                  height="100%"
+                  config={{
+                    youtube: {
+                      playerVars: {
+                        modestbranding: 1,
+                        showinfo: 0,
+                        controls: 0,
+                      },
+                    },
+                  }}
+                />
+              </div>
+            </Modal>
+          )}
+          <PlayButton setPlayVideo={setPlayVideo} />
 
-        <Info>
-          <Tag>{t("at the cinema now")}</Tag>
-          <MovieTitle>
-            <Link href="/">{movie.name}</Link>
-          </MovieTitle>
-        </Info>
-      </FullImage>
+          <Info>
+            <Tag>{t("at the cinema now")}</Tag>
+            <MovieTitle>
+              <Link href="/">{movie.name}</Link>
+            </MovieTitle>
+          </Info>
+        </FullImage>
+      )}
     </Wrapper>
   );
 }

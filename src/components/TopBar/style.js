@@ -16,6 +16,14 @@ export const TopMenuContainer = styled.div`
   height: 4rem;
   background-color: ${(props) => props.theme.colors.red};
   color: ${(props) => props.theme.colors.white};
+  .searchBar {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+    .searchIcon {
+    }
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -39,6 +47,9 @@ export const Logo = styled.img`
   display: block;
   max-width: 100%;
   height: 4rem;
+  @media only screen and (min-width: 375px) {
+    height: 3.5rem;
+  }
 `;
 
 export const Ul = styled.ul`
@@ -46,6 +57,11 @@ export const Ul = styled.ul`
   height: 100%;
   list-style: none;
   padding: 0;
+  display: none;
+
+  @media only screen and (min-width: 768px) {
+    display: flex;
+  }
 `;
 
 export const Li = styled.li`

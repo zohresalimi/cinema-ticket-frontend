@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import DropDown from "../DropDown";
+import HamburgerMenu from "../HamburgerMenu";
 import { Wrapper, TopMenuContainer, Link, Logo, Ul, Li, Div } from "./style";
 import { Container, Row, Col } from "../../Styles/StyleComponents";
 
 function TopBar() {
+  const [open, setOpen] = useState(false);
+  const node = useRef();
   const { t, i18n } = useTranslation();
 
   const changeLanguage = (event) => {
@@ -18,6 +23,9 @@ function TopBar() {
           <Row>
             <Col>
               <Div>
+                <div ref={node}>
+                  <HamburgerMenu open={open} setOpen={setOpen} />
+                </div>
                 <Link href="/">
                   <Logo
                     alt=""
@@ -39,7 +47,10 @@ function TopBar() {
               </Div>
             </Col>
             <Col>
-              <DropDown />
+              <div className="searchBar">
+                <FontAwesomeIcon icon={faSearch} className="searchIcon" />
+                <DropDown />
+              </div>
             </Col>
           </Row>
         </Container>

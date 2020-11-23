@@ -52,11 +52,12 @@ ul {
 }
 
 .player-wrapper {
-  position: absolute;
   z-index: 9;
   background-color: rgba(0, 0, 0, 0.6);
   padding: 7px;
   border-radius: 10px;
+  width: 80%;
+  height: 70%;
 }
 
 .video-wrapper {
@@ -102,4 +103,19 @@ ul {
 
 .m05 {
   margin: 0 5px;
+}
+
+@media only screen and (max-width: 768px) {
+  .player-wrapper {
+    width: 80%;
+    height: 50%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .player-wrapper {
+    width: 80%;
+    height: 40%;
+    max-height: 250px;
+  }
 }
