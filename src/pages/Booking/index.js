@@ -29,9 +29,6 @@ function Booking({ showingId, children }) {
   return (
     <div>
       <TopBar />
-      {/* <button role="link" onClick={handleClick}>
-        Checkout
-      </button> */}
 
       {children}
     </div>

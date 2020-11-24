@@ -15,7 +15,7 @@
   "original language":"زبان فیلم",
   "select location":"انتخاب صندلی",
   "continue":"بعدی",
-  "seat selection":"انتخاب صندلی",
+  "ticket selection":"انتخاب صندلی",
   "ticket":"بلیط",
   "row":"ردیف :",
   "seat number":"شماره صندلی :",
@@ -48,5 +48,6 @@
   "i accept the  terms of purchase.":"من شرایط خرید از سایت را قبول می کنم.",
   "please enter a valid email":"ایمیل صحیح وارد کنید.",
   "try again":"تلاش مجدد",
-  "action":"اکشن"
+  "action":"اکشن",
+  "lang": "زبان"
 }

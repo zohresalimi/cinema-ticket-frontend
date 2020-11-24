@@ -83,8 +83,6 @@ export const Button = styled.button`
   padding: 0.25em 1em;
   border-radius: 3px;
   display: block;
-  min-width: 11.25rem;
-  height: 2.5rem;
   line-height: 2.5rem;
   background-repeat: no-repeat;
   border: none;
@@ -98,8 +96,95 @@ export const Button = styled.button`
   &:focus {
     outline: none;
   }
-
+  &:disabled {
+    background-color: ${(props) => props.theme.colors.lightGray};
+    cursor: default;
+    color: ${(props) => props.theme.colors.darkGray};
+  }
   @media only screen and (max-width: 768px) {
     display: flex;
+  }
+`;
+
+export const Breadcrumb = styled.h2`
+  font-family: ${(props) => props.theme.fontFamily.sf};
+  margin-top: 40px;
+  font-size: ${(props) => props.theme.fontSizes.content};
+  border-bottom: 1px solid ${(props) => props.theme.colors.red};
+  justify-content: space-between;
+  display: flex;
+  a {
+    color: ${(props) => props.theme.colors.red};
+    font-size: ${(props) => props.theme.fontSizes.content};
+    text-transform: capitalize;
+    transition: all 0.4s ease;
+    & :hover {
+      color: ${(props) => props.theme.colors.white};
+    }
+  }
+`;
+
+export const Alert = styled.div`
+  width: 100%;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  font-size: 1rem;
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  margin-top: 1rem;
+  text-transform: capitalize;
+`;
+
+export const Input = styled.div`
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+  margin: 10px 0;
+  .input-group {
+    display: flex;
+    .input-group-text {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      display: flex;
+      align-items: center;
+      padding: 0.375rem 0.75rem;
+      margin-bottom: 0;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #495057;
+      text-align: center;
+      white-space: nowrap;
+      background-color: #e9ecef;
+      border: 1px solid #ced4da;
+      border-radius: 0.25rem;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      top: 0
+    }
+  }
+  input{
+    flex: 1 1 auto;
+    margin-bottom: 0;
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    text-indent: 40px;
+}
   }
 `;

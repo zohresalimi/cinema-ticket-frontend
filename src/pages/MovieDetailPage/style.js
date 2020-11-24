@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   font-family: ${(props) => props.theme.fontFamily.sf};
   display: flex;
   align-items: center;
@@ -38,77 +38,47 @@ export const Wrapper = styled.div`
     }
   }
   h2.buyTicket {
-    margin: 100px 0;
+    margin: 100px 0 45px 0;
   }
-`;
 
-export const FullImage = styled.div`
-  height: ${(props) => props.theme.fullImage.height};
-  width: 100%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const Image = styled.img`
-  width: 100%;
-  max-width: 100%;
-  max-height: 100%;
-`;
-
-export const ShadowBg = styled.div`
-  background: linear-gradient(
-    -180deg,
-    transparent 50%,
-    rgba(0, 0, 0, 0.68) 85%,
-    #000
-  );
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-`;
-
-export const Info = styled.div`
-  position: relative;
-  margin-top: -${(props) => props.theme.fullImage.height.replace("px", "") / 2.5}px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  .movie-poster {
-    width: 12rem;
-    img {
-      max-width: 100%;
-      display: block;
-      border-radius: 0.25rem;
-    }
+  .cinema-name {
+    font-size: 1.45rem;
+    color: #9c9c9c;
   }
-  .movie-detail {
-    text-transform: capitalize;
-    margin-left: 1.5rem;
-    h2 {
-    }
-    p {
-      display: inline-block;
-      margin: 5px 0;
-    }
-    .btn-wrapper {
-      margin-top: 10px;
-    }
-    .movie-duration {
-      text-transform: lowercase;
-      margin: 0;
-      span {
-        margin: 0 5px;
+
+  .showings-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    justify-content: space-between;
+    li {
+      border-bottom: 1px solid #929292;
+      width: 100%;
+      display: flex;
+      padding: 10px 20px;
+      &:hover {
+        background-color: rgb(53 53 53 / 80%);
+      }
+      a {
+        text-decoration: none;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        .time-slot {
+          flex: 1;
+        }
+        .room-name {
+        }
+        .movie-subtitle {
+          color: #888;
+        }
       }
     }
   }
+  .buy-ticket p {
+    color: ${(props) => props.theme.colors.red};
+  }
 `;
-export const MovieTitle = styled.h2`
-  font-family: ${(props) => props.theme.fontFamily.sf};
-  color: ${(props) => props.theme.colors.white};
-  margin: 20px auto;
-`;
+
+export { Wrapper as default };

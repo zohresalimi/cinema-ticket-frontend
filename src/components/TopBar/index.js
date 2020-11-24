@@ -43,6 +43,11 @@ function TopBar() {
                       {t("movies")}
                     </Link>
                   </Li>
+                  <Li>
+                    <Link href="/sign-up" weight="bold">
+                      {t("sign up")}
+                    </Link>
+                  </Li>
                 </Ul>
               </Div>
             </Col>

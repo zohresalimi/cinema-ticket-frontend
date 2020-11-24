@@ -15,12 +15,21 @@ export const FullImage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  @media (max-width: 375px) {
+    max-height: 540px;
+  }
 `;
 
 export const Image = styled.img`
   width: 100%;
   max-width: 100%;
   max-height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+  height: 100%;
 `;
 
 export const ShadowBg = styled.div`

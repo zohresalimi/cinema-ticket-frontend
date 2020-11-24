@@ -22,9 +22,15 @@ function FeaturedMovie({ movie }) {
               <ReactPlayer
                 className="react-player"
                 url={movie.trailerUrl}
+                width="100%"
+                height="100%"
                 config={{
                   youtube: {
-                    playerVars: { modestbranding: 1, showinfo: 0, controls: 0 },
+                    playerVars: {
+                      modestbranding: 1,
+                      showinfo: 0,
+                      controls: 0,
+                    },
                   },
                 }}
               />

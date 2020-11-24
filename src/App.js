@@ -10,6 +10,7 @@ import ConfirmPage from "./pages/ConfirmPage";
 import OrderPage from "./pages/OrderPage";
 import SuccessPage from "./pages/SuccessPage";
 import CancelPage from "./pages/CancelPage";
+import SignupPage from "./pages/SignupPage";
 import AppContext from "./store/context";
 import store from "./store";
 import { setLocalStorage, getLocalStorage } from "./utils/localStorage";
@@ -29,6 +30,7 @@ function App() {
         <AppContext.Provider value={{ state, dispatch }}>
           <Router>
             <HomePage path="/" />
+            <SignupPage path="sign-up" />
             <MovieDetailPage path=":category/movie-detail/:movieId" />
             <Booking path="booking/:showingId">
               <QuantityPage path="/" />

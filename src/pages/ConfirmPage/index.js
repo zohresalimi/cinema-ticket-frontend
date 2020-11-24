@@ -10,10 +10,24 @@ import { useTranslation } from "react-i18next";
 import Moment from "react-moment";
 import { loadStripe } from "@stripe/stripe-js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSpinner,
+  faAngleLeft,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 import useAxios from "../../hooks/useAxios";
 import AppContext from "../../store/context";
 import formatPrice from "../../utils/formatPrice";
+
+import {
+  Container,
+  Row,
+  Button,
+  Breadcrumb,
+  Alert,
+  Input,
+} from "../../Styles/StyleComponents";
+import Wrapper from "./style";
 
 const stripePromise = loadStripe(process.env.REACT_APP_PUBLISHABLE_KEY);
 
@@ -107,83 +121,100 @@ function ConfirmPage() {
   ]);
 
   return (
-    <div>
-      <div>
-        <Link to="../seat-selection">{t("seat selection")}</Link>
-        <Link to="/">{t("sing in")}</Link>
-      </div>
-      <h2>{t("reservation")}</h2>
-      <div className="movie-info">
-        <img src={movie.coverImage} alt="" />
-        <div>
-          <h4>{t(movie.name)}</h4>
-          <p>
-            <Moment
-              locale={i18n.language}
-              calendar={showing.startTime}
-              format="dddd D MMMM"
-            />
-          </p>
-          <p>
-            <Moment
-              locale={i18n.language}
-              date={showing.startTime}
-              format="HH:mm"
-            />
-          </p>
-          <p>{cinema.name}</p>
-          <p>{t(showing.room.name)}</p>
-          <div>
-            {seatsArray &&
-              seatsArray.map(([row, seats]) => (
-                <div key={`r${row}`}>
-                  <span>{t("row")}</span>
-                  <span>{row + 1}</span>
-                  <span>{t("seat number")}</span>
-                  <span>{row + 1}</span>
-                  <span>{seats.map((seat) => seat + 1).join(", ")}</span>
+    <Container>
+      <Row>
+        <div className="full-width">
+          <Breadcrumb>
+            <Link to="../seat-selection">
+              <FontAwesomeIcon icon={faAngleLeft} className="mr-10" />
+              {t("seat selection")}
+            </Link>
+            <Link to="/">{t("sing in")}</Link>
+          </Breadcrumb>
+          <Wrapper>
+            <h2>{t("reservation")}</h2>
+            <div className="movie-info">
+              <img src={movie.coverImage} alt="" />
+              <div className="info">
+                <h4>{t(movie.name)}</h4>
+                <p>
+                  <Moment
+                    locale={i18n.language}
+                    calendar={showing.startTime}
+                    format="dddd D MMMM"
+                  />
+                </p>
+                <p>
+                  <Moment
+                    locale={i18n.language}
+                    date={showing.startTime}
+                    format="HH:mm"
+                  />
+                </p>
+                <p>{cinema.name}</p>
+                <p>{t(showing.room.name)}</p>
+                <div>
+                  {seatsArray &&
+                    seatsArray.map(([row, seats]) => (
+                      <div key={`r${row}`}>
+                        <span className="sub-title">{t("row")}</span>
+                        <span>{row + 1}</span>
+                        <span className="sub-title">{t("seat number")}</span>
+                        <span>{row + 1}</span>
+                        <span>{seats.map((seat) => seat + 1).join(", ")}</span>
+                      </div>
+                    ))}
                 </div>
-              ))}
-          </div>
+              </div>
+            </div>
+            <div className="row-box">
+              <p>{`${quantity} ticket`}</p>
+              <p>{formatPrice(showing.price)}</p>
+            </div>
+            <div className="row-box">
+              <p>{t("to pay")}</p>
+              <p>{formatPrice(price)}</p>
+            </div>
+            <div>
+              <label>
+                {t("your e-mail")}
+                <Input>
+                  <div className="input-group">
+                    <div className="input-group-text">
+                      <FontAwesomeIcon icon={faEnvelope} />
+                    </div>
+                  </div>
+                  <input
+                    onInput={(e) => setEmail(e.target.value)}
+                    onBlur={() => emailValidation()}
+                    type="text"
+                    name="name"
+                    placeholder="example@gmail.com"
+                  />
+                </Input>
+                {emailError && <Alert>{t(emailError)}</Alert>}
+              </label>
+            </div>
+            <div>
+              <label>
+                <input
+                  name="checkbox"
+                  type="checkbox"
+                  className="m-10"
+                  onChange={() => setChecked(!checked)}
+                />
+                {t("i accept the  terms of purchase.")}
+              </label>
+            </div>
+            <Button role="link" disabled={!enableButton} onClick={createTicket}>
+              {ticketLoading && <FontAwesomeIcon icon={faSpinner} spin />}
+              {t("continue")}
+            </Button>
+            {ticketError && <Alert>{t("try again")}</Alert>}
+          </Wrapper>
         </div>
-      </div>
-      <div>
-        <p>{`${quantity} ticket`}</p>
-        <p>{formatPrice(price)}</p>
-      </div>
-      <div>
-        <p>{t("to pay")}</p>
-        <p>{formatPrice(showing.price)}</p>
-      </div>
-      <div>
-        <label>
-          {t("your e-mail:")}
-          <input
-            onInput={(e) => setEmail(e.target.value)}
-            onBlur={() => emailValidation()}
-            type="text"
-            name="name"
-            placeholder="example@gmail.com"
-          />
-          {emailError && <p>{t(emailError)}</p>}
-        </label>
-      </div>
-      <div>
-        <label>
-          <input
-            name="checkbox"
-            type="checkbox"
-            onChange={() => setChecked(!checked)}
-          />
-          {t("i accept the  terms of purchase.")}
-        </label>
-      </div>
-      <button role="link" disabled={!enableButton} onClick={createTicket}>
-        {ticketLoading && <FontAwesomeIcon icon={faSpinner} spin />}
-        {t("continue")}
-      </button>
-      {ticketError && <p>{t("try again")}</p>}
-    </div>
+      </Row>
+    </Container>
   );
 }
 

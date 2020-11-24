@@ -12,7 +12,7 @@ const StyledBurger = styled.button`
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 99;
+  z-index: 9;
   display: flex;
   position: relative;
 
@@ -60,7 +60,7 @@ const StyledMenu = styled.nav`
   top: 0;
   left: 0;
   transition: transform 0.3s ease-in-out;
-  z-index: 9;
+  z-index: 8;
 
   @media (max-width: 576px) {
     width: 100%;
@@ -95,6 +95,7 @@ function HamburgerMenu({ open, setOpen }) {
       <StyledMenu open={open}>
         <a href="/">{t("home")}</a>
         <a href="/">{t("movies")}</a>
+        <a href="/sign-up">{t("sign up")}</a>
       </StyledMenu>
     </>
   );

@@ -13,7 +13,7 @@ import {
   SET_CINEMAS_REDUCER,
 } from "../../constants";
 import { Container, Row } from "../../Styles/StyleComponents";
-import { Wrapper } from "./style";
+import Wrapper from "./style";
 
 function MovieDetailPage(props) {
   const { state, dispatch } = useContext(AppContext);
@@ -97,33 +97,51 @@ function MovieDetailPage(props) {
                     cinemas.data.map((item) => {
                       return (
                         <div key={item._id}>
-                          <h2>{item.name}</h2>
-                          <ul>
+                          <h2 className="cinema-name">{item.name}</h2>
+                          <ul className="showings-list">
                             {showings &&
                               showingByCinemaId(item._id).map((el) =>
                                 el.capacity > 0 ? (
                                   <li key={el._id}>
-                                    <Link to={`../../../booking/${el._id}`}>
-                                      <p>
-                                        <Moment
-                                          date={el.startTime}
-                                          format="hh:mm"
-                                        />
-                                      </p>
-                                      <p>{t(el.room.name)}</p>
-                                      <p>{t(currentMovie.originalTitle)}</p>
+                                    <Link
+                                      to={`../../../booking/${el._id}`}
+                                      state={{ category }}
+                                    >
+                                      <div className="showing-info">
+                                        <p className="time-slot">
+                                          <Moment
+                                            date={el.startTime}
+                                            format="hh:mm"
+                                          />
+                                        </p>
+                                        <p className="room-name">
+                                          {t(el.room.name)}
+                                        </p>
+                                        <p className="movie-subtitle">
+                                          {t("lang")}
+                                          {":"}
+                                          {t(currentMovie.originalTitle)}
+                                        </p>
+                                      </div>
+                                      <div className="buy-ticket">
+                                        <p>{t("buy ticket")}</p>
+                                      </div>
                                     </Link>
                                   </li>
                                 ) : (
                                   <li key={el._id}>
-                                    <p>
+                                    <p className="room-name">
                                       <Moment
                                         date={el.startTime}
                                         format="hh:mm"
                                       />
                                     </p>
-                                    <p>{t(el.room.name)}</p>
-                                    <p>{t(currentMovie.originalTitle)}</p>
+                                    <p className="room-name">
+                                      {t(el.room.name)}
+                                    </p>
+                                    <p className="buy-ticket">
+                                      {t(currentMovie.originalTitle)}
+                                    </p>
                                   </li>
                                 )
                               )}

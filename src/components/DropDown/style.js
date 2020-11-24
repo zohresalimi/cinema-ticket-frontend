@@ -41,7 +41,7 @@ export const ItemList = styled.li`
 export const Button = styled.button`
   display: inline-flex;
   align-items: center;
-  padding: 0px 30px;
+  margin-left: 20px;
   font-size: 14px;
   justify-content: center;
   position: relative;
@@ -65,7 +65,7 @@ export const Button = styled.button`
 `;
 
 export const CaratContainer = styled.div`
-  transform: ${(props) => (props.isOpen ? "rotate(180deg)" : "rotate(0deg)")};
+  transform: ${(props) => (props.isOpen ? "rotate(0deg)" : "rotate(180deg)")};
   transition: all 0.2s ease;
   width: 20px;
 `;

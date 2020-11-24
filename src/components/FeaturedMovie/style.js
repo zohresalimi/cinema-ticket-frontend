@@ -27,10 +27,6 @@ export const FullImage = styled.div`
   @media (max-width: 375px) {
     max-height: 540px;
   }
-
-  ${"" /* @media (max-width: 768px) {
-    max-height: 720px;
-  } */}
 `;
 
 export const Link = styled.a`

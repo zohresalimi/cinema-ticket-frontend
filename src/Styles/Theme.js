@@ -12,6 +12,8 @@ const theme = {
     blackrgb: "rgba(0,0,0,.87)",
     textColor: "#d2d2d2",
     gray: "#6d6d6d",
+    lightGray: "#e2e3e5",
+    darkGray: "#383d41",
   },
   fontSizes: {
     small: "1rem",
