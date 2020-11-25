@@ -11,7 +11,7 @@ import AppContext from "../../store/context";
 import TopBar from "../../components/TopBar";
 import FeaturedMovie from "../../components/FeaturedMovie";
 import Cards from "../../components/Cards";
-import { Container, Row, Col } from "../../Styles/StyleComponents";
+import { Container, Row } from "../../Styles/StyleComponents";
 import {
   SET_PREMIERED_MOVIE_REDUCER,
   SET_UPCOMING_MOVIE_REDUCER,

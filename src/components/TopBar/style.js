@@ -9,7 +9,7 @@ export const Div = styled.div`
 `;
 
 export const TopMenuContainer = styled.div`
-  font-family: "sfMedium";
+  font-family: ${(props) => props.theme.fontFamily.sf};
   display: flex;
   align-items: center;
   width: 100%;
@@ -42,6 +42,10 @@ export const Link = styled.a`
   text-transform: capitalize;
   color: ${(props) => props.theme.colors.white};
   font-size: ${(props) => props.theme.fontSizes.topMenu};
+
+  @media only screen and (max-width: 768px) {
+    font-size: ${(props) => props.theme.fontSizes.small};
+  }
 `;
 export const Logo = styled.img`
   display: block;

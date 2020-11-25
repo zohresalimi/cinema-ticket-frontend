@@ -10,11 +10,7 @@ import { Container, Row, Col } from "../../Styles/StyleComponents";
 function TopBar() {
   const [open, setOpen] = useState(false);
   const node = useRef();
-  const { t, i18n } = useTranslation();
-
-  const changeLanguage = (event) => {
-    i18n.changeLanguage(event.target.value);
-  };
+  const { t } = useTranslation();
 
   return (
     <Wrapper>
@@ -45,7 +41,7 @@ function TopBar() {
                   </Li>
                   <Li>
                     <Link href="/sign-up" weight="bold">
-                      {t("sign up")}
+                      {t("sign in")}
                     </Link>
                   </Li>
                 </Ul>
@@ -53,7 +49,9 @@ function TopBar() {
             </Col>
             <Col>
               <div className="searchBar">
-                <FontAwesomeIcon icon={faSearch} className="searchIcon" />
+                <Link href="/search" weight="bold">
+                  <FontAwesomeIcon icon={faSearch} className="searchIcon" />
+                </Link>
                 <DropDown />
               </div>
             </Col>

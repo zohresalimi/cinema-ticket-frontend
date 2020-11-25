@@ -11,7 +11,7 @@ function Cards({ item }) {
     if (item.premiere > currentDate) {
       setIsShow(true);
     }
-  }, []);
+  }, [item.premiere]);
 
   return (
     <Card>

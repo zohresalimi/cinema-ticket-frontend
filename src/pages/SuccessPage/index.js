@@ -7,7 +7,7 @@ function SuccessPage() {
 
   useEffect(() => {
     dispatch({ type: RESET_STATE });
-  }, []);
+  });
   return (
     <div>
       You have sucessfully purchased a ticket, an email containing ticket info

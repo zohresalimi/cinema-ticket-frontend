@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {
   useContext,
   useState,
@@ -63,11 +64,7 @@ function ConfirmPage() {
   });
 
   const [
-    {
-      error: checkoutError,
-      response: checkoutResponse,
-      loading: checkoutInProgress,
-    },
+    { response: checkoutResponse, loading: checkoutInProgress },
     createCheckout,
   ] = useAxios("/api/v1/checkout/create", {
     manual: true,
