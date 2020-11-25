@@ -119,7 +119,7 @@ export const Breadcrumb = styled.h2`
     text-transform: capitalize;
     transition: all 0.4s ease;
     & :hover {
-      color: ${(props) => props.theme.colors.white};
+      color: ${(props) => props.theme.colors.black};
     }
   }
 `;

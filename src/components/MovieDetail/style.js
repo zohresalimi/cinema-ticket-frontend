@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   flex-direction: column;
+  background-color: ${(props) => props.theme.colors.black};
 `;
 
 export const FullImage = styled.div`

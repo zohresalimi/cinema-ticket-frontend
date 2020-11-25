@@ -92,51 +92,59 @@ function HomePage() {
     <>
       <TopBar />
       <FeaturedMovie />
-      <Container>
-        <Row>
-          <h2>{t("at the cinema now")}</h2>
-          <OwlCarousel className="owl-theme" {...options}>
-            {premiered &&
-              premiered.map((item) => {
-                return (
-                  <Link
-                    to={`premiered/movie-detail/${item._id}`}
-                    key={item._id}
-                  >
-                    <Cards item={item} />
-                  </Link>
-                );
-              })}
-          </OwlCarousel>
-        </Row>
+      <div className="black-bg">
+        <Container>
+          <Row>
+            <h2>{t("at the cinema now")}</h2>
+            <OwlCarousel className="owl-theme" {...options}>
+              {premiered &&
+                premiered.map((item) => {
+                  return (
+                    <Link
+                      to={`premiered/movie-detail/${item._id}`}
+                      key={item._id}
+                    >
+                      <Cards item={item} />
+                    </Link>
+                  );
+                })}
+            </OwlCarousel>
+          </Row>
 
-        <Row>
-          <h2>{t("upcoming movies")}</h2>
-          <OwlCarousel className="owl-theme" {...options}>
-            {upcoming &&
-              upcoming.map((item) => {
-                return (
-                  <Link to={`upcoming/movie-detail/${item._id}`} key={item._id}>
-                    <Cards item={item} />
-                  </Link>
-                );
-              })}
-          </OwlCarousel>
-        </Row>
-        <Row>
-          <h2>{t("children and family")}</h2>
-          <OwlCarousel className="owl-theme" {...options}>
-            {children &&
-              children.map((item) => {
-                return (
-                  <Link to={`children/movie-detail/${item._id}`} key={item._id}>
-                    <Cards item={item} />
-                  </Link>
-                );
-              })}
-          </OwlCarousel>
-        </Row>
-      </Container>
+          <Row>
+            <h2>{t("upcoming movies")}</h2>
+            <OwlCarousel className="owl-theme" {...options}>
+              {upcoming &&
+                upcoming.map((item) => {
+                  return (
+                    <Link
+                      to={`upcoming/movie-detail/${item._id}`}
+                      key={item._id}
+                    >
+                      <Cards item={item} />
+                    </Link>
+                  );
+                })}
+            </OwlCarousel>
+          </Row>
+          <Row>
+            <h2>{t("children and family")}</h2>
+            <OwlCarousel className="owl-theme" {...options}>
+              {children &&
+                children.map((item) => {
+                  return (
+                    <Link
+                      to={`children/movie-detail/${item._id}`}
+                      key={item._id}
+                    >
+                      <Cards item={item} />
+                    </Link>
+                  );
+                })}
+            </OwlCarousel>
+          </Row>
+        </Container>
+      </div>
     </>
   );
 }

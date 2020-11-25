@@ -9,9 +9,11 @@ const Wrapper = styled.div`
   margin-bottom: 20px;
   p {
     font-size: ${(props) => props.theme.fontSizes.small};
+    color: ${(props) => props.theme.colors.darkGray};
     text-align: center;
     span {
       font-size: ${(props) => props.theme.fontSizes.medium};
+      color: ${(props) => props.theme.colors.black};
       margin: 0 10px;
     }
   }
@@ -22,7 +24,7 @@ const Wrapper = styled.div`
 
     div[disabled] {
       pointer-events: none;
-      background-color: #252424;
+      background-color: #efefef;
     }
     .seat {
       width: 30px;
@@ -52,9 +54,10 @@ const Wrapper = styled.div`
       }
       &.selected {
         background-color: rgb(235 51 87);
+        border: 1px solid rgb(235 51 87);
       }
       &.reserved {
-        background-color: rgb(170, 255, 255);
+        background-color: rgb(255, 128, 128);
       }
     }
   }

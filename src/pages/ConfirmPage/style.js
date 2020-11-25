@@ -5,7 +5,7 @@ const Wrapper = styled.div`
   width: 100%;
   margin-top: 40px;
   font-size: ${(props) => props.theme.fontSizes.content};
-  color: ${(props) => props.theme.colors.textColor};
+  color: ${(props) => props.theme.colors.darkGray};
   margin-bottom: 20px;
   h4 {
     font-size: ${(props) => props.theme.fontSizes.medium};
@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   }
   .sub-title {
     font-size: ${(props) => props.theme.fontSizes.small};
-    color: ${(props) => props.theme.colors.gray};
+    color: ${(props) => props.theme.colors.red};
     margin: 0 10px;
   }
   .movie-info {
