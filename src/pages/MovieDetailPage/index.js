@@ -33,7 +33,7 @@ function MovieDetailPage(props) {
     dataRef.current
   );
 
-  const [{ response: showings }] = useAxios(
+  const [{ response: showings, loading: showingsInProgress }] = useAxios(
     `/api/v1/showings/by-movie-id/${currentMovie._id}`
   );
 
@@ -91,62 +91,57 @@ function MovieDetailPage(props) {
 
                   <p className="title">{t("original language")}</p>
                   <p>{currentMovie.originalTitle}</p>
-                  <h2 className="buyTicket">{t("book tickets")}</h2>
                   <div>
                     {cinemas &&
                       cinemas.data.map((item) => {
+                        if (!showings && showingsInProgress) {
+                          return <h2 className="buyTicket">Loading...</h2>;
+                        }
+                        const showingsByCinema = showingByCinemaId(item._id);
                         return (
-                          <div key={item._id}>
-                            <h2 className="cinema-name">{item.name}</h2>
-                            <ul className="showings-list">
-                              {showings &&
-                                showingByCinemaId(item._id).map((el) =>
-                                  el.capacity > 0 ? (
-                                    <li key={el._id}>
-                                      <Link
-                                        to={`../../../booking/${el._id}`}
-                                        state={{ category }}
-                                      >
-                                        <div className="showing-info">
-                                          <p className="time-slot">
-                                            <Moment
-                                              date={el.startTime}
-                                              format="hh:mm"
-                                            />
-                                          </p>
-                                          <p className="room-name">
-                                            {t(el.room.name)}
-                                          </p>
-                                          <p className="movie-subtitle">
-                                            {t("lang")}
-                                            {":"}
-                                            {t(currentMovie.originalTitle)}
-                                          </p>
-                                        </div>
-                                        <div className="buy-ticket">
-                                          <p>{t("buy ticket")}</p>
-                                        </div>
-                                      </Link>
-                                    </li>
-                                  ) : (
-                                    <li key={el._id}>
-                                      <p className="room-name">
-                                        <Moment
-                                          date={el.startTime}
-                                          format="hh:mm"
-                                        />
-                                      </p>
-                                      <p className="room-name">
-                                        {t(el.room.name)}
-                                      </p>
-                                      <p className="buy-ticket">
-                                        {t(currentMovie.originalTitle)}
-                                      </p>
-                                    </li>
+                          <>
+                            <h2 className="buyTicket">{t("book tickets")}</h2>
+                            <div key={item._id}>
+                              <h2 className="cinema-name">{item.name}</h2>
+                              <ul className="showings-list">
+                                {showingsByCinema.length ? (
+                                  showingsByCinema.map(
+                                    (el) =>
+                                      el.capacity > 0 && (
+                                        <li key={el._id}>
+                                          <Link
+                                            to={`../../../booking/${el._id}`}
+                                            state={{ category }}
+                                          >
+                                            <div className="showing-info">
+                                              <p className="time-slot">
+                                                <Moment
+                                                  date={el.startTime}
+                                                  format="hh:mm"
+                                                />
+                                              </p>
+                                              <p className="room-name">
+                                                {t(el.room.name)}
+                                              </p>
+                                              <p className="movie-subtitle">
+                                                {t("lang")}
+                                                {":"}
+                                                {t(currentMovie.originalTitle)}
+                                              </p>
+                                            </div>
+                                            <div className="buy-ticket">
+                                              <p>{t("buy ticket")}</p>
+                                            </div>
+                                          </Link>
+                                        </li>
+                                      )
                                   )
+                                ) : (
+                                  <div>No showings found :-(</div>
                                 )}
-                            </ul>
-                          </div>
+                              </ul>
+                            </div>
+                          </>
                         );
                       })}
                   </div>

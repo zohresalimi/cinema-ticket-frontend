@@ -95,7 +95,7 @@ function HomePage() {
       <div className="black-bg">
         <Container>
           <Row>
-            <h2>{t("at the cinema now")}</h2>
+            <h2 className="movie-title">{t("at the cinema now")}</h2>
             <OwlCarousel className="owl-theme" {...options}>
               {premiered &&
                 premiered.map((item) => {
@@ -112,7 +112,7 @@ function HomePage() {
           </Row>
 
           <Row>
-            <h2>{t("upcoming movies")}</h2>
+            <h2 className="movie-title">{t("upcoming movies")}</h2>
             <OwlCarousel className="owl-theme" {...options}>
               {upcoming &&
                 upcoming.map((item) => {
@@ -128,7 +128,7 @@ function HomePage() {
             </OwlCarousel>
           </Row>
           <Row>
-            <h2>{t("children and family")}</h2>
+            <h2 className="movie-title">{t("children and family")}</h2>
             <OwlCarousel className="owl-theme" {...options}>
               {children &&
                 children.map((item) => {

@@ -1,27 +1,61 @@
 import styled from "styled-components";
 
-export const Div = styled.div`
-  flex-direction: row;
-  justify-content: inherit;
-  align-items: center;
-  display: flex;
-  height: 100%;
-`;
-
-export const TopMenuContainer = styled.div`
+export const Wrapper = styled.div`
   font-family: ${(props) => props.theme.fontFamily.sf};
   display: flex;
   align-items: center;
   width: 100%;
-  height: 4rem;
-  background-color: ${(props) => props.theme.colors.red};
-  color: ${(props) => props.theme.colors.white};
-  .searchBar {
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
+  color: ${(props) => props.theme.colors.black};
+  .spiner-wraper {
+    width: 100%;
     display: flex;
-    .searchIcon {
+    justify-content: center;
+    color: ${(props) => props.theme.colors.red};
+    .spiner {
+      font-size: 30px;
+      margin: 30px 0;
+    }
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0;
+    width: 100%;
+    .no-result-message {
+      text-align: center;
+      width: 100%;
+    }
+    li {
+      width: 100%;
+      border-bottom: 1px solid #ccc;
+      a {
+        color: ${(props) => props.theme.colors.black};
+        display: flex;
+        flex-direction: row;
+        text-decoration: none;
+        text-transform: capitalize;
+        position: relative;
+        padding-right: 10px;
+        .image-wrapper {
+          width: 80px;
+          margin-right: 20px;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+        .right-side {
+          position: absolute;
+          right: 10px;
+          top: 40%;
+        }
+        &:hover {
+          background-color: ${(props) => props.theme.colors.lightGray};
+        }
+      }
     }
   }
 `;
@@ -30,28 +64,22 @@ export const SearchInput = styled.div`
   width: 100%;
   display: flex;
   position: relative;
-  margin-top: 20px;
+  margin: 20px 0;
   svg{
-      position: absolute;
-      top: 34%;
+    position: absolute;
+    top: 34%;
     left: 13px;
-    &.spiner{
-      position: absolute;
-      top: 34%;
-    left: auto;
-    right: 50px;
-  }
+    color: ${(props) => props.theme.colors.black};
   }
 
   input {
     width: 95%;
     border-radius: 1.5rem;
     padding: 10px;
-    background-color: ${(props) => props.theme.colors.black};
-    border: 1px solid #fff;
+    border: 1px solid #000;
     font-family: ${(props) => props.theme.fontFamily.sf};
     font-size: ${(props) => props.theme.fontSizes.content};
-    color: ${(props) => props.theme.colors.white};
+    color: ${(props) => props.theme.colors.black};
     text-indent: 40px;
     ::-webkit-input-placeholder {
       color: color: ${(props) => props.theme.colors.lightGray};

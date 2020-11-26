@@ -7,6 +7,7 @@ const state = {
     children: [],
     premiered: [],
     upcoming: [],
+    allMovies: {},
   },
   cinemas: [],
   ticket: {

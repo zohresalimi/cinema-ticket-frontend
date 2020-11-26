@@ -89,5 +89,6 @@ export const MovieTitle = styled.h1`
   font-size: ${(props) => props.theme.fontSizes.large};
   color: ${(props) => props.theme.colors.white};
   line-height: 3.5rem;
+  text-transform: capitalize;
   margin: 20px auto;
 `;

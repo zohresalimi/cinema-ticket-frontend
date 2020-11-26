@@ -9,6 +9,10 @@ ul {
   display: flex;
 }
 
+.movie-title {
+  color: #fff;
+  text-transform: capitalize;
+}
 .player-wrapper {
   z-index: 9;
   background-color: rgba(0, 0, 0, 0.6);
@@ -45,7 +49,8 @@ ul {
   top: 40%;
   margin-left: -45px !important;
   display: block !important;
-  border: 0px solid black;
+  border: 0px solid #fff;
+  color: #fff !important;
 }
 
 .owl-next {
@@ -56,7 +61,8 @@ ul {
   top: 40%;
   right: -40px;
   display: block !important;
-  border: 0px solid black;
+  border: 0px solid #fff;
+  color: #fff !important;
 }
 
 .m05 {

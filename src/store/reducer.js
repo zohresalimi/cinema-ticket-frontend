@@ -91,32 +91,70 @@ const setQuantityAndCapacity = (state, data) => {
   };
 };
 
+const setPremieredCategory = (state, list) => {
+  const movieByCategory = list.reduce(
+    (tempMap, movie) => ({ ...tempMap, [movie._id]: "premiered" }),
+    {}
+  );
+
+  return {
+    ...state,
+    movies: {
+      ...state.movies,
+      premiered: list,
+      allMovies: {
+        ...state.movies.allMovies,
+        ...movieByCategory,
+      },
+    },
+  };
+};
+
+const setUpcomingCategory = (state, list) => {
+  const movieByCategory = list.reduce(
+    (tempMap, movie) => ({ ...tempMap, [movie._id]: "upcoming" }),
+    {}
+  );
+
+  return {
+    ...state,
+    movies: {
+      ...state.movies,
+      upcoming: list,
+      allMovies: {
+        ...state.movies.allMovies,
+        ...movieByCategory,
+      },
+    },
+  };
+};
+const setChildrenCategory = (state, list) => {
+  const movieByCategory = list.reduce(
+    (tempMap, movie) => ({ ...tempMap, [movie._id]: "children" }),
+    {}
+  );
+
+  return {
+    ...state,
+    movies: {
+      ...state.movies,
+      children: list,
+      allMovies: {
+        ...state.movies.allMovies,
+        ...movieByCategory,
+      },
+    },
+  };
+};
+
 const reducer = (state, action) => {
   switch (action.type) {
     case SET_PREMIERED_MOVIE_REDUCER:
-      return {
-        ...state,
-        movies: {
-          ...state.movies,
-          premiered: action.data,
-        },
-      };
+      return setPremieredCategory(state, action.data);
     case SET_UPCOMING_MOVIE_REDUCER:
-      return {
-        ...state,
-        movies: {
-          ...state.movies,
-          upcoming: action.data,
-        },
-      };
+      return setUpcomingCategory(state, action.data);
     case SET_CHILDREN_MOVIE_REDUCER:
-      return {
-        ...state,
-        movies: {
-          ...state.movies,
-          children: action.data,
-        },
-      };
+      return setChildrenCategory(state, action.data);
     case SET_SELECTED_MOVIE_REDUCER:
       return {
         ...state,
