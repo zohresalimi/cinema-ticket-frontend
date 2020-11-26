@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  useContext,
-  useCallback,
-} from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { Link } from "@reach/router";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -20,7 +14,6 @@ function SearchPage() {
   const { state } = useContext(AppContext);
   const { allMovies } = state.movies;
   const [input, setInput] = useState({ value: "" });
-  const [category, setCategory] = useState("");
   const refInput = useRef();
 
   const handleChange = (e) => {
@@ -29,7 +22,7 @@ function SearchPage() {
   };
 
   const [
-    { error, response: searchResponse, loading: searchLoading },
+    { response: searchResponse, loading: searchLoading },
     searchResult,
   ] = useAxios("/api/v1/movies/search", {
     manual: true,
@@ -38,31 +31,11 @@ function SearchPage() {
     },
   });
 
-  const [
-    { error: getMovieErr, response: getMovieRes, loading: mLoading },
-    getMovieById,
-  ] = useAxios("/api/v1/movies", {
-    manual: true,
-  });
-
   useEffect(() => {
     if (input.value) {
       searchResult();
     }
   }, [input.value]);
-
-  const goToMovieDetail = useCallback(
-    (movieId) => {
-      if (searchResponse && searchResponse.response) {
-        if (allMovies[movieId]) {
-          setCategory(allMovies[movieId]);
-        } else {
-          setCategory("search");
-        }
-      }
-    },
-    [allMovies, getMovieById, searchResponse]
-  );
 
   return (
     <div>

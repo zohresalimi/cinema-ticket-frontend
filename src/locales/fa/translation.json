@@ -46,5 +46,6 @@
   "an email containing ticket info was just sent to the email address provided during purchase.":"ایمیلی حاوی اطلاعات بلیط برای شما ارسال شده است.",
   "your payment was canceled. Please try again":"پرداخت شما با خظا روبرو شده است.",
   "create account": "ساخت حساب کاربری",
-  "email:":"ایمیل"
+  "email:":"ایمیل",
+  "no showings found": "سانسی برای این فیلم موجود نیست"
 }

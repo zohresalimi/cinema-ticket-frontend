@@ -70,7 +70,6 @@ function HomePage() {
 
   const options = {
     loop: false,
-    lazyLoad: true,
     margin: 20,
     nav: true,
     responsive: {

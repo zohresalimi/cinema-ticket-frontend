@@ -46,7 +46,7 @@ function ConfirmPage() {
   const [
     { error: ticketError, response: ticketResponse, loading: ticketLoading },
     createTicket,
-  ] = useAxios("/api/v1/ticket", {
+  ] = useAxios("/api/v1/tickets", {
     manual: true,
     data: {
       email,

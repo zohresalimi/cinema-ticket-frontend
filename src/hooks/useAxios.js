@@ -8,12 +8,12 @@ const actions = {
   REQUEST_END: "REQUEST_END",
 };
 
-async function fetchData({ path, ...config }, dispatch) {
+async function fetchData(config, dispatch) {
   try {
     dispatch({ type: actions.REQUEST_START });
     const result = await axios({
       ...config,
-      url: `${baseUrl}${path}`,
+      url: `${baseUrl}${config.path}`,
       paramsSerializer: (params) => {
         return qs.stringify(params);
       },

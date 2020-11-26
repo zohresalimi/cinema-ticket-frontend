@@ -43,5 +43,6 @@
     "lang": "tal",
     "You have successfully purchased a ticket":"Du har köpt en biljett",
     "an email containing ticket info was just sent to the email address provided during purchase.":"ett e-postmeddelande med biljettinformation skickades precis till den e-postadress som du angav under köpet.",
-    "Your payment was canceled. Please try again":"Din betalning avbröts. Var god försök igen"
+    "Your payment was canceled. Please try again":"Din betalning avbröts. Var god försök igen",
+    "no showings found": "Inga visningar hittadess"
 }

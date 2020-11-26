@@ -20,6 +20,7 @@
     "qs": "^6.9.4",
     "react": "^17.0.1",
     "react-app-rewired": "^2.1.6",
+    "react-content-loader": "^5.1.4",
     "react-dom": "^17.0.1",
     "react-i18next": "^11.7.3",
     "react-moment": "^1.0.0",
