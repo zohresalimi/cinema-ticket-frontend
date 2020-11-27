@@ -6,13 +6,14 @@ import React, { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
-import { SUPPORTED_LOCALES } from "../../i18n";
+import { SUPPORTED_LOCALES } from "../../constants";
 import { Wrapper, MenuLabel, ItemList, Button, CaratContainer } from "./style";
 
 function DropDown() {
   const [isOpened, setIsOpened] = useState(false);
-  const { i18n } = useTranslation();
+  const [_, i18n] = useTranslation();
   const [selectedOption, setSelectedOption] = useState(() => i18n.language);
+  console.log("incoming language: ........", _, i18n);
   const [label, setLabel] = useState(
     () => SUPPORTED_LOCALES.find((locale) => locale.code === i18n.language).name
   );
@@ -50,7 +51,10 @@ function DropDown() {
   };
   return (
     <Wrapper ref={dropdownRef}>
-      <Button onClick={() => setIsOpened(!isOpened)}>
+      <Button
+        data-testid="toogle-dropdown"
+        onClick={() => setIsOpened(!isOpened)}
+      >
         <p>{selectedOption ? label : "svenska"}</p>
         <CaratContainer isOpen={isOpened}>
           <FontAwesomeIcon icon={faAngleUp} />

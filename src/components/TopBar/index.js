@@ -8,9 +8,9 @@ import { Wrapper, TopMenuContainer, Link, Logo, Ul, Li, Div } from "./style";
 import { Container, Row, Col } from "../../Styles/StyleComponents";
 
 function TopBar() {
-  const [open, setOpen] = useState(false);
+  const [isMenuOpen, setMenuState] = useState(false);
   const node = useRef();
-  const { t } = useTranslation();
+  const [t] = useTranslation();
 
   return (
     <Wrapper>
@@ -20,7 +20,10 @@ function TopBar() {
             <Col>
               <Div>
                 <div ref={node}>
-                  <HamburgerMenu open={open} setOpen={setOpen} />
+                  <HamburgerMenu
+                    isOpen={isMenuOpen}
+                    toggleMenu={setMenuState}
+                  />
                 </div>
                 <Link href="/">
                   <Logo
@@ -30,13 +33,8 @@ function TopBar() {
                 </Link>
                 <Ul>
                   <Li>
-                    <Link href="/" weight="bold">
+                    <Link href="/" data-testid="home-item" weight="bold">
                       {t("home")}
-                    </Link>
-                  </Li>
-                  <Li>
-                    <Link href="/" weight="bold">
-                      {t("movies")}
                     </Link>
                   </Li>
                   <Li>
@@ -49,7 +47,7 @@ function TopBar() {
             </Col>
             <Col>
               <div className="searchBar">
-                <Link href="/search" weight="bold">
+                <Link href="/search" weight="bold" data-testid="serach-icon">
                   <FontAwesomeIcon icon={faSearch} className="searchIcon" />
                 </Link>
                 <DropDown />

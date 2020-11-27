@@ -8,16 +8,17 @@ import PlayButton from "../PlayButton";
 import Modal from "../Modal";
 import { Container, Row, Button } from "../../Styles/StyleComponents";
 
-function FeaturedMovie({ movie, onBookingClick }) {
+function MovieDetail({ movie, onBookingClick }) {
   const [playVideo, setPlayVideo] = useState(false);
   const [t] = useTranslation();
 
   return (
-    <Wrapper>
+    <Wrapper data-testid="wrapper">
       <FullImage>
         {!movie ? (
           <ContentLoader
             speed={2}
+            uniqueKey="movie-detail-loader"
             width={1500}
             height={600}
             viewBox="0 0 1500 600"
@@ -36,7 +37,7 @@ function FeaturedMovie({ movie, onBookingClick }) {
             <Image alt="" src={movie.largeImage} />
             <ShadowBg />
             {playVideo && (
-              <Modal setPlayVideo={setPlayVideo}>
+              <Modal closeModal={() => setPlayVideo(false)}>
                 <div className="player-wrapper">
                   <ReactPlayer
                     className="react-player"
@@ -69,7 +70,7 @@ function FeaturedMovie({ movie, onBookingClick }) {
               </div>
               <div className="movie-detail">
                 <MovieTitle>{movie.name}</MovieTitle>
-                <p>{t(movie.genre)}</p>
+                <p>{movie.genre.map((g) => t(g)).join(", ")}</p>
                 <div className="movie-duration">
                   <p>
                     {movie.duration.split(":")[0]}
@@ -85,7 +86,9 @@ function FeaturedMovie({ movie, onBookingClick }) {
                 </div>
 
                 <div className="btn-wrapper">
-                  <Button onClick={onBookingClick}>{t("buy ticket")}</Button>
+                  <Button onClick={onBookingClick} data-testid="booking-scroll">
+                    {t("buy ticket")}
+                  </Button>
                 </div>
               </div>
             </Info>
@@ -96,4 +99,4 @@ function FeaturedMovie({ movie, onBookingClick }) {
   );
 }
 
-export default FeaturedMovie;
+export default MovieDetail;

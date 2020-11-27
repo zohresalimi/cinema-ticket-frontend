@@ -1,0 +1,411 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieDetail Component Testing page should be scrolled 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div
+    class="style__Wrapper-ib79g7-0 gmtqRu"
+    data-testid="wrapper"
+  >
+    <div
+      class="style__FullImage-ib79g7-1 hfTzCG"
+    >
+      <img
+        alt=""
+        class="style__Image-ib79g7-2 dpvpLG"
+        src="https://catalog.cinema-api.com/cf/images/ncg-images/79276cead82341d2a004f8e8f99a88e9.jpg?width=1920&version=08F0C83177D59FB94C4C809F63F67E2A&format=webp"
+      />
+      <div
+        class="style__ShadowBg-ib79g7-3 cZHGqf"
+      />
+      <div
+        class="style__Div-y1of7i-0 kOhgOG"
+        data-testid="play-btn"
+      >
+        <div
+          class="style__RoundBut-y1of7i-2 iqNHdy"
+        >
+          <a
+            class="style__PlayBtn-y1of7i-1 BDDhv"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-play fa-w-14 "
+              data-icon="play"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyleComponents__Container-sc-11erdxt-0 fFgwWO"
+    >
+      <div
+        class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+      >
+        <div
+          class="style__Info-ib79g7-4 cKfTaF"
+        >
+          <div
+            class="movie-poster"
+          >
+            <img
+              alt=""
+              src="https://catalog.cinema-api.com/cf/images/ncg-images/68bfeef55ada4e7ab0606db2af0f40ad.jpg?width=240&version=EA2E80EE161E5DA161C6E26487054C9F&format=webp"
+            />
+          </div>
+          <div
+            class="movie-detail"
+          >
+            <h2
+              class="style__MovieTitle-ib79g7-5 lbHZIs"
+            >
+              follow me
+            </h2>
+            <p>
+              family, children
+            </p>
+            <div
+              class="movie-duration"
+            >
+              <p>
+                1
+                <span>
+                  hour
+                </span>
+                31
+                <span>
+                  min
+                </span>
+              </p>
+              <span>
+                |
+              </span>
+              <p>
+                7
+                year
+              </p>
+            </div>
+            <div
+              class="btn-wrapper"
+            >
+              <button
+                class="StyleComponents__Button-sc-11erdxt-3 kZtNg"
+                data-testid="booking-scroll"
+              >
+                buy ticket
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MovieDetail Component Testing should play video 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div
+    class="style__Wrapper-ib79g7-0 gmtqRu"
+    data-testid="wrapper"
+  >
+    <div
+      class="style__FullImage-ib79g7-1 hfTzCG"
+    >
+      <img
+        alt=""
+        class="style__Image-ib79g7-2 dpvpLG"
+        src="https://catalog.cinema-api.com/cf/images/ncg-images/79276cead82341d2a004f8e8f99a88e9.jpg?width=1920&version=08F0C83177D59FB94C4C809F63F67E2A&format=webp"
+      />
+      <div
+        class="style__ShadowBg-ib79g7-3 cZHGqf"
+      />
+      <div
+        class="full-page"
+      >
+        <div
+          class="video-wrapper"
+        >
+          <div
+            class="close-btn"
+            data-testid="close-btn"
+            role="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-times-circle fa-w-16 "
+              data-icon="times-circle"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+          <div
+            class="player-wrapper"
+          >
+            <div
+              class="react-player"
+              style="width: 100%; height: 100%;"
+            >
+              <div
+                style="width: 100%; height: 100%;"
+              >
+                <div />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="style__Div-y1of7i-0 kOhgOG"
+        data-testid="play-btn"
+      >
+        <div
+          class="style__RoundBut-y1of7i-2 iqNHdy"
+        >
+          <a
+            class="style__PlayBtn-y1of7i-1 BDDhv"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-play fa-w-14 "
+              data-icon="play"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyleComponents__Container-sc-11erdxt-0 fFgwWO"
+    >
+      <div
+        class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+      >
+        <div
+          class="style__Info-ib79g7-4 cKfTaF"
+        >
+          <div
+            class="movie-poster"
+          >
+            <img
+              alt=""
+              src="https://catalog.cinema-api.com/cf/images/ncg-images/68bfeef55ada4e7ab0606db2af0f40ad.jpg?width=240&version=EA2E80EE161E5DA161C6E26487054C9F&format=webp"
+            />
+          </div>
+          <div
+            class="movie-detail"
+          >
+            <h2
+              class="style__MovieTitle-ib79g7-5 lbHZIs"
+            >
+              follow me
+            </h2>
+            <p>
+              family, children
+            </p>
+            <div
+              class="movie-duration"
+            >
+              <p>
+                1
+                <span>
+                  hour
+                </span>
+                31
+                <span>
+                  min
+                </span>
+              </p>
+              <span>
+                |
+              </span>
+              <p>
+                7
+                year
+              </p>
+            </div>
+            <div
+              class="btn-wrapper"
+            >
+              <button
+                class="StyleComponents__Button-sc-11erdxt-3 kZtNg"
+                data-testid="booking-scroll"
+              >
+                buy ticket
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MovieDetail Component Testing take snapshot 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div
+    class="style__Wrapper-ib79g7-0 gmtqRu"
+    data-testid="wrapper"
+  >
+    <div
+      class="style__FullImage-ib79g7-1 hfTzCG"
+    >
+      <svg
+        aria-labelledby="movie-detail-loader-aria"
+        height="600"
+        role="img"
+        viewBox="0 0 1500 600"
+        width="1500"
+      >
+        <title
+          id="movie-detail-loader-aria"
+        >
+          Loading...
+        </title>
+        <rect
+          clip-path="url(#movie-detail-loader-diff)"
+          height="100%"
+          role="presentation"
+          style="fill: url(#movie-detail-loader-animated-diff);"
+          width="100%"
+          x="0"
+          y="0"
+        />
+        <defs
+          role="presentation"
+        >
+          <clippath
+            id="movie-detail-loader-diff"
+          >
+            <rect
+              height="9"
+              rx="3"
+              ry="3"
+              width="131"
+              x="504"
+              y="429"
+            />
+            <rect
+              height="9"
+              rx="3"
+              ry="3"
+              width="258"
+              x="503"
+              y="451"
+            />
+            <rect
+              height="12"
+              rx="3"
+              ry="3"
+              width="170"
+              x="503"
+              y="484"
+            />
+            <circle
+              cx="685"
+              cy="118"
+              r="59"
+            />
+            <rect
+              height="278"
+              rx="0"
+              ry="0"
+              width="194"
+              x="273"
+              y="285"
+            />
+            <rect
+              height="48"
+              rx="0"
+              ry="0"
+              width="104"
+              x="503"
+              y="514"
+            />
+          </clippath>
+          <lineargradient
+            id="movie-detail-loader-animated-diff"
+          >
+            <stop
+              offset="0%"
+              stop-color="#262626"
+              stop-opacity="1"
+            >
+              <animate
+                attributeName="offset"
+                dur="2s"
+                keyTimes="0; 0.25; 1"
+                repeatCount="indefinite"
+                values="-2; -2; 1"
+              />
+            </stop>
+            <stop
+              offset="50%"
+              stop-color="#575757"
+              stop-opacity="1"
+            >
+              <animate
+                attributeName="offset"
+                dur="2s"
+                keyTimes="0; 0.25; 1"
+                repeatCount="indefinite"
+                values="-1; -1; 2"
+              />
+            </stop>
+            <stop
+              offset="100%"
+              stop-color="#262626"
+              stop-opacity="1"
+            >
+              <animate
+                attributeName="offset"
+                dur="2s"
+                keyTimes="0; 0.25; 1"
+                repeatCount="indefinite"
+                values="0; 0; 3"
+              />
+            </stop>
+          </lineargradient>
+        </defs>
+      </svg>
+    </div>
+  </div>
+</div>
+`;

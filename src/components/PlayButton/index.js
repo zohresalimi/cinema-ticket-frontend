@@ -5,7 +5,7 @@ import { PlayBtn, Div, RoundBut } from "./style";
 
 function PlayButton({ setPlayVideo }) {
   return (
-    <Div onClick={() => setPlayVideo(true)}>
+    <Div onClick={() => setPlayVideo(true)} data-testid="play-btn">
       <RoundBut>
         <PlayBtn>
           <FontAwesomeIcon icon={faPlay} />

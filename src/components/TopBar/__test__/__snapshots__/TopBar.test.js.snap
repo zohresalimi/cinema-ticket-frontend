@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopBar Component Testing take snapshot 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div
+    class="style__Wrapper-sc-1ttkx56-2 giMqPh"
+  >
+    <div
+      class="style__TopMenuContainer-sc-1ttkx56-1 gJqFou"
+    >
+      <div
+        class="StyleComponents__Container-sc-11erdxt-0 fFgwWO"
+      >
+        <div
+          class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+        >
+          <div
+            class="StyleComponents__Col-sc-11erdxt-2 dgPBuy"
+          >
+            <div
+              class="style__Div-sc-1ttkx56-0 gFytCZ"
+            >
+              <div>
+                <button
+                  class="HamburgerMenu__StyledBurger-pqm95a-0 fuWDqq"
+                  data-testid="burger-wrapper"
+                >
+                  <div />
+                  <div />
+                  <div />
+                </button>
+                <nav
+                  class="HamburgerMenu__StyledMenu-pqm95a-1 dMjmXU"
+                >
+                  <a
+                    href="/"
+                  >
+                    hem
+                  </a>
+                  <a
+                    href="/"
+                  >
+                    filmer
+                  </a>
+                  <a
+                    href="/sign-up"
+                  >
+                    bli medlem
+                  </a>
+                </nav>
+              </div>
+              <a
+                class="style__Link-sc-1ttkx56-3 jcTWMg"
+                href="/"
+              >
+                <img
+                  alt=""
+                  class="style__Logo-sc-1ttkx56-4 gqkUiH"
+                  src="https://www.filmstaden.se/contentassets/abcfcecd76ac47a18718257ddc52e804/filmstadenloggo100ar.png"
+                />
+              </a>
+              <ul
+                class="style__Ul-sc-1ttkx56-5 hSnmco"
+              >
+                <li
+                  class="style__Li-sc-1ttkx56-6 fMDjQV"
+                >
+                  <a
+                    class="style__Link-sc-1ttkx56-3 dEHYxV"
+                    data-testid="home-item"
+                    href="/"
+                  >
+                    hem
+                  </a>
+                </li>
+                <li
+                  class="style__Li-sc-1ttkx56-6 fMDjQV"
+                >
+                  <a
+                    class="style__Link-sc-1ttkx56-3 dEHYxV"
+                    href="/sign-up"
+                  >
+                    logga in
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="StyleComponents__Col-sc-11erdxt-2 dgPBuy"
+          >
+            <div
+              class="searchBar"
+            >
+              <a
+                class="style__Link-sc-1ttkx56-3 dEHYxV"
+                data-testid="serach-icon"
+                href="/search"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="svg-inline--fa fa-search fa-w-16 searchIcon"
+                  data-icon="search"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+              <div
+                class="style__Wrapper-sc-13kue4j-0 bvCERe"
+              >
+                <button
+                  class="style__Button-sc-13kue4j-3 dizWDM"
+                  data-testid="toogle-dropdown"
+                >
+                  <p>
+                    Svenska
+                  </p>
+                  <div
+                    class="style__CaratContainer-sc-13kue4j-4 ljQyWE"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="svg-inline--fa fa-angle-up fa-w-10 "
+                      data-icon="angle-up"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      viewBox="0 0 320 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </div>
+                </button>
+                <ul
+                  class="style__MenuLabel-sc-13kue4j-1 erqbDH"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

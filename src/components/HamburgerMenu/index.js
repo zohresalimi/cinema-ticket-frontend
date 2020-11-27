@@ -6,7 +6,7 @@ const StyledBurger = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: ${({ open }) => (open ? "2rem" : "1.5rem")};
+  height: ${({ isOpen }) => (isOpen ? "2rem" : "1.5rem")};
   width: 2rem;
   background: transparent;
   border: none;
@@ -21,25 +21,26 @@ const StyledBurger = styled.button`
   }
 
   div {
-    width: ${({ open }) => (open ? "2rem" : "1.5rem")};
+    width: ${({ isOpen }) => (isOpen ? "2rem" : "1.5rem")};
     height: 0.2rem;
-    background: ${({ open }) => (open ? "#0D0C1D" : "#FFF")};
+    background: ${({ isOpen }) => (isOpen ? "#0D0C1D" : "#FFF")};
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
 
     :first-child {
-      transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
+      transform: ${({ isOpen }) => (isOpen ? "rotate(45deg)" : "rotate(0)")};
     }
 
     :nth-child(2) {
-      opacity: ${({ open }) => (open ? "0" : "1")};
-      transform: ${({ open }) => (open ? "translateX(20px)" : "translateX(0)")};
+      opacity: ${({ isOpen }) => (isOpen ? "0" : "1")};
+      transform: ${({ isOpen }) =>
+        isOpen ? "translateX(20px)" : "translateX(0)"};
     }
 
     :nth-child(3) {
-      transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
+      transform: ${({ isOpen }) => (isOpen ? "rotate(-45deg)" : "rotate(0)")};
     }
   }
 
@@ -53,7 +54,8 @@ const StyledMenu = styled.nav`
   flex-direction: column;
   justify-content: center;
   background: ${(props) => props.theme.colors.white};
-  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
+  transform: ${({ isOpen }) =>
+    isOpen ? "translateX(0)" : "translateX(-100%)"};
   height: 100vh;
   text-align: left;
   position: fixed;
@@ -86,13 +88,22 @@ const StyledMenu = styled.nav`
     }
   }
 `;
-function HamburgerMenu({ open, setOpen }) {
-  const { t } = useTranslation();
+
+function HamburgerMenu({ isOpen, toggleMenu }) {
+  const [t] = useTranslation();
 
   return (
     <>
-      <Burger open={open} setOpen={setOpen} />
-      <StyledMenu open={open}>
+      <StyledBurger
+        data-testid="burger-wrapper"
+        isOpen={isOpen}
+        onClick={() => toggleMenu(!isOpen)}
+      >
+        <div />
+        <div />
+        <div />
+      </StyledBurger>
+      <StyledMenu className={isOpen ? "opened" : ""} isOpen={isOpen}>
         <a href="/">{t("home")}</a>
         <a href="/">{t("movies")}</a>
         <a href="/sign-up">{t("sign up")}</a>
@@ -102,13 +113,3 @@ function HamburgerMenu({ open, setOpen }) {
 }
 
 export default HamburgerMenu;
-
-const Burger = ({ open, setOpen }) => {
-  return (
-    <StyledBurger open={open} onClick={() => setOpen(!open)}>
-      <div />
-      <div />
-      <div />
-    </StyledBurger>
-  );
-};

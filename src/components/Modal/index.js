@@ -6,14 +6,15 @@ import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 // styled
 import "./style.css";
 
-function Modal({ children, setPlayVideo }) {
+function Modal({ children, closeModal }) {
   return (
     <div className="full-page">
       <div className="video-wrapper">
         <div
           className="close-btn"
           role="button"
-          onClick={() => setPlayVideo(false)}
+          data-testid="close-btn"
+          onClick={closeModal}
         >
           <FontAwesomeIcon icon={faTimesCircle} />
         </div>

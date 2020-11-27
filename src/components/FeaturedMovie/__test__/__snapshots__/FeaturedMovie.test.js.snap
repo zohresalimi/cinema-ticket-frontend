@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeaturedMovie Component Testing should play video 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div
+    class="style__Wrapper-sc-16suol2-1 iJZZcf"
+  >
+    <div
+      class="style__FullImage-sc-16suol2-2 ezesCl"
+    >
+      <img
+        alt=""
+        class="style__Image-sc-16suol2-4 krudRE"
+      />
+      <div
+        class="style__ShadowBg-sc-16suol2-5 lmCCjh"
+      />
+      <div
+        class="full-page"
+      >
+        <div
+          class="video-wrapper"
+        >
+          <div
+            class="close-btn"
+            data-testid="close-btn"
+            role="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-times-circle fa-w-16 "
+              data-icon="times-circle"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+          <div
+            class="player-wrapper"
+          >
+            <div
+              class="react-player"
+              style="width: 100%; height: 100%;"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="style__Div-y1of7i-0 kOhgOG"
+        data-testid="play-btn"
+      >
+        <div
+          class="style__RoundBut-y1of7i-2 iqNHdy"
+        >
+          <a
+            class="style__PlayBtn-y1of7i-1 BDDhv"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-play fa-w-14 "
+              data-icon="play"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div
+        class="style__Info-sc-16suol2-6 kmYNvI"
+      >
+        <span
+          class="style__Tag-sc-16suol2-7 feJZOr"
+        >
+          at the cinema now
+        </span>
+        <h1
+          class="style__MovieTitle-sc-16suol2-8 fAYStm"
+        >
+          <p />
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FeaturedMovie Component Testing take snapshot 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div
+    class="style__Wrapper-sc-16suol2-1 iJZZcf"
+  >
+    <div
+      class="style__FullImage-sc-16suol2-2 ezesCl"
+    >
+      <img
+        alt=""
+        class="style__Image-sc-16suol2-4 krudRE"
+        src="https://catalog.cinema-api.com/cf/images/ncg-images/79276cead82341d2a004f8e8f99a88e9.jpg?width=1920&version=08F0C83177D59FB94C4C809F63F67E2A&format=webp"
+      />
+      <div
+        class="style__ShadowBg-sc-16suol2-5 lmCCjh"
+      />
+      <div
+        class="style__Div-y1of7i-0 kOhgOG"
+        data-testid="play-btn"
+      >
+        <div
+          class="style__RoundBut-y1of7i-2 iqNHdy"
+        >
+          <a
+            class="style__PlayBtn-y1of7i-1 BDDhv"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-play fa-w-14 "
+              data-icon="play"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div
+        class="style__Info-sc-16suol2-6 kmYNvI"
+      >
+        <span
+          class="style__Tag-sc-16suol2-7 feJZOr"
+        >
+          at the cinema now
+        </span>
+        <h1
+          class="style__MovieTitle-sc-16suol2-8 fAYStm"
+        >
+          <p>
+            follow me
+          </p>
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+`;

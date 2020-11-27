@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hamburger Menu Component Testing take snapshot 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <button
+    class="HamburgerMenu__StyledBurger-pqm95a-0 fuWDqq"
+    data-testid="burger-wrapper"
+  >
+    <div />
+    <div />
+    <div />
+  </button>
+  <nav
+    class="HamburgerMenu__StyledMenu-pqm95a-1 dMjmXU"
+  >
+    <a
+      href="/"
+    >
+      home
+    </a>
+    <a
+      href="/"
+    >
+      movies
+    </a>
+    <a
+      href="/sign-up"
+    >
+      sign up
+    </a>
+  </nav>
+</div>
+`;

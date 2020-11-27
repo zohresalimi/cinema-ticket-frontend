@@ -12,3 +12,14 @@ export const SET_SELECTED_SEAT = "setSelectedSeat";
 export const RESET_STATE = "resetState";
 
 export const CHILDREN_GENRE = ["family"];
+
+export const SUPPORTED_LOCALES = [
+  {
+    code: "fa",
+    name: "فارسی",
+  },
+  {
+    code: "sv",
+    name: "Svenska",
+  },
+];
