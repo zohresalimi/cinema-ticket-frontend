@@ -1,8 +1,18 @@
 import React from "react";
-import { render, act, fireEvent } from "@testing-library/react";
+import { render, act } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
 import TopBar from "../";
+
+jest.mock("react-i18next", () => ({
+  useTranslation: () => ({
+    t: (k) => k,
+    i18n: {
+      language: "sv",
+      changeLanguage: () => new Promise(() => {}),
+    },
+  }),
+}));
 
 import { WithProvider } from "../../../mockTestData/data";
 

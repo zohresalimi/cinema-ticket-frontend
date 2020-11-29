@@ -10,7 +10,7 @@ import { Container, Row, Col } from "../../Styles/StyleComponents";
 function TopBar() {
   const [isMenuOpen, setMenuState] = useState(false);
   const node = useRef();
-  const [t] = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <Wrapper>

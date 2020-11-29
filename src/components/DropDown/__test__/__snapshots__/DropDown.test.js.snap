@@ -1,5 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`DropDown Component Testing dropdown should be opened 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div
+    class="style__Wrapper-sc-13kue4j-0 bvCERe"
+  >
+    <button
+      class="style__Button-sc-13kue4j-3 dizWDM"
+      data-testid="toggle-dropdown"
+    >
+      <p>
+        Svenska
+      </p>
+      <div
+        class="style__CaratContainer-sc-13kue4j-4 cpmmUF"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-angle-up fa-w-10 "
+          data-icon="angle-up"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 320 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+    </button>
+    <ul
+      class="style__MenuLabel-sc-13kue4j-1 erqbDH"
+    >
+      <li
+        class="style__ItemList-sc-13kue4j-2 bVTfja"
+      >
+        فارسی
+      </li>
+      <li
+        class="style__ItemList-sc-13kue4j-2 bVTfja"
+      >
+        Svenska
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
 exports[`DropDown Component Testing take snapshot 1`] = `
 <div
   style="outline: none;"
@@ -10,7 +63,7 @@ exports[`DropDown Component Testing take snapshot 1`] = `
   >
     <button
       class="style__Button-sc-13kue4j-3 dizWDM"
-      data-testid="toogle-dropdown"
+      data-testid="toggle-dropdown"
     >
       <p>
         Svenska

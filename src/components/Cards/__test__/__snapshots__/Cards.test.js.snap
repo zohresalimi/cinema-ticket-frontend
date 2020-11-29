@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cards Component Testing should not show upcoming lablel 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div
+    class="style__Card-bh9exm-0 cPnSuI"
+  >
+    <div
+      class="imageWrapper"
+    >
+      <img
+        alt=""
+        src="https://catalog.cinema-api.com/cf/images/ncg-images/68bfeef55ada4e7ab0606db2af0f40ad.jpg?width=240&version=EA2E80EE161E5DA161C6E26487054C9F&format=webp"
+      />
+    </div>
+    <h5
+      class="title"
+    >
+      follow me
+    </h5>
+  </div>
+</div>
+`;
+
+exports[`Cards Component Testing should show upcoming lable 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div
+    class="style__Card-bh9exm-0 cPnSuI"
+  >
+    <div
+      class="imageWrapper"
+    >
+      <img
+        alt=""
+        src="https://catalog.cinema-api.com/cf/images/ncg-images/68bfeef55ada4e7ab0606db2af0f40ad.jpg?width=240&version=EA2E80EE161E5DA161C6E26487054C9F&format=webp"
+      />
+      <time
+        class="time-wrapper"
+        datetime="1609687132722"
+      >
+        2021/01/03
+      </time>
+    </div>
+    <h5
+      class="title"
+    >
+      honest thief
+    </h5>
+  </div>
+</div>
+`;
+
+exports[`Cards Component Testing take snapshot 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div
+    class="style__Card-bh9exm-0 cPnSuI"
+  />
+</div>
+`;

@@ -1,9 +1,9 @@
 import * as React from "react";
-import { render, act, fireEvent } from "@testing-library/react";
+import { render, act } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
-import { WithProvider } from "../../../mockTestData/data";
-import DropDown from "..";
+import { getTestStore, WithProvider } from "../../../mockTestData/data";
+import Cards from "../";
 
 jest.mock("react-i18next", () => ({
   useTranslation: () => ({
@@ -21,7 +21,7 @@ function renderWrapper(props) {
   act(() => {
     component = render(
       <WithProvider>
-        <DropDown {...props} path="/" />
+        <Cards {...props} path="/" />
       </WithProvider>
     );
   });
@@ -29,7 +29,7 @@ function renderWrapper(props) {
   return component;
 }
 
-describe("DropDown Component Testing", () => {
+describe("Cards Component Testing", () => {
   afterAll(() => {
     jest.clearAllMocks();
   });
@@ -39,9 +39,18 @@ describe("DropDown Component Testing", () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test("dropdown should be opened", async () => {
-    const { container, getByTestId } = await renderWrapper();
-    fireEvent.click(getByTestId("toggle-dropdown"));
+  test("should not show upcoming lablel", async () => {
+    const movie = getTestStore().state.movies.premiered[0];
+
+    const { container } = await renderWrapper({
+      item: movie,
+    });
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test("should show upcoming lable", async () => {
+    const movie = getTestStore().state.movies.upcoming[0];
+    const { container } = await renderWrapper({ item: movie });
     expect(container.firstChild).toMatchSnapshot();
   });
 });

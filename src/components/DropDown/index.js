@@ -11,11 +11,11 @@ import { Wrapper, MenuLabel, ItemList, Button, CaratContainer } from "./style";
 
 function DropDown() {
   const [isOpened, setIsOpened] = useState(false);
-  const [_, i18n] = useTranslation();
+  const { i18n } = useTranslation();
   const [selectedOption, setSelectedOption] = useState(() => i18n.language);
-  console.log("incoming language: ........", _, i18n);
   const [label, setLabel] = useState(
-    () => SUPPORTED_LOCALES.find((locale) => locale.code === i18n.language).name
+    () =>
+      SUPPORTED_LOCALES.find((locale) => locale.code === selectedOption).name
   );
 
   const dropdownRef = useRef();
@@ -52,7 +52,7 @@ function DropDown() {
   return (
     <Wrapper ref={dropdownRef}>
       <Button
-        data-testid="toogle-dropdown"
+        data-testid="toggle-dropdown"
         onClick={() => setIsOpened(!isOpened)}
       >
         <p>{selectedOption ? label : "svenska"}</p>
@@ -63,7 +63,7 @@ function DropDown() {
       <MenuLabel>
         {isOpened &&
           SUPPORTED_LOCALES.map((el) => (
-            <ItemList key={el.value} onClick={() => handleSelectedItem(el)}>
+            <ItemList key={el.code} onClick={() => handleSelectedItem(el)}>
               {el.name}
             </ItemList>
           ))}

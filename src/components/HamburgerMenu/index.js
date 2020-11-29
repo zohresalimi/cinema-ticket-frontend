@@ -90,7 +90,7 @@ const StyledMenu = styled.nav`
 `;
 
 function HamburgerMenu({ isOpen, toggleMenu }) {
-  const [t] = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <>

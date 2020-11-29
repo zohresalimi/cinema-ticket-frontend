@@ -38,17 +38,17 @@ exports[`TopBar Component Testing take snapshot 1`] = `
                   <a
                     href="/"
                   >
-                    hem
+                    home
                   </a>
                   <a
                     href="/"
                   >
-                    filmer
+                    movies
                   </a>
                   <a
                     href="/sign-up"
                   >
-                    bli medlem
+                    sign up
                   </a>
                 </nav>
               </div>
@@ -73,7 +73,7 @@ exports[`TopBar Component Testing take snapshot 1`] = `
                     data-testid="home-item"
                     href="/"
                   >
-                    hem
+                    home
                   </a>
                 </li>
                 <li
@@ -83,7 +83,7 @@ exports[`TopBar Component Testing take snapshot 1`] = `
                     class="style__Link-sc-1ttkx56-3 dEHYxV"
                     href="/sign-up"
                   >
-                    logga in
+                    sign in
                   </a>
                 </li>
               </ul>
@@ -121,7 +121,7 @@ exports[`TopBar Component Testing take snapshot 1`] = `
               >
                 <button
                   class="style__Button-sc-13kue4j-3 dizWDM"
-                  data-testid="toogle-dropdown"
+                  data-testid="toggle-dropdown"
                 >
                   <p>
                     Svenska

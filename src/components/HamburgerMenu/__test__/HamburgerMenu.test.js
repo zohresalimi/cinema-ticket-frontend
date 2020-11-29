@@ -7,7 +7,13 @@ import HamburgerMenu from "../";
 import { WithProvider } from "../../../mockTestData/data";
 
 jest.mock("react-i18next", () => ({
-  useTranslation: () => [(key) => key, { changeLanguage: jest.fn() }],
+  useTranslation: () => ({
+    t: (k) => k,
+    i18n: {
+      language: "sv",
+      changeLanguage: () => new Promise(() => {}),
+    },
+  }),
 }));
 
 function renderWrapper(props) {

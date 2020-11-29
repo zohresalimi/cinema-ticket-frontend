@@ -8,25 +8,29 @@ function Cards({ item }) {
   const [isShow, setIsShow] = useState(false);
   useEffect(() => {
     const currentDate = new Date().toJSON();
-    if (item.premiere > currentDate) {
+    if (item && item.premiere > currentDate) {
       setIsShow(true);
     }
-  }, [item.premiere]);
+  }, [item]);
 
   return (
     <Card>
-      <div className="imageWrapper">
-        <img src={item.coverImage} alt="" />
-        {isShow && (
-          <Moment
-            locale={i18n.language}
-            format="YYYY/MM/DD"
-            date={item.premiere}
-            className="time-wrapper"
-          />
-        )}
-      </div>
-      <h5 className="title">{item.name}</h5>
+      {item && (
+        <>
+          <div className="imageWrapper">
+            <img src={item.coverImage} alt="" />
+            {isShow && (
+              <Moment
+                locale={i18n.language}
+                format="YYYY/MM/DD"
+                date={item.premiere}
+                className="time-wrapper"
+              />
+            )}
+          </div>
+          <h5 className="title">{item.name}</h5>
+        </>
+      )}
     </Card>
   );
 }
