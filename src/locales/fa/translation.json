@@ -51,5 +51,7 @@
   "email:":"ایمیل",
   "no showings found": "سانسی برای این فیلم موجود نیست",
   "Could not find movies with this search term, give me more characters.": "نتیجه ای یافت نشد، با کلمات بیشتری تلاش کنید",
-  "show": "نمایش"
+  "show": "نمایش",
+  "selected": "انتخاب شده",
+  "from": "از"
 }

@@ -48,5 +48,7 @@
     "Your payment was canceled. Please try again":"Din betalning avbröts. Var god försök igen",
     "no showings found": "Inga visningar hittadess",
     "Could not find movies with this search term, give me more characters.": "Det gick inte att hitta filmer med det här sökordet, ge mig fler karaktärer.",
-    "show": "visa"
+    "show": "visa",
+    "selected": "vald",
+    "from": "från"
 }
