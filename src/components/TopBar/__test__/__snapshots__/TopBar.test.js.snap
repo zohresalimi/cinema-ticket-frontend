@@ -45,11 +45,6 @@ exports[`TopBar Component Testing take snapshot 1`] = `
                   >
                     movies
                   </a>
-                  <a
-                    href="/sign-up"
-                  >
-                    sign up
-                  </a>
                 </nav>
               </div>
               <a
@@ -74,16 +69,6 @@ exports[`TopBar Component Testing take snapshot 1`] = `
                     href="/"
                   >
                     home
-                  </a>
-                </li>
-                <li
-                  class="style__Li-sc-1ttkx56-6 fMDjQV"
-                >
-                  <a
-                    class="style__Link-sc-1ttkx56-3 dEHYxV"
-                    href="/sign-up"
-                  >
-                    sign in
                   </a>
                 </li>
               </ul>

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cancel Page Component Testing take snapshot 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div
+    class="style__Wrapper-ntmqul-0 bbTnu"
+  >
+    <div
+      class="StyleComponents__Container-sc-11erdxt-0 fFgwWO"
+    >
+      <div
+        class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+      >
+        <h1>
+          Your payment was canceled. Please try again
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+`;

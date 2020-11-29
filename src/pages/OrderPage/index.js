@@ -5,7 +5,6 @@ function OrderPage({ children }) {
   return (
     <div>
       <TopBar />
-
       {children}
     </div>
   );

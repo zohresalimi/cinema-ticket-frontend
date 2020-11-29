@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { Link } from "@reach/router";
+import { useTranslation } from "react-i18next";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faSpinner } from "@fortawesome/free-solid-svg-icons";
@@ -13,13 +14,8 @@ import AppContext from "../../store/context";
 function SearchPage() {
   const { state } = useContext(AppContext);
   const { allMovies } = state.movies;
+  const { t } = useTranslation();
   const [input, setInput] = useState({ value: "" });
-  const refInput = useRef();
-
-  const handleChange = (e) => {
-    e.preventDefault();
-    setInput({ value: refInput.current.value });
-  };
 
   const [
     { response: searchResponse, loading: searchLoading },
@@ -45,12 +41,12 @@ function SearchPage() {
           <Row>
             <SearchInput>
               <input
-                ref={refInput}
                 name="search-input"
                 type="text"
                 autoComplete="off"
+                data-testid="search-input"
                 placeholder="search by movie name!"
-                onChange={(e) => handleChange(e)}
+                onChange={(e) => setInput({ value: e.target.value })}
               />
               <FontAwesomeIcon icon={faSearch} className="searchIcon" />
             </SearchInput>
@@ -63,8 +59,9 @@ function SearchPage() {
               {searchResponse && !searchResponse.response.length && (
                 <div className="no-result-message">
                   <p>
-                    Could not find movies with this search term, give me more
-                    characters.
+                    {t(
+                      "Could not find movies with this search term, give me more characters."
+                    )}
                   </p>
                 </div>
               )}
@@ -84,17 +81,8 @@ function SearchPage() {
                             <p>{movie.name}</p>
                             <p>{movie.genre}</p>
                             <p>{movie.premiere}</p>
-                            {/* {moment().diff(movie.premiere, "minutes") >
-                            moment() ? (
-                              "upcoming"
-                            ) : (
-                              <Moment
-                                date={movie.premiere}
-                                format="ddd D MMM"
-                              />
-                            )} */}
                           </div>
-                          <div className="right-side"> show</div>
+                          <div className="right-side">{t("show")}</div>
                         </Link>
                       </li>
                     );

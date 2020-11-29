@@ -30,9 +30,9 @@ function renderWrapper(props) {
 }
 
 describe("Showings Component Testing", () => {
-  const cinemas = getTestStore().state.cinemas;
-  const showings = getTestStore().state.showings;
-  const currentMovie = getTestStore().state.movies.children[0];
+  const cinemas = getTestStore().cinemas;
+  const showings = getTestStore().showings;
+  const currentMovie = getTestStore().movies.children[0];
   test("take snapshot when cinema & showings do not match", async () => {
     const { container } = await renderWrapper({
       cinemas,

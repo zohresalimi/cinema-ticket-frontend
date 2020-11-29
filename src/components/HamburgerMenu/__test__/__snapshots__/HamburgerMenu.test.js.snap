@@ -26,11 +26,6 @@ exports[`Hamburger Menu Component Testing take snapshot 1`] = `
     >
       movies
     </a>
-    <a
-      href="/sign-up"
-    >
-      sign up
-    </a>
   </nav>
 </div>
 `;

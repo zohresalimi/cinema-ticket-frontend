@@ -1,9 +1,10 @@
 import * as React from "react";
-import { render, act } from "@testing-library/react";
+
+import { act, render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
 import { getTestStore, WithProvider } from "../../../mockTestData/data";
-import Cards from "../";
+import SuccessPage from "../";
 
 jest.mock("react-i18next", () => ({
   useTranslation: () => ({
@@ -15,13 +16,13 @@ jest.mock("react-i18next", () => ({
   }),
 }));
 
-function renderWrapper(props) {
+async function renderWrapper(props) {
   let component;
 
   act(() => {
     component = render(
       <WithProvider>
-        <Cards {...props} path="/" />
+        <SuccessPage {...props} path="/" />
       </WithProvider>
     );
   });
@@ -29,28 +30,19 @@ function renderWrapper(props) {
   return component;
 }
 
-describe("Cards Component Testing", () => {
+describe("Success Page Component Testing", () => {
   afterAll(() => {
     jest.clearAllMocks();
   });
 
   test("take snapshot", async () => {
+    const mockDispatch = jest.fn();
+    const mockUseContext = jest.fn(() => ({ dispatch: mockDispatch }));
+    jest.spyOn(React, "useContext").mockImplementation(mockUseContext);
     const { container } = await renderWrapper();
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test("should not show upcoming lablel", async () => {
-    const movie = getTestStore().movies.premiered[0];
-
-    const { container } = await renderWrapper({
-      item: movie,
+    expect(mockDispatch).toHaveBeenCalledWith({
+      type: "resetState",
     });
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test("should show upcoming lable", async () => {
-    const movie = getTestStore().movies.upcoming[0];
-    const { container } = await renderWrapper({ item: movie });
     expect(container.firstChild).toMatchSnapshot();
   });
 });

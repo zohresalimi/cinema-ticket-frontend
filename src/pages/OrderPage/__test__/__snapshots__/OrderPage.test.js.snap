@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderPage Component Testing take snapshot 1`] = `
+<div>
+  <div>
+    TopBar Component
+  </div>
+  <div>
+    order page
+  </div>
+</div>
+`;

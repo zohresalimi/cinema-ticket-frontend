@@ -37,11 +37,6 @@ function TopBar() {
                       {t("home")}
                     </Link>
                   </Li>
-                  <Li>
-                    <Link href="/sign-up" weight="bold">
-                      {t("sign in")}
-                    </Link>
-                  </Li>
                 </Ul>
               </Div>
             </Col>

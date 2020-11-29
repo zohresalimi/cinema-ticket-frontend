@@ -35,7 +35,7 @@ async function renderWrapper(setDefaultState) {
 
   act(() => {
     component = render(
-      <WithProvider defaultValue={defaultValue}>
+      <WithProvider mockDispatch={() => {}} defaultValue={defaultValue}>
         <HomePage path="/" />
       </WithProvider>
     );
@@ -73,7 +73,7 @@ describe("Home page Component Testing", () => {
   test("should read data from state", async () => {
     const useRefMock = jest.fn(() => ({ current: 1 }));
     jest.spyOn(React, "useRef").mockImplementation(useRefMock);
-    const testState = getTestStore().state;
+    const testState = getTestStore();
     const mockUseAxios = jest.fn();
     when(mockUseAxios)
       .calledWith(`/api/v1/movies/current-movie`)

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { Link } from "@reach/router";
+import { Link, useLocation, useNavigate } from "@reach/router";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
@@ -18,7 +18,9 @@ import {
 } from "../../Styles/StyleComponents";
 import Quantity from "./style";
 
-function QuantityPage({ navigate, location }) {
+function QuantityPage() {
+  const location = useLocation();
+  const navigate = useNavigate();
   const { state, dispatch } = useContext(AppContext);
   const { movie, showing, quantity } = state.ticket;
   const { category } = location.state;
@@ -56,9 +58,13 @@ function QuantityPage({ navigate, location }) {
           <Quantity>
             <p className="breadcrumb">{t("number of tickets")}</p>
             <div>
-              <button onClick={handleDecrement}>-</button>
-              <span>{quantity}</span>
-              <button onClick={handleIncrement}>+</button>
+              <button data-testid="decrement" onClick={handleDecrement}>
+                -
+              </button>
+              <span data-testid="ticket-quantity">{quantity}</span>
+              <button data-testid="increment" onClick={handleIncrement}>
+                +
+              </button>
             </div>
           </Quantity>
           <Button

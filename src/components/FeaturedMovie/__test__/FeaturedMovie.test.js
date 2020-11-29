@@ -36,7 +36,7 @@ describe("FeaturedMovie Component Testing", () => {
   test("should play video", async () => {
     const setState = jest.fn();
     jest.spyOn(React, "useState").mockImplementation(() => [true, setState]);
-    const movie = getTestStore().state.movies.premiered[0];
+    const movie = getTestStore().movies.premiered[0];
 
     const { container } = await renderWrapper({
       movie,

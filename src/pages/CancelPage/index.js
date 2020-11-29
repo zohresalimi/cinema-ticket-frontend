@@ -8,7 +8,7 @@ import Wrapper from "./style";
 
 function CancelPage() {
   const { dispatch } = useContext(AppContext);
-  const [t] = useTranslation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     dispatch({ type: RESET_STATE });

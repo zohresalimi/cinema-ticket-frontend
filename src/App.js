@@ -10,7 +10,6 @@ import ConfirmPage from "./pages/ConfirmPage";
 import OrderPage from "./pages/OrderPage";
 import SuccessPage from "./pages/SuccessPage";
 import CancelPage from "./pages/CancelPage";
-import SignupPage from "./pages/SignupPage";
 import SearchPage from "./pages/SearchPage";
 import AppContext from "./store/context";
 import store from "./store";
@@ -31,7 +30,6 @@ function App() {
         <AppContext.Provider value={{ state, dispatch }}>
           <Router>
             <HomePage path="/" />
-            <SignupPage path="sign-up" />
             <SearchPage path="search" />
             <MovieDetailPage path=":category/movie-detail/:movieId" />
             <Booking path="booking/:showingId">

@@ -1,0 +1,281 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Page Component Testing should call to search api 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div>
+    <div>
+      TopBar Component
+    </div>
+    <div
+      class="style__Wrapper-sc-184j6m9-0 iDVMYk"
+    >
+      <div
+        class="StyleComponents__Container-sc-11erdxt-0 fFgwWO"
+      >
+        <div
+          class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+        >
+          <div
+            class="style__SearchInput-sc-184j6m9-1 bWXmHs"
+          >
+            <input
+              autocomplete="off"
+              data-testid="search-input"
+              name="search-input"
+              placeholder="search by movie name!"
+              type="text"
+            />
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-search fa-w-16 searchIcon"
+              data-icon="search"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+          <div
+            class="spiner-wraper"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-spinner fa-w-16 fa-spin spiner"
+              data-icon="spinner"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+          <ul
+            id="movie-List"
+          >
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Search Page Component Testing should render items when api returns result 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div>
+    <div>
+      TopBar Component
+    </div>
+    <div
+      class="style__Wrapper-sc-184j6m9-0 iDVMYk"
+    >
+      <div
+        class="StyleComponents__Container-sc-11erdxt-0 fFgwWO"
+      >
+        <div
+          class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+        >
+          <div
+            class="style__SearchInput-sc-184j6m9-1 bWXmHs"
+          >
+            <input
+              autocomplete="off"
+              data-testid="search-input"
+              name="search-input"
+              placeholder="search by movie name!"
+              type="text"
+            />
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-search fa-w-16 searchIcon"
+              data-icon="search"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+          <ul
+            id="movie-List"
+          >
+            <li>
+              <a
+                href="/premiered/movie-detail/5fa71823adc463397a50c502"
+              >
+                <div
+                  class="image-wrapper"
+                >
+                  <img
+                    alt=""
+                    src="https://catalog.cinema-api.com/cf/images/ncg-images/68bfeef55ada4e7ab0606db2af0f40ad.jpg?width=240&version=EA2E80EE161E5DA161C6E26487054C9F&format=webp"
+                  />
+                </div>
+                <div>
+                  <p>
+                    follow me
+                  </p>
+                  <p>
+                    family
+                    children
+                  </p>
+                  <p>
+                    2020-10-05T15:18:52.722Z
+                  </p>
+                </div>
+                <div
+                  class="right-side"
+                >
+                  show
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Search Page Component Testing should render message when api returns empty list 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div>
+    <div>
+      TopBar Component
+    </div>
+    <div
+      class="style__Wrapper-sc-184j6m9-0 iDVMYk"
+    >
+      <div
+        class="StyleComponents__Container-sc-11erdxt-0 fFgwWO"
+      >
+        <div
+          class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+        >
+          <div
+            class="style__SearchInput-sc-184j6m9-1 bWXmHs"
+          >
+            <input
+              autocomplete="off"
+              data-testid="search-input"
+              name="search-input"
+              placeholder="search by movie name!"
+              type="text"
+            />
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-search fa-w-16 searchIcon"
+              data-icon="search"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+          <ul
+            id="movie-List"
+          >
+            <div
+              class="no-result-message"
+            >
+              <p>
+                Could not find movies with this search term, give me more characters.
+              </p>
+            </div>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Search Page Component Testing take snapshot 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div>
+    <div>
+      TopBar Component
+    </div>
+    <div
+      class="style__Wrapper-sc-184j6m9-0 iDVMYk"
+    >
+      <div
+        class="StyleComponents__Container-sc-11erdxt-0 fFgwWO"
+      >
+        <div
+          class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+        >
+          <div
+            class="style__SearchInput-sc-184j6m9-1 bWXmHs"
+          >
+            <input
+              autocomplete="off"
+              data-testid="search-input"
+              name="search-input"
+              placeholder="search by movie name!"
+              type="text"
+            />
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-search fa-w-16 searchIcon"
+              data-icon="search"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+          <ul
+            id="movie-List"
+          >
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

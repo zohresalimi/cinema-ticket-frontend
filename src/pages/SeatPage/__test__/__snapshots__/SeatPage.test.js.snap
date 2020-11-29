@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Seat Page Component Testing take snapshot 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div
+    class="StyleComponents__Container-sc-11erdxt-0 fFgwWO"
+  >
+    <div
+      class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+    >
+      <div
+        class="full-width"
+      >
+        <h2
+          class="StyleComponents__Breadcrumb-sc-11erdxt-4 cNjPuO"
+        >
+          <a
+            href="/booking/undefined"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-angle-left fa-w-8 mr-10"
+              data-icon="angle-left"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 256 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                fill="currentColor"
+              />
+            </svg>
+            ticket selection
+          </a>
+        </h2>
+        <div
+          class="style__Wrapper-gzbnn9-0 hhfVwl"
+        >
+          <p>
+            selected
+            <span>
+              0
+            </span>
+            from
+            <span>
+              0
+            </span>
+          </p>
+          <div
+            class="column-wrapper"
+          >
+            <div
+              class="seat available"
+              disabled=""
+              role="button"
+            />
+            <div
+              class="seat available"
+              disabled=""
+              role="button"
+            />
+          </div>
+          <div
+            class="column-wrapper"
+          >
+            <div
+              class="seat available"
+              disabled=""
+              role="button"
+            />
+            <div
+              class="seat available"
+              disabled=""
+              role="button"
+            />
+          </div>
+        </div>
+        <button
+          class="StyleComponents__Button-sc-11erdxt-3 kZtNg"
+        >
+          continue
+        </button>
+        <p>
+          you must select at least one ticket
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -10,7 +10,7 @@ import img from "../../images/img.png";
 
 function SuccessPage() {
   const { dispatch } = useContext(AppContext);
-  const [t] = useTranslation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     dispatch({ type: RESET_STATE });

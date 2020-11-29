@@ -37,7 +37,7 @@ describe("MovieDetail Component Testing", () => {
   });
 
   test("page should be scrolled", async () => {
-    const movie = getTestStore().state.movies.premiered[0];
+    const movie = getTestStore().movies.premiered[0];
     const mockOnBookingClick = jest.fn(() => true);
 
     const { container, getByTestId } = await renderWrapper({
@@ -51,7 +51,7 @@ describe("MovieDetail Component Testing", () => {
   test("should play video", async () => {
     const setState = jest.fn();
     jest.spyOn(React, "useState").mockImplementation(() => [true, setState]);
-    const movie = getTestStore().state.movies.premiered[0];
+    const movie = getTestStore().movies.premiered[0];
 
     const { container } = await renderWrapper({
       movie,

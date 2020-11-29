@@ -49,5 +49,7 @@
   "your payment was canceled. Please try again":"پرداخت شما با خظا روبرو شده است.",
   "create account": "ساخت حساب کاربری",
   "email:":"ایمیل",
-  "no showings found": "سانسی برای این فیلم موجود نیست"
+  "no showings found": "سانسی برای این فیلم موجود نیست",
+  "Could not find movies with this search term, give me more characters.": "نتیجه ای یافت نشد، با کلمات بیشتری تلاش کنید",
+  "show": "نمایش"
 }

@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "@reach/router";
+import { Link, useNavigate } from "@reach/router";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
@@ -18,6 +18,7 @@ import Wrapper from "./style";
 
 function SeatPlan({ seats, ticketCount }) {
   const { state, dispatch } = useContext(AppContext);
+  const { t } = useTranslation();
   const { quantity } = state.ticket;
 
   const bookSeat = (rowIndex, colIndex) => {
@@ -27,11 +28,10 @@ function SeatPlan({ seats, ticketCount }) {
   return (
     <Wrapper>
       <p>
-        selected
+        {t("selected")}
         <span>{ticketCount}</span>
-        from
+        {t("from")}
         <span>{quantity}</span>
-        {/* {`${ticketCount}/${quantity}`} */}
       </p>
       {seats.map((row, rowIndex) => (
         <div className="column-wrapper" key={`row-${rowIndex}`}>
@@ -55,9 +55,10 @@ function SeatPlan({ seats, ticketCount }) {
   );
 }
 
-function Seat({ navigate, showingId }) {
+function Seat({ showingId }) {
   const { state } = useContext(AppContext);
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const { showing, seatNumbers, quantity } = state.ticket;
   const [ticketCount, setTicketCount] = useState(0);
 

@@ -106,7 +106,6 @@ function HamburgerMenu({ isOpen, toggleMenu }) {
       <StyledMenu className={isOpen ? "opened" : ""} isOpen={isOpen}>
         <a href="/">{t("home")}</a>
         <a href="/">{t("movies")}</a>
-        <a href="/sign-up">{t("sign up")}</a>
       </StyledMenu>
     </>
   );

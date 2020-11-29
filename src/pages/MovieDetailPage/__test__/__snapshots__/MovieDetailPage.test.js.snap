@@ -10,20 +10,87 @@ exports[`MovieDetail page Component Testing should read current movie from state
       TopBar Component
     </div>
     <div>
+      <button
+        data-testid="button-scroll"
+      >
+        scroll
+      </button>
       MovieDetail Component
     </div>
     <div
       class="black-bg"
     >
       <div
-        class="StyleComponents__Container-sc-11erdxt-0 fFgwWO"
+        class="style__Wrapper-cmlatl-0 gnRgOj"
       >
         <div
-          class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+          class="StyleComponents__Container-sc-11erdxt-0 fFgwWO"
         >
           <div
-            class="style__Wrapper-cmlatl-0 gQAXWg"
-          />
+            class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+          >
+            <div
+              class="full-width"
+            >
+              
+              <h2
+                class="buyTicket"
+              >
+                no showings found
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MovieDetail page Component Testing should show loading and call useAxios 3 times 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div>
+    <div>
+      TopBar Component
+    </div>
+    <div>
+      <button
+        data-testid="button-scroll"
+      >
+        scroll
+      </button>
+      MovieDetail Component
+    </div>
+    <div
+      class="black-bg"
+    >
+      <div
+        class="style__Wrapper-cmlatl-0 gnRgOj"
+      >
+        <div
+          class="StyleComponents__Container-sc-11erdxt-0 fFgwWO"
+        >
+          <div
+            class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+          >
+            <div
+              class="full-width"
+            >
+              <h2
+                class="buyTicket"
+              >
+                Loading...
+              </h2>
+              <h2
+                class="buyTicket"
+              >
+                no showings found
+              </h2>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -41,19 +108,24 @@ exports[`MovieDetail page Component Testing take snapshot 1`] = `
       TopBar Component
     </div>
     <div>
+      <button
+        data-testid="button-scroll"
+      >
+        scroll
+      </button>
       MovieDetail Component
     </div>
     <div
       class="black-bg"
     >
       <div
-        class="StyleComponents__Container-sc-11erdxt-0 fFgwWO"
+        class="style__Wrapper-cmlatl-0 gnRgOj"
       >
         <div
-          class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+          class="StyleComponents__Container-sc-11erdxt-0 fFgwWO"
         >
           <div
-            class="style__Wrapper-cmlatl-0 gQAXWg"
+            class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
           />
         </div>
       </div>
