@@ -65,6 +65,7 @@ export const Info = styled.div`
   .movie-detail {
     text-transform: capitalize;
     margin-left: 1.5rem;
+    color: ${(props) => props.theme.colors.white};
     h2 {
     }
     p {

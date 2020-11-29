@@ -56,7 +56,7 @@ exports[`MovieDetail Component Testing page should be scrolled 1`] = `
         class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
       >
         <div
-          class="style__Info-ib79g7-4 cKfTaF"
+          class="style__Info-ib79g7-4 hyXzhv"
         >
           <div
             class="movie-poster"
@@ -215,7 +215,7 @@ exports[`MovieDetail Component Testing should play video 1`] = `
         class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
       >
         <div
-          class="style__Info-ib79g7-4 cKfTaF"
+          class="style__Info-ib79g7-4 hyXzhv"
         >
           <div
             class="movie-poster"
