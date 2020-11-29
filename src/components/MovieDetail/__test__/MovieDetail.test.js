@@ -6,10 +6,10 @@ import { getTestStore, WithProvider } from "../../../mockTestData/data";
 import MovieDetail from "../";
 
 jest.mock("react-i18next", () => ({
-  useTranslation: () => [
-    (key) => key,
-    { changeLanguage: jest.fn(), language: "sv" },
-  ],
+  useTranslation: () => ({
+    t: (key) => key,
+    i18n: { changeLanguage: jest.fn(), language: "sv" },
+  }),
 }));
 
 function renderWrapper(props) {

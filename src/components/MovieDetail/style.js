@@ -7,6 +7,35 @@ export const Wrapper = styled.div`
   width: 100%;
   flex-direction: column;
   background-color: ${(props) => props.theme.colors.black};
+
+  font-size: ${(props) => props.theme.fontSizes.content};
+  color: ${(props) => props.theme.colors.textColor};
+  line-height: 25px;
+
+  p {
+    color: ${(props) => props.theme.colors.white};
+    font-size: ${(props) => props.theme.fontSizes.content};
+    margin: 5px 0;
+    &.description {
+      margin: 30px 0;
+    }
+  }
+  .title {
+    font-size: ${(props) => props.theme.fontSizes.small};
+    color: ${(props) => props.theme.colors.gray};
+    &:after {
+      content: ":";
+    }
+  }
+  .displayInline {
+    p {
+      display: inline;
+      margin-right: 5px;
+      &:after {
+        content: ",";
+      }
+    }
+  }
 `;
 
 export const FullImage = styled.div`

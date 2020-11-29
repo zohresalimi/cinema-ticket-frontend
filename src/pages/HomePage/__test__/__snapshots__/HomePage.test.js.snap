@@ -1,0 +1,187 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home page Component Testing should read data from state 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div>
+    TopBar Component
+  </div>
+  <div>
+    Featured Movie Component
+  </div>
+  <div
+    class="black-bg"
+  >
+    <div
+      class="StyleComponents__Container-sc-11erdxt-0 fFgwWO"
+    >
+      <div
+        class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+      >
+        <h2
+          class="movie-title"
+        >
+          at the cinema now
+        </h2>
+        <div />
+      </div>
+      <div
+        class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+      >
+        <h2
+          class="movie-title"
+        >
+          upcoming movies
+        </h2>
+        <div />
+      </div>
+      <div
+        class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+      >
+        <h2
+          class="movie-title"
+        >
+          children and family
+        </h2>
+        <div />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Home page Component Testing take snapshot 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div>
+    TopBar Component
+  </div>
+  <div>
+    Featured Movie Component
+  </div>
+  <div
+    class="black-bg"
+  >
+    <div
+      class="StyleComponents__Container-sc-11erdxt-0 fFgwWO"
+    >
+      <div
+        class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+      >
+        <h2
+          class="movie-title"
+        >
+          at the cinema now
+        </h2>
+        <div />
+      </div>
+      <div
+        class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+      >
+        <h2
+          class="movie-title"
+        >
+          upcoming movies
+        </h2>
+        <div />
+      </div>
+      <div
+        class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+      >
+        <h2
+          class="movie-title"
+        >
+          children and family
+        </h2>
+        <div />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Home page Component Testing take snapshot when state has default value 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div>
+    TopBar Component
+  </div>
+  <div>
+    Featured Movie Component
+  </div>
+  <div
+    class="black-bg"
+  >
+    <div
+      class="StyleComponents__Container-sc-11erdxt-0 fFgwWO"
+    >
+      <div
+        class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+      >
+        <h2
+          class="movie-title"
+        >
+          at the cinema now
+        </h2>
+        <div>
+          <a
+            href="/premiered/movie-detail/5fa71823adc463397a50c502"
+          >
+            <div
+              data-testid="card-item"
+            >
+              follow me
+            </div>
+          </a>
+        </div>
+      </div>
+      <div
+        class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+      >
+        <h2
+          class="movie-title"
+        >
+          upcoming movies
+        </h2>
+        <div>
+          <a
+            href="/upcoming/movie-detail/5fa71823adc463397a50c503"
+          >
+            <div
+              data-testid="card-item"
+            >
+              honest thief
+            </div>
+          </a>
+        </div>
+      </div>
+      <div
+        class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+      >
+        <h2
+          class="movie-title"
+        >
+          children and family
+        </h2>
+        <div>
+          <a
+            href="/children/movie-detail/5fa71823adc463397a50c501"
+          >
+            <div
+              data-testid="card-item"
+            >
+              trolls 2: world tour
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

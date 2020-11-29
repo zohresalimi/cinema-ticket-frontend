@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ReactPlayer from "react-player/youtube";
 import { useTranslation } from "react-i18next";
 import ContentLoader from "react-content-loader";
+import Moment from "react-moment";
 
 import { Wrapper, FullImage, Image, ShadowBg, Info, MovieTitle } from "./style";
 import PlayButton from "../PlayButton";
@@ -10,7 +11,7 @@ import { Container, Row, Button } from "../../Styles/StyleComponents";
 
 function MovieDetail({ movie, onBookingClick }) {
   const [playVideo, setPlayVideo] = useState(false);
-  const [t] = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <Wrapper data-testid="wrapper">
@@ -92,6 +93,30 @@ function MovieDetail({ movie, onBookingClick }) {
                 </div>
               </div>
             </Info>
+          </Row>
+          <Row>
+            <div>
+              <p className="description">{movie.description}</p>
+              <p className="title">{t("director")}</p>
+              <p>{movie.director}</p>
+              <p className="title">{t("premiere")}</p>
+              <p>
+                <Moment
+                  locale={i18n.language}
+                  date={movie.premiere}
+                  format="ddd D MMM"
+                />
+              </p>
+              <p className="title">{t("actor")}</p>
+              <div className="displayInline">
+                {movie.actors.map((actor) => (
+                  <p key={actor}>{actor}</p>
+                ))}
+              </div>
+
+              <p className="title">{t("original language")}</p>
+              <p>{movie.originalTitle}</p>
+            </div>
           </Row>
         </Container>
       )}

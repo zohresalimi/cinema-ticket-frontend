@@ -148,7 +148,9 @@ export const WithProvider = (props) => {
   const { state, dispatch } = getTestStore();
   return (
     <Theme>
-      <AppContext.Provider value={{ state, dispatch }}>
+      <AppContext.Provider
+        value={{ state: props.defaultValue || state, dispatch }}
+      >
         <Router>{props.children}</Router>
       </AppContext.Provider>
     </Theme>

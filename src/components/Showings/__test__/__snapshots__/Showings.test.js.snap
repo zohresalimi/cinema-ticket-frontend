@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Showings Component Testing take snapshot when cinema & showings do match 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div
+    data-testid="showings-wrapper"
+  >
+    <div>
+      <h2
+        class="cinema-name"
+      >
+        filmstaden kista
+      </h2>
+      <ul
+        class="showings-list"
+      >
+        <li>
+          <a
+            href="/booking/5fbe9bd31f58462b5c759b5c"
+          >
+            <div
+              class="showing-info"
+            >
+              <p
+                class="time-slot"
+              >
+                <time
+                  datetime="1605283200000"
+                >
+                  05:00
+                </time>
+              </p>
+              <p
+                class="room-name"
+              />
+              <p
+                class="movie-subtitle"
+              >
+                lang
+                :
+                swedish
+              </p>
+            </div>
+            <div
+              class="buy-ticket"
+            >
+              <p>
+                buy ticket
+              </p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Showings Component Testing take snapshot when cinema & showings do not match 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div
+    data-testid="showings-wrapper"
+  >
+    <div>
+      <h2
+        class="cinema-name"
+      >
+        filmstaden kista
+      </h2>
+      <ul
+        class="showings-list"
+      />
+    </div>
+  </div>
+</div>
+`;

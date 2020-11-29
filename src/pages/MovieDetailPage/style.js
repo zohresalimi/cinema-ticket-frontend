@@ -6,37 +6,10 @@ const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   flex-direction: column;
-  margin-top: 40px;
   font-size: ${(props) => props.theme.fontSizes.content};
   color: ${(props) => props.theme.colors.textColor};
   line-height: 25px;
-  p {
-    color: ${(props) => props.theme.colors.white};
-    font-size: ${(props) => props.theme.fontSizes.content};
-    margin: 5px 0;
-    &.description {
-      margin-bottom: 30px;
-    }
-  }
-  .title {
-    font-size: ${(props) => props.theme.fontSizes.small};
-    color: ${(props) => props.theme.colors.gray};
-    &:after {
-      content: ":";
-    }
-  }
-  i {
-    margin: 0 10px;
-  }
-  .displayInline {
-    p {
-      display: inline;
-      margin-right: 5px;
-      &:after {
-        content: ",";
-      }
-    }
-  }
+
   h2.buyTicket {
     margin: 100px 0 45px 0;
   }

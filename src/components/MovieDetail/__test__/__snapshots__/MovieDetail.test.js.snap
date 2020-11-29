@@ -6,7 +6,7 @@ exports[`MovieDetail Component Testing page should be scrolled 1`] = `
   tabindex="-1"
 >
   <div
-    class="style__Wrapper-ib79g7-0 gmtqRu"
+    class="style__Wrapper-ib79g7-0 jhlonx"
     data-testid="wrapper"
   >
     <div
@@ -111,6 +111,63 @@ exports[`MovieDetail Component Testing page should be scrolled 1`] = `
           </div>
         </div>
       </div>
+      <div
+        class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+      >
+        <div>
+          <p
+            class="description"
+          >
+            Poppy and Kvist embark on an adventure that will take them far beyond
+          </p>
+          <p
+            class="title"
+          >
+            director
+          </p>
+          <p>
+            aaron woodley
+          </p>
+          <p
+            class="title"
+          >
+            premiere
+          </p>
+          <p>
+            <time
+              datetime="1601911132722"
+            >
+              mån 5 okt
+            </time>
+          </p>
+          <p
+            class="title"
+          >
+            actor
+          </p>
+          <div
+            class="displayInline"
+          >
+            <p>
+              Holland Roden
+            </p>
+            <p>
+              Ronen Rubinstein
+            </p>
+            <p>
+              Keegan Allen
+            </p>
+          </div>
+          <p
+            class="title"
+          >
+            original language
+          </p>
+          <p>
+            swedish
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -122,7 +179,7 @@ exports[`MovieDetail Component Testing should play video 1`] = `
   tabindex="-1"
 >
   <div
-    class="style__Wrapper-ib79g7-0 gmtqRu"
+    class="style__Wrapper-ib79g7-0 jhlonx"
     data-testid="wrapper"
   >
     <div
@@ -270,6 +327,63 @@ exports[`MovieDetail Component Testing should play video 1`] = `
           </div>
         </div>
       </div>
+      <div
+        class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+      >
+        <div>
+          <p
+            class="description"
+          >
+            Poppy and Kvist embark on an adventure that will take them far beyond
+          </p>
+          <p
+            class="title"
+          >
+            director
+          </p>
+          <p>
+            aaron woodley
+          </p>
+          <p
+            class="title"
+          >
+            premiere
+          </p>
+          <p>
+            <time
+              datetime="1601911132722"
+            >
+              mån 5 okt
+            </time>
+          </p>
+          <p
+            class="title"
+          >
+            actor
+          </p>
+          <div
+            class="displayInline"
+          >
+            <p>
+              Holland Roden
+            </p>
+            <p>
+              Ronen Rubinstein
+            </p>
+            <p>
+              Keegan Allen
+            </p>
+          </div>
+          <p
+            class="title"
+          >
+            original language
+          </p>
+          <p>
+            swedish
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -281,7 +395,7 @@ exports[`MovieDetail Component Testing take snapshot 1`] = `
   tabindex="-1"
 >
   <div
-    class="style__Wrapper-ib79g7-0 gmtqRu"
+    class="style__Wrapper-ib79g7-0 jhlonx"
     data-testid="wrapper"
   >
     <div

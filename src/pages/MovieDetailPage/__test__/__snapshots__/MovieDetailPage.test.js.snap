@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieDetail page Component Testing should read current movie from state 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div>
+    <div>
+      TopBar Component
+    </div>
+    <div>
+      MovieDetail Component
+    </div>
+    <div
+      class="black-bg"
+    >
+      <div
+        class="StyleComponents__Container-sc-11erdxt-0 fFgwWO"
+      >
+        <div
+          class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+        >
+          <div
+            class="style__Wrapper-cmlatl-0 gQAXWg"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MovieDetail page Component Testing take snapshot 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div>
+    <div>
+      TopBar Component
+    </div>
+    <div>
+      MovieDetail Component
+    </div>
+    <div
+      class="black-bg"
+    >
+      <div
+        class="StyleComponents__Container-sc-11erdxt-0 fFgwWO"
+      >
+        <div
+          class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+        >
+          <div
+            class="style__Wrapper-cmlatl-0 gQAXWg"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
