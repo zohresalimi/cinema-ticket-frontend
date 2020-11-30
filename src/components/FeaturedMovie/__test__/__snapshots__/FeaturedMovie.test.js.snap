@@ -6,7 +6,7 @@ exports[`FeaturedMovie Component Testing should play video 1`] = `
   tabindex="-1"
 >
   <div
-    class="style__Wrapper-sc-16suol2-1 iJZZcf"
+    class="style__Wrapper-sc-16suol2-1 NzduN"
   >
     <div
       class="style__FullImage-sc-16suol2-2 ezesCl"
@@ -108,7 +108,7 @@ exports[`FeaturedMovie Component Testing take snapshot 1`] = `
   tabindex="-1"
 >
   <div
-    class="style__Wrapper-sc-16suol2-1 iJZZcf"
+    class="style__Wrapper-sc-16suol2-1 NzduN"
   >
     <div
       class="style__FullImage-sc-16suol2-2 ezesCl"

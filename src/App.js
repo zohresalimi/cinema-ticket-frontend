@@ -12,6 +12,7 @@ import SuccessPage from "./pages/SuccessPage";
 import CancelPage from "./pages/CancelPage";
 import SearchPage from "./pages/SearchPage";
 import AppContext from "./store/context";
+import Footer from "./components/Footer";
 import store from "./store";
 import { setLocalStorage, getLocalStorage } from "./utils/localStorage";
 import "./Styles/globalStyle.css";
@@ -43,6 +44,7 @@ function App() {
             </OrderPage>
           </Router>
         </AppContext.Provider>
+        <Footer />
       </div>
     </Theme>
   );

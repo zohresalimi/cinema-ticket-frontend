@@ -21,7 +21,7 @@ exports[`MovieDetail page Component Testing should read current movie from state
       class="black-bg"
     >
       <div
-        class="style__Wrapper-cmlatl-0 gnRgOj"
+        class="style__Wrapper-cmlatl-0 bbndKs"
       >
         <div
           class="StyleComponents__Container-sc-11erdxt-0 fFgwWO"
@@ -68,7 +68,7 @@ exports[`MovieDetail page Component Testing should show loading and call useAxio
       class="black-bg"
     >
       <div
-        class="style__Wrapper-cmlatl-0 gnRgOj"
+        class="style__Wrapper-cmlatl-0 bbndKs"
       >
         <div
           class="StyleComponents__Container-sc-11erdxt-0 fFgwWO"
@@ -119,7 +119,7 @@ exports[`MovieDetail page Component Testing take snapshot 1`] = `
       class="black-bg"
     >
       <div
-        class="style__Wrapper-cmlatl-0 gnRgOj"
+        class="style__Wrapper-cmlatl-0 bbndKs"
       >
         <div
           class="StyleComponents__Container-sc-11erdxt-0 fFgwWO"

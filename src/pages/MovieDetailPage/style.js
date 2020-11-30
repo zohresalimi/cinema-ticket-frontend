@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   font-size: ${(props) => props.theme.fontSizes.content};
   color: ${(props) => props.theme.colors.textColor};
   line-height: 25px;
+  padding-bottom: 45px;
 
   h2.buyTicket {
     margin: 100px 0 45px 0;
