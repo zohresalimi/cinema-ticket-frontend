@@ -27,7 +27,11 @@ function Showings({ cinemas, showings, category, currentMovie }) {
                       >
                         <div className="showing-info">
                           <p className="time-slot">
-                            <Moment date={el.startTime} format="hh:mm" />
+                            <Moment
+                              local="sv"
+                              date={el.startTime}
+                              format="hh:mm"
+                            />
                           </p>
                           <p className="room-name">{t(el.room.name)}</p>
                           <p className="movie-subtitle">
