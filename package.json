@@ -27,7 +27,7 @@
     "react-moment": "^1.0.0",
     "react-owl-carousel": "^2.3.1",
     "react-player": "^2.6.2",
-    "react-scripts": "4.0.0",
+    "react-scripts": "^4.0.1",
     "stripe": "^8.120.0",
     "styled-components": "^5.2.1",
     "use-debounce": "^5.1.0",
@@ -60,6 +60,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/dom": "^7.28.1",
     "@testing-library/react": "^11.2.2",
     "@testing-library/react-hooks": "^3.4.2",
     "babel-plugin-styled-components": "^1.11.1",
@@ -72,6 +73,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "jest-when": "^3.0.1",
     "prettier": "^2.1.2",
-    "react-app-rewired": "^2.1.6"
+    "react-app-rewired": "^2.1.6",
+    "react-test-renderer": "^17.0.1"
   }
 }
