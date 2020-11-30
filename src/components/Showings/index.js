@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "@reach/router";
 import Moment from "react-moment";
+import "moment-timezone";
+
 import { useTranslation } from "react-i18next";
 
 function Showings({ cinemas, showings, category, currentMovie }) {
@@ -28,7 +30,7 @@ function Showings({ cinemas, showings, category, currentMovie }) {
                         <div className="showing-info">
                           <p className="time-slot">
                             <Moment
-                              local="sv"
+                              tz="Europe/Stockholm"
                               date={el.startTime}
                               format="hh:mm"
                             />
