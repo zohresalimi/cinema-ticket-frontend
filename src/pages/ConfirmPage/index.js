@@ -6,7 +6,7 @@ import React, {
   useEffect,
   useCallback,
 } from "react";
-import { Link } from "@reach/router";
+import { Link, useLocation } from "@reach/router";
 import { useTranslation } from "react-i18next";
 import Moment from "react-moment";
 import { loadStripe } from "@stripe/stripe-js";
@@ -35,6 +35,7 @@ const stripePromise = loadStripe(process.env.REACT_APP_PUBLISHABLE_KEY);
 function ConfirmPage() {
   const { state } = useContext(AppContext);
   const { t, i18n } = useTranslation();
+  const { state: locationState } = useLocation();
   const { cinema, movie, price, quantity, seatNumbers, showing } = state.ticket;
   const [email, setEmail] = useState();
   const [emailError, setEmailError] = useState(null);
@@ -122,7 +123,10 @@ function ConfirmPage() {
       <Row>
         <div className="full-width">
           <Breadcrumb>
-            <Link to="../seat-selection">
+            <Link
+              to="../seat-selection"
+              state={{ category: locationState.category }}
+            >
               <FontAwesomeIcon icon={faAngleLeft} className="mr-10" />
               {t("seat selection")}
             </Link>

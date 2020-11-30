@@ -81,9 +81,13 @@ exports[`Seat Page Component Testing take snapshot 1`] = `
           </div>
         </div>
         <button
-          class="StyleComponents__Button-sc-11erdxt-3 kZtNg"
+          class="StyleComponents__Button-sc-11erdxt-3 fWbzoT"
         >
-          continue
+          <a
+            href="/booking/5fbe9bd31f58462b5c759b5c/confirm-booking"
+          >
+            continue
+          </a>
         </button>
         <p>
           you must select at least one ticket

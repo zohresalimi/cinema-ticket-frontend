@@ -90,6 +90,11 @@ export const Button = styled.button`
   outline: none;
   appearance: none;
   transition: ease-in-out 0.2s;
+
+  a {
+    display: block;
+  }
+
   & :hover {
     background-color: ${(props) => props.theme.colors.darkRed};
   }
@@ -100,6 +105,7 @@ export const Button = styled.button`
     background-color: ${(props) => props.theme.colors.lightGray};
     cursor: default;
     color: ${(props) => props.theme.colors.darkGray};
+    pointer-events: none;
   }
   @media only screen and (max-width: 768px) {
     display: flex;

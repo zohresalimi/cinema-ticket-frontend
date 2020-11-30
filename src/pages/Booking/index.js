@@ -11,20 +11,15 @@ function Booking({ showingId, children }) {
   const { showings, ticket, cinemas } = state;
 
   useEffect(() => {
-    if (!ticket.showing._id && showingId) {
+    if (!ticket.cinema && !ticket.showing._id && showingId) {
       const showingObj = showings.find((showing) => showing._id === showingId);
-      dispatch({ type: SET_SELECTED_SHOWING_REDUCER, data: showingObj });
-    }
-  }, [showingId, showings, dispatch, ticket.showing]);
-
-  useEffect(() => {
-    if (ticket.showing) {
       const cinemaObj = cinemas.find(
-        (cinema) => cinema._id === ticket.showing.cinema
+        (cinema) => cinema._id === showingObj.cinema
       );
+      dispatch({ type: SET_SELECTED_SHOWING_REDUCER, data: showingObj });
       dispatch({ type: SET_SELECTED_CINEMA_REDUCER, data: cinemaObj });
     }
-  }, [showingId, showings, dispatch, cinemas, ticket.showing]);
+  }, [showingId, showings, cinemas, dispatch, ticket]);
 
   return (
     <div>

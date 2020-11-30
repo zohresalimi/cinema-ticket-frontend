@@ -64,9 +64,13 @@ exports[`Quantity Page Component Testing should decrease quantity 1`] = `
           </div>
         </div>
         <button
-          class="StyleComponents__Button-sc-11erdxt-3 kZtNg"
+          class="StyleComponents__Button-sc-11erdxt-3 fWbzoT"
         >
-          select location
+          <a
+            href="/booking/undefined/seat-selection"
+          >
+            select location
+          </a>
         </button>
       </div>
     </div>
@@ -138,9 +142,13 @@ exports[`Quantity Page Component Testing should increase quantity 1`] = `
           </div>
         </div>
         <button
-          class="StyleComponents__Button-sc-11erdxt-3 kZtNg"
+          class="StyleComponents__Button-sc-11erdxt-3 fWbzoT"
         >
-          select location
+          <a
+            href="/booking/undefined/seat-selection"
+          >
+            select location
+          </a>
         </button>
       </div>
     </div>
@@ -212,10 +220,14 @@ exports[`Quantity Page Component Testing take snapshot 1`] = `
           </div>
         </div>
         <button
-          class="StyleComponents__Button-sc-11erdxt-3 kZtNg"
+          class="StyleComponents__Button-sc-11erdxt-3 fWbzoT"
           disabled=""
         >
-          select location
+          <a
+            href="/booking/undefined/seat-selection"
+          >
+            select location
+          </a>
         </button>
         <div
           class="StyleComponents__Alert-sc-11erdxt-5 bPYMDT"

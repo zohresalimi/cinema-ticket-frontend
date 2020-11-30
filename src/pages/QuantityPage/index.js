@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { Link, useLocation, useNavigate } from "@reach/router";
+import { Link, useLocation } from "@reach/router";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
@@ -20,7 +20,6 @@ import Quantity from "./style";
 
 function QuantityPage() {
   const location = useLocation();
-  const navigate = useNavigate();
   const { state, dispatch } = useContext(AppContext);
   const { movie, showing, quantity } = state.ticket;
   const { category } = location.state;
@@ -67,11 +66,13 @@ function QuantityPage() {
               </button>
             </div>
           </Quantity>
-          <Button
-            onClick={() => navigate("seat-selection")}
-            disabled={quantity <= 0}
-          >
-            {t("select location")}
+          <Button disabled={quantity <= 0}>
+            <Link
+              to={`/booking/${showing._id}/seat-selection`}
+              state={{ category }}
+            >
+              {t("select location")}
+            </Link>
           </Button>
           {quantity === 0 && (
             <Alert>{t("you must select at least one ticket")}</Alert>

@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useNavigate } from "@reach/router";
+import { Link, useLocation } from "@reach/router";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
@@ -58,7 +58,7 @@ function SeatPlan({ seats, ticketCount }) {
 function Seat({ showingId }) {
   const { state } = useContext(AppContext);
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const { state: locationState } = useLocation();
   const { showing, seatNumbers, quantity } = state.ticket;
   const [ticketCount, setTicketCount] = useState(0);
 
@@ -75,7 +75,10 @@ function Seat({ showingId }) {
       <Row>
         <div className="full-width">
           <Breadcrumb>
-            <Link to={`/booking/${showingId}`}>
+            <Link
+              to={`/booking/${showingId}`}
+              state={{ category: locationState.category }}
+            >
               <FontAwesomeIcon icon={faAngleLeft} className="mr-10" />
               {t("ticket selection")}
             </Link>
@@ -84,11 +87,13 @@ function Seat({ showingId }) {
             <SeatPlan ticketCount={ticketCount} seats={showing.seats} />
           )}
 
-          <Button
-            disabled={ticketCount < quantity}
-            onClick={() => navigate("../confirm-booking")}
-          >
-            {t("continue")}
+          <Button disabled={ticketCount !== quantity}>
+            <Link
+              to={`/booking/${showing._id}/confirm-booking`}
+              state={{ category: locationState.category }}
+            >
+              {t("continue")}
+            </Link>
           </Button>
           {quantity === 0 && <p>{t("you must select at least one ticket")}</p>}
         </div>

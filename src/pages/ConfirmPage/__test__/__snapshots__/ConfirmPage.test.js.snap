@@ -1,0 +1,208 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Confirm Page Component Testing take snapshot 1`] = `
+<div
+  style="outline: none;"
+  tabindex="-1"
+>
+  <div
+    class="StyleComponents__Container-sc-11erdxt-0 fFgwWO"
+  >
+    <div
+      class="StyleComponents__Row-sc-11erdxt-1 jhoSVF"
+    >
+      <div
+        class="full-width"
+      >
+        <h2
+          class="StyleComponents__Breadcrumb-sc-11erdxt-4 cNjPuO"
+        >
+          <a
+            href="/seat-selection"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-angle-left fa-w-8 mr-10"
+              data-icon="angle-left"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 256 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                fill="currentColor"
+              />
+            </svg>
+            seat selection
+          </a>
+          <a
+            aria-current="page"
+            href="/"
+          >
+            sing in
+          </a>
+        </h2>
+        <div
+          class="style__Wrapper-sc-183f9xs-0 lovBnU"
+        >
+          <h2>
+            reservation
+          </h2>
+          <div
+            class="movie-info"
+          >
+            <img
+              alt=""
+            />
+            <div
+              class="info"
+            >
+              <h4 />
+              <p>
+                <time
+                  datetime="1606695508693"
+                >
+                  måndag 30 november
+                </time>
+              </p>
+              <p>
+                <time
+                  datetime="1605283200000"
+                >
+                  17:00
+                </time>
+              </p>
+              <p>
+                filmstaden kista
+              </p>
+              <p>
+                room name
+              </p>
+              <div>
+                <div>
+                  <span
+                    class="sub-title"
+                  >
+                    row
+                  </span>
+                  <span>
+                    2
+                  </span>
+                  <span
+                    class="sub-title"
+                  >
+                    seat number
+                  </span>
+                  <span>
+                    2
+                  </span>
+                  <span>
+                    2, 3
+                  </span>
+                </div>
+                <div>
+                  <span
+                    class="sub-title"
+                  >
+                    row
+                  </span>
+                  <span>
+                    3
+                  </span>
+                  <span
+                    class="sub-title"
+                  >
+                    seat number
+                  </span>
+                  <span>
+                    3
+                  </span>
+                  <span>
+                    2, 5
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="row-box"
+          >
+            <p>
+              0 ticket
+            </p>
+            <p>
+              100,00 kr
+            </p>
+          </div>
+          <div
+            class="row-box"
+          >
+            <p>
+              to pay
+            </p>
+            <p>
+              0,00 kr
+            </p>
+          </div>
+          <div>
+            <label>
+              your e-mail
+              <div
+                class="StyleComponents__Input-sc-11erdxt-6 jWtKJs"
+              >
+                <div
+                  class="input-group"
+                >
+                  <div
+                    class="input-group-text"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="svg-inline--fa fa-envelope fa-w-16 "
+                      data-icon="envelope"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      viewBox="0 0 512 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <input
+                  name="name"
+                  placeholder="example@gmail.com"
+                  type="text"
+                />
+              </div>
+            </label>
+          </div>
+          <div>
+            <label>
+              <input
+                class="m-10"
+                name="checkbox"
+                type="checkbox"
+              />
+              i accept the  terms of purchase.
+            </label>
+          </div>
+          <button
+            class="StyleComponents__Button-sc-11erdxt-3 fWbzoT"
+            disabled=""
+            role="link"
+          >
+            continue
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

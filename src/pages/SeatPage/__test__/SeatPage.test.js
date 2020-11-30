@@ -1,7 +1,7 @@
 import * as React from "react";
+import * as ReachRouter from "@reach/router";
 
-import { act, render, fireEvent, waitFor } from "@testing-library/react";
-import { when } from "jest-when";
+import { act, render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
 import * as hooks from "../../../hooks/useAxios";
@@ -48,6 +48,12 @@ describe("Seat Page Component Testing", () => {
   });
 
   test("take snapshot", async () => {
+    const mockUseLocation = jest.fn(() => ({
+      state: {
+        category: "premiered",
+      },
+    }));
+    jest.spyOn(ReachRouter, "useLocation").mockImplementation(mockUseLocation);
     const { container } = await renderWrapper(true);
     expect(container.firstChild).toMatchSnapshot();
   });

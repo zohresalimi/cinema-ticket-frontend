@@ -102,7 +102,7 @@ exports[`MovieDetail Component Testing page should be scrolled 1`] = `
               class="btn-wrapper"
             >
               <button
-                class="StyleComponents__Button-sc-11erdxt-3 kZtNg"
+                class="StyleComponents__Button-sc-11erdxt-3 fWbzoT"
                 data-testid="booking-scroll"
               >
                 buy ticket
@@ -318,7 +318,7 @@ exports[`MovieDetail Component Testing should play video 1`] = `
               class="btn-wrapper"
             >
               <button
-                class="StyleComponents__Button-sc-11erdxt-3 kZtNg"
+                class="StyleComponents__Button-sc-11erdxt-3 fWbzoT"
                 data-testid="booking-scroll"
               >
                 buy ticket
