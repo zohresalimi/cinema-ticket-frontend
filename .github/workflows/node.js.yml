@@ -1,4 +1,4 @@
-name: Savely Frontend
+name: CinemaTicket Frontend
 
 on:
   push:
