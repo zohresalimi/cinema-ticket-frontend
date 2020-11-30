@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/zohresalimi/frocinema-ticketntend/workflows/badge.svg)](https://github.com/zohresalimi/frontend/actions)
+[![Actions Status](https://github.com/zohresalimi/cinema-ticket-frontend/workflows/.github/workflows/main.yml/badge.svg)](https://github.com/zohresalimi/frontend/actions)
 
 # CinemaTicket frontend
 
