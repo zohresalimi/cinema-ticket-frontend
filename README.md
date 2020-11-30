@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/slosa-smartare/frontend/workflows/Savely%20Frontend/badge.svg)](https://github.com/slosa-smartare/frontend/actions)
+
 # CinemaTicket frontend
 
 This site has been set up to inform about the screening of cinemas and show cinema movies. Online ticket booking is also one of the main goals of this website.
