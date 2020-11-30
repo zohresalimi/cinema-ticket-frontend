@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "@reach/router";
 import { useTranslation } from "react-i18next";
 

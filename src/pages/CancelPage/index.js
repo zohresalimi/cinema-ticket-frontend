@@ -12,7 +12,7 @@ function CancelPage() {
 
   useEffect(() => {
     dispatch({ type: RESET_STATE });
-  }, []);
+  });
   return (
     <Wrapper>
       <Container>

@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  background-color: ${(props) => props.theme.colors.red};
+  background-color: ${(props) => props.theme.colors.black};
 `;
 
 export const FullImage = styled.div`

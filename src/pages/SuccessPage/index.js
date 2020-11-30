@@ -14,7 +14,7 @@ function SuccessPage() {
 
   useEffect(() => {
     dispatch({ type: RESET_STATE });
-  }, []);
+  });
   return (
     <Wrapper>
       <Container>
