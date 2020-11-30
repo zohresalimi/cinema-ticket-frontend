@@ -40,7 +40,9 @@ exports[`Showings Component Testing take snapshot when cinema & showings do matc
                 class="movie-subtitle"
               >
                 lang
-                :
+                <span>
+                  :
+                </span>
                 swedish
               </p>
             </div>
