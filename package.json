@@ -38,7 +38,8 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom --verbose=false --coverage",
     "eject": "react-app-rewired eject",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "serve": "serve -s build"
   },
   "eslintConfig": {
     "extends": [

@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/slosa-smartare/frontend/workflows/Savely%20Frontend/badge.svg)](https://github.com/slosa-smartare/frontend/actions)
+[![Actions Status](https://github.com/zohresalimi/frocinema-ticketntend/workflows/badge.svg)](https://github.com/zohresalimi/frontend/actions)
 
 # CinemaTicket frontend
 
