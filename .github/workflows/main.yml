@@ -19,6 +19,7 @@ jobs:
       - name: Lint
         run: |
           yarn
+          yarn global add react-app-rewired
           yarn lint
 
       - name: Test
