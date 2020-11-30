@@ -32,7 +32,7 @@ function Showings({ cinemas, showings, category, currentMovie }) {
                           <p className="room-name">{t(el.room.name)}</p>
                           <p className="movie-subtitle">
                             {t("lang")}
-                            {":"}
+                            <span>:</span>
                             {t(currentMovie.originalTitle)}
                           </p>
                         </div>

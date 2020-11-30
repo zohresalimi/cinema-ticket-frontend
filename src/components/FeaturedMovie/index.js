@@ -11,7 +11,6 @@ import {
   Info,
   Tag,
   MovieTitle,
-  Link,
 } from "./style";
 import PlayButton from "../PlayButton";
 import Modal from "../Modal";
