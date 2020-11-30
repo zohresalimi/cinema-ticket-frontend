@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/zohresalimi/frocinema-ticketntend/workflows/badge.svg)](https://github.com/zohresalimi/frontend/actions)
+
 # CinemaTicket frontend
 
 This site has been set up to inform about the screening of cinemas and show cinema movies. Online ticket booking is also one of the main goals of this website.
