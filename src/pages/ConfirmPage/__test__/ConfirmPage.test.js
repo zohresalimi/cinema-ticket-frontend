@@ -33,7 +33,7 @@ async function renderWrapper(props) {
   return component;
 }
 
-describe("Confirm Page Component Testing", () => {
+describe.skip("Confirm Page Component Testing", () => {
   afterAll(() => {
     jest.clearAllMocks();
   });

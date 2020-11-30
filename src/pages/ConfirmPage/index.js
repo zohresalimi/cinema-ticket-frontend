@@ -144,6 +144,7 @@ function ConfirmPage() {
                     locale={i18n.language}
                     calendar={showing.startTime}
                     format="dddd D MMMM"
+                    tz="Europe/Stockholm"
                   />
                 </p>
                 <p>
@@ -151,6 +152,7 @@ function ConfirmPage() {
                     locale={i18n.language}
                     date={showing.startTime}
                     format="HH:mm"
+                    tz="Europe/Stockholm"
                   />
                 </p>
                 <p>{cinema.name}</p>
