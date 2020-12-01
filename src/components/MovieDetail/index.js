@@ -49,7 +49,7 @@ function MovieDetail({ movie, onBookingClick }) {
                       youtube: {
                         playerVars: {
                           modestbranding: 1,
-                          showinfo: 0,
+                          showinfo: 1,
                           controls: 1,
                           disablekb: 1,
                           listType: 1,

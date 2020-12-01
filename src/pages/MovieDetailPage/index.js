@@ -26,7 +26,7 @@ function MovieDetailPage(props) {
   const { state, dispatch } = useContext(AppContext);
   const { t } = useTranslation();
   const { category, movieId } = props;
-  const { movies } = state;
+  const { movies, cinemas, showings } = state;
   const [currentMovie, setCurrentMovie] = useState(() => {
     const movieList = movies[category];
     if (movieList) {
@@ -59,14 +59,14 @@ function MovieDetailPage(props) {
     manual: true,
   });
 
-  const [{ response: cinemas }, getCinemas] = useAxios(
+  const [{ response: cinemasResponse }, getCinemas] = useAxios(
     `/api/v1/cinemas/by-room-ids`,
     {
       manual: true,
     }
   );
 
-  const [{ response: showings, loading: showingsIsLoading }] = useAxios(
+  const [{ response: showingsResponse, loading: showingsIsLoading }] = useAxios(
     `/api/v1/showings/by-movie-id/${movieId}`
   );
 
@@ -88,16 +88,19 @@ function MovieDetailPage(props) {
   }, [getMovieRes, setCurrentMovie]);
 
   useEffect(() => {
-    if (cinemas) {
-      dispatch({ type: SET_CINEMAS_REDUCER, data: cinemas.data });
+    if (cinemasResponse) {
+      dispatch({ type: SET_CINEMAS_REDUCER, data: cinemasResponse.data });
     }
-  }, [cinemas, dispatch]);
+  }, [cinemasResponse, dispatch]);
 
   useEffect(() => {
-    if (showings) {
-      dispatch({ type: SET_SHOWINGS_MOVIE_REDUCER, data: showings.data });
+    if (showingsResponse) {
+      dispatch({
+        type: SET_SHOWINGS_MOVIE_REDUCER,
+        data: showingsResponse.data,
+      });
     }
-  }, [showings, dispatch]);
+  }, [showingsResponse, dispatch]);
 
   return (
     <div>
@@ -118,15 +121,15 @@ function MovieDetailPage(props) {
                     ""
                   )}
                   <h2 ref={bookingSection} className="buyTicket">
-                    {!cinemas || !cinemas.length
+                    {!showings.length
                       ? t("no showings found")
                       : t("book tickets")}
                   </h2>
-                  {cinemas && showings && (
+                  {!!showings.length && (
                     <Showings
                       {...{
-                        showings: showings.data,
-                        cinemas: cinemas.data,
+                        showings,
+                        cinemas,
                         category,
                         currentMovie,
                       }}

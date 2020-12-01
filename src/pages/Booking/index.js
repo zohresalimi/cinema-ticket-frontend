@@ -8,10 +8,10 @@ import {
 
 function Booking({ showingId, children }) {
   const { state, dispatch } = useContext(AppContext);
-  const { showings, ticket, cinemas } = state;
+  const { showings, cinemas } = state;
 
   useEffect(() => {
-    if (!ticket.cinema && !ticket.showing._id && showingId) {
+    if (showingId) {
       const showingObj = showings.find((showing) => showing._id === showingId);
       const cinemaObj = cinemas.find(
         (cinema) => cinema._id === showingObj.cinema
@@ -19,7 +19,7 @@ function Booking({ showingId, children }) {
       dispatch({ type: SET_SELECTED_SHOWING_REDUCER, data: showingObj });
       dispatch({ type: SET_SELECTED_CINEMA_REDUCER, data: cinemaObj });
     }
-  }, [showingId, showings, cinemas, dispatch, ticket]);
+  }, []);
 
   return (
     <div>
