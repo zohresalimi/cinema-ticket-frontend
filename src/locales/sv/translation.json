@@ -18,6 +18,7 @@
     "select location":"Välj platser",
     "continue":"Fortsätt",
     "ticket selection":"biljettval",
+    "seat selection":"platsval",
     "ticket":"biljettr",
     "row":"rad:",
     "seat number":"sittnummer:",
@@ -50,5 +51,6 @@
     "Could not find movies with this search term, give me more characters.": "Det gick inte att hitta filmer med det här sökordet, ge mig fler karaktärer.",
     "show": "visa",
     "selected": "vald",
-    "from": "från"
+    "from": "från",
+    
 }
