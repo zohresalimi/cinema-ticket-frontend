@@ -50,7 +50,10 @@ function MovieDetail({ movie, onBookingClick }) {
                         playerVars: {
                           modestbranding: 1,
                           showinfo: 0,
-                          controls: 0,
+                          controls: 1,
+                          disablekb: 1,
+                          listType: 1,
+                          playlist: 1,
                         },
                       },
                     }}
