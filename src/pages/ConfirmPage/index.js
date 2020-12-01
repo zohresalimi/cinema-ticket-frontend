@@ -66,7 +66,11 @@ function ConfirmPage() {
   });
 
   const [
-    { response: checkoutResponse, loading: checkoutInProgress },
+    {
+      response: checkoutResponse,
+      loading: checkoutInProgress,
+      error: checkoutError,
+    },
     createCheckout,
   ] = useAxios("/api/v1/checkout/create", {
     manual: true,
@@ -75,6 +79,9 @@ function ConfirmPage() {
 
   useEffect(() => {
     async function createSession() {
+      if (checkoutError) {
+        return;
+      }
       if (ticketResponse && !checkoutInProgress && !checkoutResponse) {
         await createCheckout({
           data: {
@@ -85,7 +92,7 @@ function ConfirmPage() {
     }
 
     createSession();
-  }, [checkoutInProgress, ticketResponse, checkoutResponse]);
+  }, [checkoutInProgress, ticketResponse, checkoutResponse, checkoutError]);
 
   useEffect(() => {
     async function goToCheckout() {
@@ -121,6 +128,13 @@ function ConfirmPage() {
 
   return (
     <Container>
+      {checkoutError && (
+        <Row>
+          {t(
+            "failed to create checkout session, please try again later, start over or contact admin"
+          )}
+        </Row>
+      )}
       <Row>
         <div className="full-width">
           <Breadcrumb>

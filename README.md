@@ -1,4 +1,5 @@
-[![Actions Status](https://github.com/zohresalimi/cinema-ticket-frontend/workflows/.github/workflows/main.yml/badge.svg)](https://github.com/zohresalimi/frontend/actions)
+[![Actions Status](https://github.com/zohresalimi/cinema-ticket-frontend/workflows/main/badge.svg)](https://github.com/zohresalimi/cinema-ticket-frontend/actions)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5dcfc8c0-7382-49a6-a8f9-c2f53a30e918/deploy-status)](https://app.netlify.com/sites/frosty-raman-d9c6ad/deploys)
 
 # CinemaTicket frontend
 
