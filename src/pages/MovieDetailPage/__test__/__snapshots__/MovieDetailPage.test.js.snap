@@ -36,8 +36,22 @@ exports[`MovieDetail page Component Testing should read current movie from state
               <h2
                 class="buyTicket"
               >
-                no showings found
+                book tickets
               </h2>
+              <div
+                data-testid="showings-wrapper"
+              >
+                <div>
+                  <h2
+                    class="cinema-name"
+                  >
+                    filmstaden kista
+                  </h2>
+                  <ul
+                    class="showings-list"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -79,16 +93,26 @@ exports[`MovieDetail page Component Testing should show loading and call useAxio
             <div
               class="full-width"
             >
+              
               <h2
                 class="buyTicket"
               >
-                Loading...
+                book tickets
               </h2>
-              <h2
-                class="buyTicket"
+              <div
+                data-testid="showings-wrapper"
               >
-                no showings found
-              </h2>
+                <div>
+                  <h2
+                    class="cinema-name"
+                  >
+                    filmstaden kista
+                  </h2>
+                  <ul
+                    class="showings-list"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
