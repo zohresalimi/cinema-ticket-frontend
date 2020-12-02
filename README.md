@@ -1,6 +1,4 @@
-![Lint, Test, Build](https://github.com/zohresalimi/cinema-ticket-frontend/workflows/Lint,%20Test,%20Build/badge.svg)
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5dcfc8c0-7382-49a6-a8f9-c2f53a30e918/deploy-status)](https://app.netlify.com/sites/cinema-ticket/deploys)
+![Lint, Test, Build](https://github.com/zohresalimi/cinema-ticket-frontend/workflows/Lint,%20Test,%20Build/badge.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/5dcfc8c0-7382-49a6-a8f9-c2f53a30e918/deploy-status)](https://app.netlify.com/sites/cinema-ticket/deploys)
 
 # CinemaTicket frontend
 
