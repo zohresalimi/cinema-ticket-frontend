@@ -1,5 +1,7 @@
 ![Lint, Test, Build](https://github.com/zohresalimi/cinema-ticket-frontend/workflows/Lint,%20Test,%20Build/badge.svg)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5dcfc8c0-7382-49a6-a8f9-c2f53a30e918/deploy-status)](https://app.netlify.com/sites/cinema-ticket/deploys)
+
 # CinemaTicket frontend
 
 This site has been set up to inform about the screening of cinemas and show cinema movies. Online ticket booking is also one of the main goals of this website.
