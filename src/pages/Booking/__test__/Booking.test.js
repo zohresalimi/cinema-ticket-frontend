@@ -57,7 +57,7 @@ describe("Booking Page Component Testing", () => {
       data: testState.showings[0],
     });
 
-    expect(mockDispatch).toHaveBeenCalledTimes(2);
+    expect(mockDispatch).toHaveBeenCalledTimes(3);
     expect(container.firstChild).toMatchSnapshot();
   });
 });
