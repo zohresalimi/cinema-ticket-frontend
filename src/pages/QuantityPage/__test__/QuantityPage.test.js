@@ -4,7 +4,7 @@ import * as ReachRouter from "@reach/router";
 import { act, render, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
-import { WithProvider } from "../../../mockTestData/data";
+import { getTestStore, WithProvider } from "../../../mockTestData/data";
 import QuantityPage from "../";
 
 jest.mock("react-i18next", () => ({
@@ -17,12 +17,12 @@ jest.mock("react-i18next", () => ({
   }),
 }));
 
-async function renderWrapper(props) {
+async function renderWrapper(defaultValue, props) {
   let component;
 
   act(() => {
     component = render(
-      <WithProvider>
+      <WithProvider defaultValue={defaultValue}>
         <QuantityPage {...props} path="/" />
       </WithProvider>
     );
@@ -48,11 +48,13 @@ describe("Quantity Page Component Testing", () => {
     jest.spyOn(ReachRouter, "useLocation").mockImplementation(mockUseLocation);
     jest.spyOn(ReachRouter, "useNavigate").mockImplementation(mockUseNavigate);
 
-    const { container, getByTestId } = await renderWrapper();
+    const { container } = await renderWrapper();
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test("should increase quantity", async () => {
+    const testState = getTestStore();
+    testState.ticket.showing = testState.showings[0];
     const mockUseLocation = jest.fn(() => ({
       state: {
         category: "premiered",
@@ -64,15 +66,10 @@ describe("Quantity Page Component Testing", () => {
     jest.spyOn(ReachRouter, "useLocation").mockImplementation(mockUseLocation);
     jest.spyOn(ReachRouter, "useNavigate").mockImplementation(mockUseNavigate);
 
-    const { container, getByTestId } = await renderWrapper();
+    const { container, getByTestId } = await renderWrapper(testState);
     const increment = await getByTestId("increment");
     fireEvent.click(increment);
-    await act(
-      async () =>
-        await waitFor(() => {
-          expect(getByTestId("ticket-quantity")).toHaveTextContent("1");
-        })
-    );
+    expect(getByTestId("ticket-quantity")).toHaveTextContent("1");
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -88,19 +85,17 @@ describe("Quantity Page Component Testing", () => {
     jest.spyOn(ReachRouter, "useLocation").mockImplementation(mockUseLocation);
     jest.spyOn(ReachRouter, "useNavigate").mockImplementation(mockUseNavigate);
 
-    const { container, getByTestId } = await renderWrapper();
+    const testState = getTestStore();
+    testState.ticket.showing = testState.showings[0];
+
+    const { container, getByTestId } = await renderWrapper(testState);
     const decrement = await getByTestId("decrement");
     const increment = await getByTestId("increment");
     fireEvent.click(increment);
     fireEvent.click(increment);
     fireEvent.click(increment);
     fireEvent.click(decrement);
-    await act(
-      async () =>
-        await waitFor(() => {
-          expect(getByTestId("ticket-quantity")).toHaveTextContent("2");
-        })
-    );
+    expect(getByTestId("ticket-quantity")).toHaveTextContent("2");
     expect(container.firstChild).toMatchSnapshot();
   });
 });

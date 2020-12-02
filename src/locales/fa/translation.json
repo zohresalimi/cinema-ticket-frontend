@@ -38,7 +38,7 @@
   "room 1":"سالن1",
   "room 2":"سالن 2",
   "room 3":"سالن 3",
-  "English":"انگلیسی",
+  "english":"انگلیسی",
   "you must select at least one ticket":"شما باید حداقل یک بلیط انتخاب کنید.",
   "i accept the  terms of purchase.":"من شرایط خرید از سایت را قبول می کنم.",
   "please enter a valid email":"ایمیل صحیح وارد کنید.",
@@ -54,5 +54,8 @@
   "Could not find movies with this search term, give me more characters.": "نتیجه ای یافت نشد، با کلمات بیشتری تلاش کنید",
   "show": "نمایش",
   "selected": "انتخاب شده",
-  "from": "از"
+  "from": "از",
+  "sold out":"فروخته شده",
+  "time passed":"خارج از زمان",
+  "quantity":"ظرفیت"
 }

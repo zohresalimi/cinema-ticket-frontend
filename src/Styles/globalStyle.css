@@ -99,6 +99,44 @@ input[type="checkbox"] {
   height: 20px;
 }
 
+.unclickable {
+  pointer-events: none;
+  background-color: #1f1e1e;
+  opacity: 0.6;
+}
+
+.showing-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.time-slot {
+  padding: 0;
+  margin-right: 14px;
+  display: flex;
+  justify-content: center;
+}
+
+.showing-info div {
+  font-size: 16px;
+  color: #ccc;
+}
+
+.quantity {
+  padding: 0;
+  font-size: 17px;
+  text-transform: capitalize;
+  color: #869791;
+}
+.quantity > span:first-child {
+  margin: 0 5px;
+}
+
+.quantity > span:last-child {
+  font-weight: bold;
+  color: #000;
+}
+
 @media only screen and (max-width: 768px) {
   .player-wrapper {
     width: 80%;

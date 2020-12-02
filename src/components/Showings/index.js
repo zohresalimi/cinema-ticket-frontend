@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "@reach/router";
 import Moment from "react-moment";
 import "moment-timezone";
 
 import { useTranslation } from "react-i18next";
+import AppContext from "../../store/context";
 
-function Showings({ cinemas, showings, category, currentMovie }) {
+function getBookingText(showing) {
+  if (!showing.capacity) return "sold out";
+  if (new Date(showing.startTime) < new Date()) return "time passed";
+  return "buy ticket";
+}
+
+function Showings({ category, currentMovie }) {
+  const { state } = useContext(AppContext);
+  const { cinemas, showings } = state;
   const { t } = useTranslation();
 
   return (
@@ -19,35 +28,50 @@ function Showings({ cinemas, showings, category, currentMovie }) {
             <h2 className="cinema-name">{item.name}</h2>
             <ul className="showings-list">
               {!!showingsByCinema.length &&
-                showingsByCinema
-                  .filter((showing) => showing.capacity > 0)
-                  .map((el) => (
-                    <li key={el._id}>
-                      <Link
-                        to={`../../../booking/${el._id}`}
-                        state={{ category }}
-                      >
-                        <div className="showing-info">
-                          <p className="time-slot">
-                            <Moment
-                              tz="Europe/Stockholm"
-                              date={el.startTime}
-                              format="hh:mm"
-                            />
-                          </p>
+                showingsByCinema.map((el) => (
+                  <li
+                    key={el._id}
+                    className={
+                      getBookingText(el) !== "buy ticket" ? "unclickable" : ""
+                    }
+                  >
+                    <Link
+                      to={`../../../booking/${el._id}`}
+                      state={{ category }}
+                    >
+                      <div className="showing-info">
+                        <p className="time-slot">
+                          <Moment
+                            tz="Europe/Stockholm"
+                            date={el.startTime}
+                            format="hh:mm"
+                          />
+                        </p>
+                        <div>
                           <p className="room-name">{t(el.room.name)}</p>
                           <p className="movie-subtitle">
                             {t("lang")}
                             <span>:</span>
                             {t(currentMovie.originalTitle)}
                           </p>
+                          <p>
+                            <Moment
+                              tz="Europe/Stockholm"
+                              date={el.startTime}
+                              format="YYYY-MM-DD"
+                            />
+                          </p>
                         </div>
-                        <div className="buy-ticket">
-                          <p>{t("buy ticket")}</p>
-                        </div>
-                      </Link>
-                    </li>
-                  ))}
+                      </div>
+                      <div className="buy-ticket">
+                        <p>
+                          {/* {el.capacity > 0 ? t("buy ticket") : t("sold out")} */}
+                          {t(getBookingText(el))}
+                        </p>
+                      </div>
+                    </Link>
+                  </li>
+                ))}
             </ul>
           </div>
         );

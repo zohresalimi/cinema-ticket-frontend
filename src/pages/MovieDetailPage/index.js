@@ -26,7 +26,7 @@ function MovieDetailPage(props) {
   const { state, dispatch } = useContext(AppContext);
   const { t } = useTranslation();
   const { category, movieId } = props;
-  const { movies, cinemas, showings } = state;
+  const { movies, showings } = state;
   const [currentMovie, setCurrentMovie] = useState(() => {
     const movieList = movies[category];
     if (movieList) {
@@ -128,8 +128,6 @@ function MovieDetailPage(props) {
                   {!!showings.length && (
                     <Showings
                       {...{
-                        showings,
-                        cinemas,
                         category,
                         currentMovie,
                       }}

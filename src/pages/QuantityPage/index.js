@@ -21,12 +21,17 @@ import Quantity from "./style";
 function QuantityPage() {
   const location = useLocation();
   const { state, dispatch } = useContext(AppContext);
+  const { showings } = state;
   const { movie, showing, quantity } = state.ticket;
   const { category } = location.state;
   const { t } = useTranslation();
 
+  const showingQuantity = showings.find((show) => show._id === showing._id);
+
   const handleIncrement = () => {
-    dispatch({ type: SET_TICKET_QUANTITY_REDUCER, data: quantity + 1 });
+    if (quantity < showingQuantity.capacity) {
+      dispatch({ type: SET_TICKET_QUANTITY_REDUCER, data: quantity + 1 });
+    }
   };
 
   const handleDecrement = () => {
@@ -55,7 +60,7 @@ function QuantityPage() {
             </Link>
           </Breadcrumb>
           <Quantity>
-            <p className="breadcrumb">{t("number of tickets")}</p>
+            <p>{t("number of tickets")}</p>
             <div>
               <button data-testid="decrement" onClick={handleDecrement}>
                 -
@@ -66,6 +71,13 @@ function QuantityPage() {
               </button>
             </div>
           </Quantity>
+          {showingQuantity && (
+            <p className="quantity">
+              {t("quantity")}
+              <span>:</span>
+              <span>{showingQuantity.capacity}</span>
+            </p>
+          )}
           <Button disabled={quantity <= 0}>
             <Link
               to={`/booking/${showing._id}/seat-selection`}

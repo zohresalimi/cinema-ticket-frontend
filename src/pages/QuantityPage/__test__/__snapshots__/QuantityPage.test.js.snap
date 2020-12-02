@@ -40,9 +40,7 @@ exports[`Quantity Page Component Testing should decrease quantity 1`] = `
         <div
           class="style__Quantity-wqle2v-0 eTLLsO"
         >
-          <p
-            class="breadcrumb"
-          >
+          <p>
             number of tickets
           </p>
           <div>
@@ -63,11 +61,22 @@ exports[`Quantity Page Component Testing should decrease quantity 1`] = `
             </button>
           </div>
         </div>
+        <p
+          class="quantity"
+        >
+          quantity
+          <span>
+            :
+          </span>
+          <span>
+            4
+          </span>
+        </p>
         <button
           class="StyleComponents__Button-sc-11erdxt-3 fWbzoT"
         >
           <a
-            href="/booking/undefined/seat-selection"
+            href="/booking/5fbe9bd31f58462b5c759b5c/seat-selection"
           >
             select location
           </a>
@@ -118,9 +127,7 @@ exports[`Quantity Page Component Testing should increase quantity 1`] = `
         <div
           class="style__Quantity-wqle2v-0 eTLLsO"
         >
-          <p
-            class="breadcrumb"
-          >
+          <p>
             number of tickets
           </p>
           <div>
@@ -141,11 +148,22 @@ exports[`Quantity Page Component Testing should increase quantity 1`] = `
             </button>
           </div>
         </div>
+        <p
+          class="quantity"
+        >
+          quantity
+          <span>
+            :
+          </span>
+          <span>
+            4
+          </span>
+        </p>
         <button
           class="StyleComponents__Button-sc-11erdxt-3 fWbzoT"
         >
           <a
-            href="/booking/undefined/seat-selection"
+            href="/booking/5fbe9bd31f58462b5c759b5c/seat-selection"
           >
             select location
           </a>
@@ -196,9 +214,7 @@ exports[`Quantity Page Component Testing take snapshot 1`] = `
         <div
           class="style__Quantity-wqle2v-0 eTLLsO"
         >
-          <p
-            class="breadcrumb"
-          >
+          <p>
             number of tickets
           </p>
           <div>

@@ -143,13 +143,16 @@ export const getTestStore = () => {
 };
 
 export const WithProvider = (props) => {
-  const [state, dispatch] = useReducer(reducer, getTestStore());
+  const [state, dispatch] = useReducer(
+    reducer,
+    props.defaultValue || getTestStore()
+  );
 
   return (
     <Theme>
       <AppContext.Provider
         value={{
-          state: props.defaultValue || state,
+          state,
           dispatch: props.mockDispatch || dispatch,
         }}
       >
