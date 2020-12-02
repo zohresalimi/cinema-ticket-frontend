@@ -1,27 +1,37 @@
-[![Actions Status](https://github.com/zohresalimi/cinema-ticket-frontend/workflows/main/badge.svg)](https://github.com/zohresalimi/cinema-ticket-frontend/actions)
+![Lint, Test, Build](https://github.com/zohresalimi/cinema-ticket-frontend/workflows/Lint,%20Test,%20Build/badge.svg?branch=master)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5dcfc8c0-7382-49a6-a8f9-c2f53a30e918/deploy-status)](https://app.netlify.com/sites/frosty-raman-d9c6ad/deploys)
 
 # CinemaTicket frontend
 
-This site has been set up to inform about the screening of cinemas and show cinema movies. Online ticket booking is also one of the main goals of this website.
+This site has been set up for cinemas screenings and movies premiering in cinemas. Online ticket booking is also one of the main goals of this website.
 
 ### Tech
 
 we are useing a number of open source tools:
 
-- [React] - A JavaScript library for building user interfaces
+- [react] - A JavaScript library for building user interfaces
 - [styled-components] - Visual primitives for the component age.
-- [Axios] - Promise based HTTP client for the browser and node.js
+- [axios] - Promise based HTTP client for the browser and node.js.
+- [i18n]- locale switching.
+- [stripe]- Stripe’s APIs to accept payments.
 
 ### Installation
+
+Clone the repository
+
+```
+$ git clone https://github.com/zohresalimi/cinema-ticket-frontend.git
+```
 
 Install all dependencies and start the project.
 
 ```sh
-$ cd frontend
-$ npm install
-$ npm start
+$ cd cinema-ticket-frontend
+$ yarn
+$ yarn start
 ```
+
+Note: we used `yarn` to setup this project, however, if you want to use `npm` instead, do not forget to delete the `yarn.lock` file first.
 
 ### Setup
 
@@ -29,14 +39,10 @@ Eslint must be installed globally: `npm install -g eslint`
 
 env variables are only available in node environment and not in the browser and we can access to them via `process.env.[VARIABLE_NAME]`
 
-A `.env.local` file is created at the root directory of the application. Just add the variables to it.
+A `.env.sample` file is created at the root directory of the application. Just rename it to your environment name (ex. `.env.development`) and add corresponding values to the variables inside the file.
 
 ```
-REACT_APP_BASE_URL="http://localhost:5050"
+REACT_APP_BASE_URL=http://localhost:<your desired port>
+REACT_APP_LOCAL_STORAGE_KEY=<a string which will be used to store data in localstorage>
+REACT_APP_PUBLISHABLE_KEY=<your stripe credentioal>
 ```
-
-Since we're using create-react-app, It does some tricks for you and simulates the same behavior inside the browser, only if you put the REACT*APP* prefix before your env variables.
-
-Note:
-
-> You must create custom environment variables beginning with REACT*APP*. Any other variables except NODE_ENV will be ignored to avoid accidentally exposing a private key on the machine that could have the same name. Changing any environment variables will require you to restart the development server if it is running.
