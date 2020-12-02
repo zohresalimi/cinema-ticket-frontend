@@ -142,9 +142,6 @@ exports[`Search Page Component Testing should render items when api returns resu
                     family
                     children
                   </p>
-                  <p>
-                    2020-10-05T15:18:52.722Z
-                  </p>
                 </div>
                 <div
                   class="right-side"

@@ -46,7 +46,7 @@ function SearchPage() {
                 type="text"
                 autoComplete="off"
                 data-testid="search-input"
-                placeholder="search by movie name!"
+                placeholder={t("search by movie name!")}
                 onChange={(e) => setInput({ value: e.target.value })}
               />
               <FontAwesomeIcon icon={faSearch} className="searchIcon" />
@@ -81,7 +81,6 @@ function SearchPage() {
                           <div>
                             <p>{movie.name}</p>
                             <p>{movie.genre}</p>
-                            <p>{movie.premiere}</p>
                           </div>
                           <div className="right-side">{t("show")}</div>
                         </Link>

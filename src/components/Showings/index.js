@@ -64,10 +64,7 @@ function Showings({ category, currentMovie }) {
                         </div>
                       </div>
                       <div className="buy-ticket">
-                        <p>
-                          {/* {el.capacity > 0 ? t("buy ticket") : t("sold out")} */}
-                          {t(getBookingText(el))}
-                        </p>
+                        <p>{t(getBookingText(el))}</p>
                       </div>
                     </Link>
                   </li>
