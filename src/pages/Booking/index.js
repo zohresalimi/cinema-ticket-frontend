@@ -5,6 +5,7 @@ import TopBar from "../../components/TopBar";
 import {
   SET_SELECTED_SHOWING_REDUCER,
   SET_SELECTED_CINEMA_REDUCER,
+  RESET_TICKET_REDUCER,
 } from "../../constants";
 
 function Booking({ showingId, children }) {
@@ -18,9 +19,10 @@ function Booking({ showingId, children }) {
         (cinema) => cinema._id === showingObj.cinema
       );
       dispatch({ type: SET_SELECTED_SHOWING_REDUCER, data: showingObj });
+      dispatch({ type: RESET_TICKET_REDUCER });
       dispatch({ type: SET_SELECTED_CINEMA_REDUCER, data: cinemaObj });
     }
-  }, []);
+  }, [showingId]);
 
   return (
     <div>

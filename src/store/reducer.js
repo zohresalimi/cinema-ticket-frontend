@@ -6,6 +6,7 @@ import {
   SET_TICKET_QUANTITY_REDUCER,
   SET_SHOWINGS_MOVIE_REDUCER,
   SET_SELECTED_SHOWING_REDUCER,
+  RESET_TICKET_REDUCER,
   SET_SELECTED_CINEMA_REDUCER,
   SET_CINEMAS_REDUCER,
   SET_SELECTED_SEAT,
@@ -198,6 +199,15 @@ const reducer = (state, action) => {
       return {
         ...state,
         cinemas: action.data,
+      };
+    case RESET_TICKET_REDUCER:
+      return {
+        ...state,
+        ticket: {
+          ...state.ticket,
+          quantity: 0,
+          seatNumbers: new Map(),
+        },
       };
     case SET_SELECTED_SEAT:
       return setSeatSelection(state, action.data);

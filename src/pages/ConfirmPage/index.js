@@ -178,7 +178,6 @@ function ConfirmPage() {
                         <span className="sub-title">{t("row")}</span>
                         <span>{row + 1}</span>
                         <span className="sub-title">{t("seat number")}</span>
-                        <span>{row + 1}</span>
                         <span>{seats.map((seat) => seat + 1).join(", ")}</span>
                       </div>
                     ))}

@@ -2,7 +2,7 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useMemo } from "react";
 import { Link, useLocation } from "@reach/router";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -61,15 +61,14 @@ function Seat({ showingId }) {
   const { t } = useTranslation();
   const { state: locationState } = useLocation();
   const { showing, seatNumbers, quantity } = state.ticket;
-  const [ticketCount, setTicketCount] = useState(0);
 
-  useEffect(() => {
+  const ticketCount = useMemo(() => {
     let count = 0;
     for (const [_, columns] of seatNumbers) {
       count += columns.size;
     }
-    setTicketCount(count);
-  }, [seatNumbers, setTicketCount]);
+    return count;
+  }, [seatNumbers]);
 
   return (
     <Container>
