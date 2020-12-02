@@ -185,7 +185,10 @@ function ConfirmPage() {
               </div>
             </div>
             <div className="row-box">
-              <p>{`${quantity} ticket`}</p>
+              <p>
+                {t("ticket")}
+                <span>{quantity}</span>
+              </p>
               <p>{formatPrice(showing.price)}</p>
             </div>
             <div className="row-box">

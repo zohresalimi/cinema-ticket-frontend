@@ -29,7 +29,7 @@ const Wrapper = styled.div`
     .info {
       display: flex;
       flex-direction: column;
-      margin-left: 20px;
+      margin:0 20px;
     }
   }
   .row-box {

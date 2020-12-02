@@ -1,5 +1,7 @@
 import React, { useReducer, useEffect } from "react";
 import { Router } from "@reach/router";
+import { useTranslation } from "react-i18next";
+
 import Theme from "./Styles/Theme";
 import HomePage from "./pages/HomePage";
 import MovieDetailPage from "./pages/MovieDetailPage";
@@ -20,6 +22,8 @@ import "./Styles/globalStyle.css";
 const cachedState = getLocalStorage(store.initialState);
 function App() {
   const [state, dispatch] = useReducer(store.reducer, cachedState);
+  const { i18n } = useTranslation();
+  document.body.dir = i18n.dir();
 
   useEffect(() => {
     setLocalStorage(state);
