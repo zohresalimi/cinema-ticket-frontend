@@ -58,5 +58,8 @@
   "sold out":"فروخته شده",
   "time passed":"خارج از زمان",
   "quantity":"ظرفیت",
-  "search by movie name!":"جستجوی فیلم"
+  "search by movie name!":"جستجوی فیلم",
+  "available":"قابل انتخاب",
+  "taken":"گرفته شده",
+  "reserved":"رزرو"
 }

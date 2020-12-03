@@ -16,6 +16,8 @@ import {
   Breadcrumb,
 } from "../../Styles/StyleComponents";
 import Wrapper from "./style";
+// import seat from "../../images/seat.svg";
+import { ReactComponent as Logo } from "../../images/seat.svg";
 
 function SeatPlan({ seats, ticketCount }) {
   const { state, dispatch } = useContext(AppContext);
@@ -28,30 +30,54 @@ function SeatPlan({ seats, ticketCount }) {
 
   return (
     <Wrapper>
-      <p>
-        {t("selected")}
-        <span>{ticketCount}</span>
-        {t("from")}
-        <span>{quantity}</span>
-      </p>
-      {seats.map((row, rowIndex) => (
-        <div className="column-wrapper" key={`row-${rowIndex}`}>
-          {row.map((column, colIndex) => {
-            return (
-              // eslint-disable-next-line jsx-a11y/interactive-supports-focus
-              <div
-                role="button"
-                disabled={
-                  quantity === ticketCount && column.taken === "available"
-                }
-                className={"seat " + column.taken}
-                key={`column-${column.seatNumber}`}
-                onClick={() => bookSeat(rowIndex, colIndex)}
-              />
-            );
-          })}
+      <div className="screen">
+        <p>
+          {t("selected")}
+          <span>{ticketCount}</span>
+          {t("from")}
+          <span>{quantity}</span>
+        </p>
+        {seats.map((row, rowIndex) => (
+          <div className="column-wrapper" key={`row-${rowIndex}`}>
+            {row.map((column, colIndex) => {
+              return (
+                // eslint-disable-next-line jsx-a11y/interactive-supports-focus
+                <div
+                  key={`column-${column.seatNumber}`}
+                  disabled={
+                    quantity === ticketCount && column.taken === "available"
+                  }
+                >
+                  <Logo
+                    fill={"seat " + column.taken}
+                    className={"seat " + column.taken}
+                    onClick={() => bookSeat(rowIndex, colIndex)}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        ))}
+      </div>
+
+      <div className="guideline">
+        <div className="available">
+          <Logo />
+          <p>{t("available")}</p>
         </div>
-      ))}
+        <div className="taken">
+          <Logo />
+          <p>{t("taken")}</p>
+        </div>
+        <div className="reserved">
+          <Logo />
+          <p>{t("reserved")}</p>
+        </div>
+        <div className="selected">
+          <Logo />
+          <p>{t("selected")}</p>
+        </div>
+      </div>
     </Wrapper>
   );
 }

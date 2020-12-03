@@ -55,6 +55,8 @@
     "sold out":"utsåld",
     "time passed":"tiden gick",
     "quantity":"mängd",
-    "search by movie name!":"sök efter filmnamn!"
-    
+    "search by movie name!":"sök efter filmnamn!",
+    "available":"giltig",
+    "taken":"tagen",
+    "reserved":"bokad"
 }

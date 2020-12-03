@@ -39,45 +39,113 @@ exports[`Seat Page Component Testing take snapshot 1`] = `
           </a>
         </h2>
         <div
-          class="style__Wrapper-gzbnn9-0 hhfVwl"
+          class="style__Wrapper-gzbnn9-0 hhucTx"
         >
-          <p>
-            selected
-            <span>
-              0
-            </span>
-            from
-            <span>
-              0
-            </span>
-          </p>
           <div
-            class="column-wrapper"
+            class="screen"
           >
+            <p>
+              selected
+              <span>
+                0
+              </span>
+              from
+              <span>
+                0
+              </span>
+            </p>
             <div
-              class="seat available"
-              disabled=""
-              role="button"
-            />
+              class="column-wrapper"
+            >
+              <div
+                disabled=""
+              >
+                <svg
+                  class="seat available"
+                  fill="seat available"
+                >
+                  seat.svg
+                </svg>
+              </div>
+              <div
+                disabled=""
+              >
+                <svg
+                  class="seat available"
+                  fill="seat available"
+                >
+                  seat.svg
+                </svg>
+              </div>
+            </div>
             <div
-              class="seat available"
-              disabled=""
-              role="button"
-            />
+              class="column-wrapper"
+            >
+              <div
+                disabled=""
+              >
+                <svg
+                  class="seat available"
+                  fill="seat available"
+                >
+                  seat.svg
+                </svg>
+              </div>
+              <div
+                disabled=""
+              >
+                <svg
+                  class="seat available"
+                  fill="seat available"
+                >
+                  seat.svg
+                </svg>
+              </div>
+            </div>
           </div>
           <div
-            class="column-wrapper"
+            class="guideline"
           >
             <div
-              class="seat available"
-              disabled=""
-              role="button"
-            />
+              class="available"
+            >
+              <svg>
+                seat.svg
+              </svg>
+              <p>
+                available
+              </p>
+            </div>
             <div
-              class="seat available"
-              disabled=""
-              role="button"
-            />
+              class="taken"
+            >
+              <svg>
+                seat.svg
+              </svg>
+              <p>
+                taken
+              </p>
+            </div>
+            <div
+              class="reserved"
+            >
+              <svg>
+                seat.svg
+              </svg>
+              <p>
+                reserved
+              </p>
+            </div>
+            <div
+              class="selected"
+            >
+              <svg>
+                seat.svg
+              </svg>
+              <p>
+                selected
+              </p>
+            </div>
           </div>
         </div>
         <button

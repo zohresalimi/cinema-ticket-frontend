@@ -7,6 +7,50 @@ const Wrapper = styled.div`
   font-size: ${(props) => props.theme.fontSizes.content};
   color: ${(props) => props.theme.colors.textColor};
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  .guideline {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+    padding: 20px 0;
+    svg {
+      width: 30px;
+      margin: 0 10px;
+    }
+
+    .available {
+      svg {
+        fill: #ffffff;
+        stroke: #797979;
+        stroke-width: 8px;
+      }
+    }
+    .taken {
+      svg {
+        fill: #636363;
+      }
+    }
+
+    .reserved {
+      svg {
+        pointer-events: none;
+        animation: blinker 1s linear infinite;
+        fill: #ecc31a;
+        stroke: #cca505;
+      }
+    }
+    .selected {
+      svg {
+        fill: rgb(235 51 87);
+      }
+    }
+  }
+  justify-content: center;
+
   p {
     font-size: ${(props) => props.theme.fontSizes.small};
     color: ${(props) => props.theme.colors.darkGray};
@@ -23,18 +67,23 @@ const Wrapper = styled.div`
     justify-content: center;
 
     div[disabled] {
+      svg {
+        fill: #ccc;
+        stroke: #797979;
+      }
       pointer-events: none;
-      background-color: #efefef;
     }
+
     .seat {
       width: 30px;
       height: 30px;
-      border: 1px solid #ccc;
       margin: 3px;
-      border-radius: 0 0 0.5em 0.5em;
       cursor: pointer;
+      fill: #ffffff;
+      stroke: #797979;
+      stroke-width: 8px;
       &.taken {
-        background-color: #a9a8a8;
+        fill: #636363;
         &::before {
           content: "x";
           color: #454343;
@@ -50,14 +99,15 @@ const Wrapper = styled.div`
         animation: blinker 1s linear infinite;
       }
       a:hover {
-        background-color: "green";
+        fill: "green";
       }
       &.selected {
-        background-color: rgb(235 51 87);
-        border: 1px solid rgb(235 51 87);
+        fill: rgb(235 51 87);
       }
       &.reserved {
-        background-color: rgb(255, 128, 128);
+        fill: #ecc31a;
+        stroke: #cca505;
+        stroke-width: 8px;
       }
     }
   }
