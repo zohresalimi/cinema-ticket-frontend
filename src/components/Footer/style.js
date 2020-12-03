@@ -36,7 +36,6 @@ export const Ul = styled.ul`
   height: 100%;
   list-style: none;
   padding: 0;
-  display: none;
 
   @media only screen and (min-width: 768px) {
     display: flex;

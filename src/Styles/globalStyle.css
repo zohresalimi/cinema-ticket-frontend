@@ -137,6 +137,12 @@ input[type="checkbox"] {
   color: #000;
 }
 
+/* RTL Style */
+
+[dir="rtl"] .searchBar a {
+  margin-left: 15px;
+}
+
 @media only screen and (max-width: 768px) {
   .player-wrapper {
     width: 80%;

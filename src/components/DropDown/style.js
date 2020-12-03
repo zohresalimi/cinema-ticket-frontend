@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   box-sizing: border-box;
   display: flex;
   justify-content: flex-end;
+  position: relative;
 `;
 
 export const MenuLabel = styled.ul`
@@ -13,7 +14,6 @@ export const MenuLabel = styled.ul`
   flex-direction: column;
   position: absolute;
   top: 50px;
-  right: 16px;
   z-index: 9;
   list-style: none;
   align-items: flex-end;

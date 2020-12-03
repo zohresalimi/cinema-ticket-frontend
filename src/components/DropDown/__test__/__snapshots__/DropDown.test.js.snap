@@ -6,7 +6,7 @@ exports[`DropDown Component Testing dropdown should be opened 1`] = `
   tabindex="-1"
 >
   <div
-    class="style__Wrapper-sc-13kue4j-0 bvCERe"
+    class="style__Wrapper-sc-13kue4j-0 iGlIry"
   >
     <button
       class="style__Button-sc-13kue4j-3 dizWDM"
@@ -36,7 +36,7 @@ exports[`DropDown Component Testing dropdown should be opened 1`] = `
       </div>
     </button>
     <ul
-      class="style__MenuLabel-sc-13kue4j-1 erqbDH"
+      class="style__MenuLabel-sc-13kue4j-1 irqOIZ"
     >
       <li
         class="style__ItemList-sc-13kue4j-2 bVTfja"
@@ -59,7 +59,7 @@ exports[`DropDown Component Testing take snapshot 1`] = `
   tabindex="-1"
 >
   <div
-    class="style__Wrapper-sc-13kue4j-0 bvCERe"
+    class="style__Wrapper-sc-13kue4j-0 iGlIry"
   >
     <button
       class="style__Button-sc-13kue4j-3 dizWDM"
@@ -89,7 +89,7 @@ exports[`DropDown Component Testing take snapshot 1`] = `
       </div>
     </button>
     <ul
-      class="style__MenuLabel-sc-13kue4j-1 erqbDH"
+      class="style__MenuLabel-sc-13kue4j-1 irqOIZ"
     />
   </div>
 </div>

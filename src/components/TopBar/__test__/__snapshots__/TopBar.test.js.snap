@@ -102,7 +102,7 @@ exports[`TopBar Component Testing take snapshot 1`] = `
                 </svg>
               </a>
               <div
-                class="style__Wrapper-sc-13kue4j-0 bvCERe"
+                class="style__Wrapper-sc-13kue4j-0 iGlIry"
               >
                 <button
                   class="style__Button-sc-13kue4j-3 dizWDM"
@@ -132,7 +132,7 @@ exports[`TopBar Component Testing take snapshot 1`] = `
                   </div>
                 </button>
                 <ul
-                  class="style__MenuLabel-sc-13kue4j-1 erqbDH"
+                  class="style__MenuLabel-sc-13kue4j-1 irqOIZ"
                 />
               </div>
             </div>

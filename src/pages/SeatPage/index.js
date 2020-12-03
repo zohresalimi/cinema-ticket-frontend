@@ -17,7 +17,7 @@ import {
 } from "../../Styles/StyleComponents";
 import Wrapper from "./style";
 // import seat from "../../images/seat.svg";
-import { ReactComponent as Logo } from "../../images/seat.svg";
+import { ReactComponent as SeatIcon } from "../../images/seat.svg";
 
 function SeatPlan({ seats, ticketCount }) {
   const { state, dispatch } = useContext(AppContext);
@@ -48,7 +48,7 @@ function SeatPlan({ seats, ticketCount }) {
                     quantity === ticketCount && column.taken === "available"
                   }
                 >
-                  <Logo
+                  <SeatIcon
                     fill={"seat " + column.taken}
                     className={"seat " + column.taken}
                     onClick={() => bookSeat(rowIndex, colIndex)}
@@ -62,19 +62,19 @@ function SeatPlan({ seats, ticketCount }) {
 
       <div className="guideline">
         <div className="available">
-          <Logo />
+          <SeatIcon />
           <p>{t("available")}</p>
         </div>
         <div className="taken">
-          <Logo />
+          <SeatIcon />
           <p>{t("taken")}</p>
         </div>
         <div className="reserved">
-          <Logo />
+          <SeatIcon />
           <p>{t("reserved")}</p>
         </div>
         <div className="selected">
-          <Logo />
+          <SeatIcon />
           <p>{t("selected")}</p>
         </div>
       </div>

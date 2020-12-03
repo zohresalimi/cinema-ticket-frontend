@@ -83,16 +83,8 @@ const Wrapper = styled.div`
       stroke: #797979;
       stroke-width: 8px;
       &.taken {
+        pointer-events: none;
         fill: #636363;
-        &::before {
-          content: "x";
-          color: #454343;
-          font-weight: 300;
-          font-family: Arial, sans-serif;
-          text-align: center;
-          display: block;
-          font-size: 25px;
-        }
       }
       &.reserved {
         pointer-events: none;
