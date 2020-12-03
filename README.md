@@ -46,3 +46,7 @@ REACT_APP_BASE_URL=http://localhost:<your desired port>
 REACT_APP_LOCAL_STORAGE_KEY=<a string which will be used to store data in localstorage>
 REACT_APP_PUBLISHABLE_KEY=<your stripe credentioal>
 ```
+
+### Icons
+
+Icons made by [I'm an inline-style link](<a href="https://www.vectorstock.com/royalty-free-vector/play-media-cinema-simple-logo-template-icon-vector-24516644">Vector image by VectorStock / vectorstock</a>) from www.vectorstock.com

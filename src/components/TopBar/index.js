@@ -7,6 +7,8 @@ import HamburgerMenu from "../HamburgerMenu";
 import { Wrapper, TopMenuContainer, Link, Logo, Ul, Li, Div } from "./style";
 import { Container, Row, Col } from "../../Styles/StyleComponents";
 
+import logo from "../../images/logo.png";
+
 function TopBar() {
   const [isMenuOpen, setMenuState] = useState(false);
   const node = useRef();
@@ -26,10 +28,7 @@ function TopBar() {
                   />
                 </div>
                 <Link href="/">
-                  <Logo
-                    alt=""
-                    src="https://www.filmstaden.se/contentassets/abcfcecd76ac47a18718257ddc52e804/filmstadenloggo100ar.png"
-                  />
+                  <Logo src={logo} alt="" />
                 </Link>
                 <Ul>
                   <Li>

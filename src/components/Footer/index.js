@@ -8,16 +8,15 @@ import {
 import { Wrapper, Logo, Ul, Li } from "./style";
 import { Container, Row, Col } from "../../Styles/StyleComponents";
 
+import logo from "../../images/logo.png";
+
 function Footer() {
   return (
     <Wrapper>
       <Container>
         <Row>
           <Col>
-            <Logo
-              alt=""
-              src="https://www.filmstaden.se/contentassets/abcfcecd76ac47a18718257ddc52e804/filmstadenloggo100ar.png"
-            />
+            <Logo alt="" src={logo} />
           </Col>
           <Col>
             <Ul>
