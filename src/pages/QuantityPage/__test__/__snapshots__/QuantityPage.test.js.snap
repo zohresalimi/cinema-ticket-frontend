@@ -246,7 +246,7 @@ exports[`Quantity Page Component Testing take snapshot 1`] = `
           </a>
         </button>
         <div
-          class="StyleComponents__Alert-sc-11erdxt-5 bPYMDT"
+          class="StyleComponents__Alert-sc-11erdxt-5 jMPlbE"
         >
           you must select at least one ticket
         </div>
