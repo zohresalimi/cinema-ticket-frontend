@@ -3,7 +3,6 @@
 
 # CinemaTicket frontend
 
-===
 This site has been set up for cinemas screenings and movies premiering in cinemas. Online ticket booking is also one of the main goals of this website.
 
 ### Tech
@@ -18,7 +17,6 @@ we are useing a number of open source tools:
 
 ### Installation
 
-===
 Clone the repository
 
 ```
@@ -37,7 +35,6 @@ Note: we used `yarn` to setup this project, however, if you want to use `npm` in
 
 ### Setup
 
-===
 Eslint must be installed globally: `npm install -g eslint`
 
 env variables are only available in node environment and not in the browser and we can access to them via `process.env.[VARIABLE_NAME]`
@@ -52,7 +49,6 @@ REACT_APP_PUBLISHABLE_KEY=<your stripe credentioal>
 
 ### Booking tickets and payment
 
-===
 You can book tickets and pay by Stripe mockup card.
 
 ### mockup card details:
@@ -63,5 +59,4 @@ card valid till: any date in the futrue
 
 ### Icons
 
-===
 Icons made by (<a href="https://www.vectorstock.com/royalty-free-vector/play-media-cinema-simple-logo-template-icon-vector-24516644">Vector image by VectorStock / vectorstock</a>)
