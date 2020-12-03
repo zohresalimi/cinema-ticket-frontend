@@ -15,7 +15,7 @@ we are useing a number of open source tools:
 - [i18n]- locale switching.
 - [stripe]- Stripe’s APIs to accept payments.
 
-### Installation
+# Installation
 
 Clone the repository
 
@@ -33,7 +33,7 @@ $ yarn start
 
 Note: we used `yarn` to setup this project, however, if you want to use `npm` instead, do not forget to delete the `yarn.lock` file first.
 
-### Setup
+# Setup
 
 Eslint must be installed globally: `npm install -g eslint`
 
@@ -47,7 +47,7 @@ REACT_APP_LOCAL_STORAGE_KEY=<a string which will be used to store data in locals
 REACT_APP_PUBLISHABLE_KEY=<your stripe credentioal>
 ```
 
-### Booking tickets and payment
+# Booking tickets and payment
 
 You can book tickets and pay by Stripe mockup card.
 
@@ -57,6 +57,6 @@ card number: 4242 4242 4242 4242
 
 card valid till: any date in the futrue
 
-### Icons
+# Icons
 
 Icons made by (<a href="https://www.vectorstock.com/royalty-free-vector/play-media-cinema-simple-logo-template-icon-vector-24516644">Vector image by VectorStock / vectorstock</a>)
