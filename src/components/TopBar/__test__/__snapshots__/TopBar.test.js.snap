@@ -54,7 +54,7 @@ exports[`TopBar Component Testing take snapshot 1`] = `
                 <img
                   alt=""
                   class="style__Logo-sc-1ttkx56-4 gqkUiH"
-                  src="https://www.filmstaden.se/contentassets/abcfcecd76ac47a18718257ddc52e804/filmstadenloggo100ar.png"
+                  src="logo.png"
                 />
               </a>
               <ul
